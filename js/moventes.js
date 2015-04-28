@@ -1,5 +1,8 @@
+'use strict';
+
 $(document).ready(function () {
     console.log('document ready');
+    fixNavLayout();
     console.log('form',$('#contactForm'));
     $('#contactForm')
         .bootstrapValidator({
@@ -17,7 +20,7 @@ $(document).ready(function () {
                 //      valid: true,          // false if the account is not found
                 //      message: 'message'
                 //  }
-                if (result.success == true || result.success == 'true') {
+                if (result.success === true || result.success === 'true') {
                     $('#form_submit_success').html(result.message).removeClass('hide');
                 } else {
                     // The account is not found
@@ -90,5 +93,33 @@ $(document).ready(function () {
                 }
             }
         }
+    });
+});
+
+
+//jQuery to collapse the navbar on scroll
+$(window).scroll(function() {
+    fixNavLayout();
+});
+
+
+var fixNavLayout = function(){
+       if ($(".navbar").offset().top > 50 ) {
+        $(".navbar-fixed-top").removeClass("nav-over-header");
+    } else if($("header").length) {
+        $(".navbar-fixed-top").addClass("nav-over-header");
+    }
+};
+
+// for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        console.log('click for page-scroll ',$(this));
+        var $anchor = $(this);
+        console.log( $($anchor.attr('href')).offset().top);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
     });
 });

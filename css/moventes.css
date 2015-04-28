@@ -5,13 +5,81 @@
  */
 
 /* Global Styles */
+.equal, .equal > div[class*='col-'] {
+    display: -webkit-flex;
+    display: flex;
+    flex:1 1 auto;
+}
 
 html,
 body {
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+
+/* Nav bar */
+.brand {
+/*    font-family: 'Courgette', cursive;*/
+    font-family: 'Kaushan Script', cursive;
+    color:#23527c;
+}
+a:hover .brand{
+    text-decoration: none;
+}
+
+.navbar-brand {
+    display: inline;
+/*    overflow: hidden;*/
+    white-space: nowrap;
+/*    padding: 7px;*/
+}
+.navbar-brand img {
+    max-height:100%;
+    display:inline-block;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding-top: 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out,font-size .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out,font-size .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out,font-size .5s ease-in-out;
+/*
+        background-color:black;
+        border-color:gray;
+        font-size: 100%
+*/
+    }
+
+    .nav-over-header {
+        padding-top : 10px;
+        background-color:transparent;
+        border-color:transparent;
+        font-size: 125%;
+        font-weight: bolder;
+    }
+
+    .nav-over-header .navbar-nav>li>a {
+        color:#666;
+    }
+}
+
+.navbar-nav > .active {
+    font-weight: bolder;
+}
+
+.text-header {
+    color:#666;
+}
+
+
+.panel-heading h4 {
+    display:inline;
+}
+
+/* Center utils */
 
 .text-vertical-center {
     display: table-cell;
@@ -26,14 +94,7 @@ body {
     font-weight: 700;
 }
 
-/* Nav bar */
 
-.navbar .brand {
-    max-height: 40px;
-    overflow: visible;
-    padding-top: 0;
-    padding-bottom: 0;
-}
 
 
 /* Header */
@@ -67,8 +128,6 @@ body {
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
-
-
 }
 /* Section */
 section {
@@ -78,6 +137,18 @@ section {
     section {
         padding: 80px 0;
     }
+}
+.section-title {
+    text-align: center;
+}
+
+a.service-item {
+ color:inherit;
+}
+
+a.service-item:hover {
+    text-decoration: none;
+    color:#FFF9AA;
 }
 
 /* Section "CONTACT" */
@@ -136,6 +207,7 @@ section#contact .form-group textarea.form-control {
 
 footer {
     padding: 25px 0;
+/*    margin: 50px 0;*/
     text-align: center;
 }
 
@@ -153,34 +225,6 @@ footer ul.quicklinks {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
 }
-/*
-
-ul.social-buttons {
-    margin-bottom: 0;
-}
-
-ul.social-buttons li a {
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    font-size: 20px;
-    line-height: 40px;
-    outline: 0;
-    color: #fff;
-    background-color: #222;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
-}
-
-ul.social-buttons li a:hover,
-ul.social-buttons li a:focus,
-ul.social-buttons li a:active {
-    background-color: #fed136;
-}
-*/
-
 
 /* Custom Horizontal Rule */
 
@@ -209,22 +253,6 @@ hr.small {
     font-style: italic;
 }
 
-/* Footer Styles */
-
-footer {
-    margin: 50px 0;
-}
-
-/* Responsive Styles */
-
-@media(max-width:991px) {
-    .customer-img,
-    .img-related {
-        margin-bottom: 30px;
-    }
-}
-
-
 
 
 /* Custom Button "dark" */
@@ -240,4 +268,22 @@ footer {
 .btn-dark:active {
     color: #fff;
     background-color: rgba(0,0,0,0.7);
+}
+
+
+
+
+
+
+
+/* Offre */
+#offre{
+    background-color: transparent;
+	background: url('../img/offre-bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  	background-color:#333;
+
 }
