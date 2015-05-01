@@ -50,7 +50,7 @@
 
     </head>
 
-    <body id="demarche" data-spy="scroll" data-target=".navbar-fixed-top">
+    <body id="demarche" class="fixed-bg" data-spy="scroll" data-target=".navbar-fixed-top">
 
         <!-- Navigation -->
         <!--navbar-inverse-->
@@ -105,27 +105,47 @@
 
                                 <ul class="timeline">
                                     <li>
-                                        <div class="milestone alert alert-warning">
+                                        <div class="milestone alert alert-info">
                                             <div class="milestone-heading">Devis pour l'analyse</div>
                                             <ul class="list-inline milestone-body">
                                                 <li><a href="index.html#contact">Demandez un devis</a></li>
                                             </ul>
                                         </div>
                                     </li>
+                                    <li class="timeline-inverted">
+                                        <span class="tl-circ fa-stack fa-2x">
+                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fa  fa-search  fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                        <div class="timeline-panel">
+                                            <span class="label label-primary top-left">optionnel</span>
+                                            <div class="tl-heading">
+                                                <h4 class="text-primary" style="padding-top:10px">Etude du potentiel mobilité</h4>
+                                                <span class="label label-default">Définir votre besoin</span>
+                                            </div>
+                                            <div class="tl-body">
+                                                <ul>
+                                                    <li>Analyse des outils et process existants</li>
+                                                    <li>Evaluation du gain de productivité possible</li>
+                                                    <li>Etude des optimisations potentielles avec une application mobile</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
 
                                     <li>
                                         <span class="tl-circ fa-stack fa-2x">
-                                            <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
                                             <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
                                         </span>
                                         <div class="timeline-panel">
                                             <div class="tl-heading">
-                                                <h4 class="text-warning">Analyse & Conception</h4>
-                                                <span class="label label-default">Comprendre votre besoin</span>
+                                                <h4 class="text-primary">Analyse & Conception</h4>
+                                                <span class="label label-default">Concevoir votre solution</span>
                                             </div>
                                             <div class="tl-body">
                                                 <ul>
-                                                    <li>Etude des besoins fonctionnels</li>
+                                                    <li>Définition des besoins fonctionnels</li>
                                                     <li>Maquettage des écrans de l'application</li>
                                                     <li>Conception du modèle de données, des règles de gestion, du parcours utilisateur</li>
                                                 </ul>
@@ -133,7 +153,7 @@
                                         </div>
                                     </li>
                                     <li><div class="milestone alert alert-success">
-                                        <div class="milestone-heading">Devis pour <br/>la réalisation et la maintenance</div>
+                                        <div class="milestone-heading">Devis pour la réalisation<br/>&<br/>Devis pour l'exploitation</div>
                                         <ul class="list-inline milestone-body">
                                             <li><a href="roi.html">Notre tarification</a></li>
                                             <li><a href="index.html#contact">Demandez un devis</a></li>
@@ -148,23 +168,41 @@
                                         </div>
                                         <div class="timeline-panel">
                                             <div class="tl-heading">
-                                                <h4 class="text-success">Réalisation & tests</h4>
+                                                <h4 class="text-success">Réalisation</h4>
                                                 <span class="label label-default">Construire votre solution</span>
                                             </div>
                                             <div class="tl-body">
                                                 <ul>
-                                                    <li>Développement de l'application et des scripts serveur</li>
+                                                    <li>Développement de l'application</li>
+                                                    <li>Développement des scripts serveur</li>
                                                     <li>Connexion aux sources de données existantes</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tl-circ fa-stack fa-2x">
+                                            <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                            <i class="fa fa-user  fa-stack-1x fa-inverse"></i>
+                                        </div>
+                                        <div class="timeline-panel">
+                                            <div class="tl-heading">
+                                                <h4 class="text-success">Tests & corrections</h4>
+                                                <span class="label label-default">Ajuster votre solution</span>
+                                            </div>
+                                            <div class="tl-body">
+                                                <ul>
                                                     <li>Tests unitaires par notre équipe</li>
                                                     <li>Tests sur le terrain avec un panel d'utilisateurs</li>
-                                                    <li>Prise en compte des retours des utilisateurs</li>
+                                                    <li>Développements prenant en compte les retours</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </li>
 
 
-                                    <li>
+
+                                    <li  class="timeline-inverted">
                                         <div class="tl-circ fa-stack fa-2x">
                                             <i class="fa fa-circle fa-stack-2x text-success"></i>
                                             <i class="fa fa-paper-plane  fa-stack-1x fa-inverse"></i>
@@ -173,27 +211,27 @@
                                             <div class="tl-heading">
                                                 <h4 class="text-success">Déploiement & formation</h4>
                                                 <span class="label label-default">Installer votre solution</span>
-                                            <div class="tl-body">
-                                                <ul>
-                                                    <li>Mise en ligne de l'application sur un store public (Google Play ou AppStore), le site web de votre entreprise ou un store privé (tel que Apperian)</li>
-                                                    <li>Formation des utilisateurs de l'application</li>
-                                                    <li>Formation du responsable pour administrer l'application </li>
-                                                </ul>
+                                                <div class="tl-body">
+                                                    <ul>
+                                                        <li>Mise en ligne de l'application sur un store public (Google Play ou AppStore), le site web de votre entreprise ou un store privé (tel que Apperian)</li>
+                                                        <li>Formation des utilisateurs de l'application</li>
+                                                        <li>Formation du responsable pour administrer l'application </li>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-inverted">
+                                            </li>
+                                    <li>
                                         <div class="tl-circ fa-stack fa-2x">
                                             <i class="fa fa-circle fa-stack-2x text-success"></i>
                                             <i class="fa fa-area-chart  fa-stack-1x fa-inverse"></i>
                                         </div>
                                         <div class="timeline-panel">
                                             <div class="tl-heading">
-                                                <h4>Support & Maintenance</h4>
+                                                <h4 class="text-success">Support & Maintenance</h4>
                                                 <span class="label label-default">Gérer votre solution</span>                                                             </div>
                                             <div class="tl-body">
                                                 <ul>
-                                                    <li>Hébergement dans le cloud de la patie <i>back-end</i> (base de données et scripts serveur)</li>
+                                                    <li>Hébergement dans le cloud de la partie <i>back-end</i> (base de données et scripts serveur)</li>
                                                     <li>Garantie de disponibilité des serveurs, quelque soit le nombre d'utilisateurs</li>
                                                     <li>Maintenance de l'application mobile (corrections, évolutions mineures et prises en charges des mises à jour du système d'exploitation des smartphones)</li>
                                                 </ul>
@@ -209,7 +247,7 @@
 
                             <div class="clearfix"></div>
                             <div class="col-md-12" style="text-align:right;">
-<!--                                <a href="solution.html" class="btn btn-primary">En savoir plus <span class="glyphicon glyphicon-chevron-right"></span></a>-->
+                                <!--                                <a href="solution.html" class="btn btn-primary">En savoir plus <span class="glyphicon glyphicon-chevron-right"></span></a>-->
                             </div>
                         </div>
                         <!-- /.row (nested) -->
@@ -226,22 +264,22 @@
 
         <footer>
             <div style="text-align:center">
-                        <ul class="list-inline quicklinks">
-                            <li>
-                                <a href="about.html">Qui sommes nous?</a>
-                            </li>
-                            <li>
-                                 <span class="copyright">Copyright &copy; Moventes 2015</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <ul class="list-inline quicklinks">
+                    <li>
+                        <a href="about.html">Qui sommes nous?</a>
+                    </li>
+                    <li>
+                        <span class="copyright">Copyright &copy; Moventes 2015</span>
+                    </li>
+                </ul>
             </div>
-        </footer>
+            </div>
+        </div>
+    </footer>
 
 
 
 
-    </body>
+</body>
 
 </html>
