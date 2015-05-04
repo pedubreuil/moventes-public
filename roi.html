@@ -21,6 +21,7 @@
         <!--        <link href='http://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
         <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="css/cookiecuttr.css" rel="stylesheet"/>
 
         <!-- Custom CSS -->
         <link href="css/moventes.css" rel="stylesheet">
@@ -34,6 +35,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/language/fr_FR.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+                <script src="js/jquery.cookie.js"></script>
+        <script src="js/jquery.cookiecuttr.js"></script>
+
+
 
         <!-- Custom JavaScript -->
         <script src="js/moventes.js"></script>
@@ -64,7 +69,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand page-scroll" href="index.html" title="Moventes"> <img src="img/logo.svg"><span class="brand">Moventes</span></a>
+                    <a class="navbar-brand page-scroll" href="index.html" title="Moventes"> <img src="img/logo.png"><span class="brand">Moventes</span></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="full-navbar-collapse">
@@ -96,20 +101,92 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1">
-<!--
+
                         <ol class="breadcrumb">
                             <li><a href="index.html">Accueil</a></li>
                             <li><a href="offre.html">Notre offre</a></li>
-                            <li class="active">Votre retour sur investissement</li>
+                            <li class="active">Notre facturation</li>
                         </ol>
--->
+
                         <br/>
-                        <h3 class="section-title">Notre tarification</h3>
+                        <h3 class="section-title">Un coût maitrisé pour un <br/> retour-sur-investissement assuré</h3>
                         <hr class="small">
                         <div class="row">
-                            <div class="col-md-6" style=" padding-bottom:10px">
+                            <div class="col-md-12 well">
+                                Moventes se mobilise à vos côtés pour que la solution mobile de votre choix rapporte bien plus qu'elle ne vous coûte !
+                                <br/>
+                                Grâce à des technologies innovantes, notre ambition est de réaliser pour vous une solution personnalisée, qui respecte vos contraintes de temps et de budget tout en optimisant votre investissement tout au long de la chaîne de valeur.
+                                <br/>
+                                Ainsi, nous nous engageons à une transparence de nos prix à chaque étape du projet, sans aucun coût caché supplémentaire.
                             </div>
-                            <div class="col-md-6 "  style=" padding-bottom:10px">
+                            <div class="col-md-12">
+                                <ul class="basic-left-timeline">
+                                    <li>
+                                        <div class="media">
+                                            <div class="media-left media-middle">
+                                                <span class="tl-circ fa-stack fa-2x">
+                                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                                    <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </div>
+                                            <div class="media-body panel panel-primary">
+                                                <div class="panel-heading media-heading">
+                                                    <h4 class="panel-title">Diagnostic, Analyse et Conception</h4>
+                                                </div>
+                                                <div class="panel-body">
+                                                    Le coût de cette phase de conseil et de conception est fonction du nombre de jours passés dans vos locaux (contrat en régie). <br/>
+                                                    Sa durée dépend de l'avancement de votre projet au moment de l'intervention,  allant de quelques jours (s'il ne reste plus que la conception technique à faire) à quelques semaines (si une étude de votre potentiel mobilité est nécessaire pour définir les besoins).
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <div class="media">
+                                            <div class="media-left media-middle">
+                                                <span class="tl-circ fa-stack fa-2x">
+                                                    <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                                    <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </div>
+                                            <div class="media-body panel panel-success">
+                                                <div class="panel-heading media-heading">
+                                                    <h4 class="panel-title">Réalisation et Tests</h4>
+                                                </div>
+                                                <div class="panel-body">
+                                                    Le coût de cette phase de construction de votre application est évalué par un devis dans lequel Moventes s'engage pour une durée et un prix (contrat au forfait).<br/>
+                                                    Ce prix dépend de la taille de l'application à réaliser (nombre et taux de complexité des écrans et des fonctionnalités transverses). <br/><br/>
+                                                    Moventes vous garantit un rapport qualité/prix très compétitif grâce à l'utilisation d'outils innovants qui permettent d'accélérer et fiabiliser les développements.                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <div class="media">
+                                            <div class="media-left media-middle">
+                                                <span class="tl-circ fa-stack fa-2x">
+                                                    <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                                                    <i class="fa fa-area-chart fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </div>
+                                            <div class="media-body panel panel-danger">
+                                                <div class="panel-heading media-heading">
+                                                    <h4 class="panel-title">Hébergement et Maintenance</h4>
+                                                </div>
+                                                <div class="panel-body">
+                                                    Moventes prend en charge 100% de la technique, pendant la durée de vie de votre application.<br/>
+                                                    Ainsi, plus besoin d'embaucher d'informaticiens pour gérer en interne des serveurs, des bases de données, une flotte de mobiles...<br/>
+                                                    Notre abonnement mensuel comprend tout, des frais d'infrastructure à la maintenance, pour vous permettre de maitriser complètement votre budget, à un prix très attractif !
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </li>
+
+                                </ul>
 
                             </div>
                             <div class="clearfix"></div>
@@ -127,28 +204,6 @@
 
 
 
-        <section id="valeur" class="">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-lg-10 col-lg-offset-1">
-                        <h3 class="section-title">Notre création de valeur</h3>
-                        <hr class="small">
-                        <div class="row">
-                            <div class="col-md-12">
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-md-12" style="text-align:right; padding-top:15px">
-                            </div>
-
-                        </div>
-                        <!-- /.row (nested) -->
-                    </div>
-                    <!-- /.col-lg-10 -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-        </section>
 
 
 

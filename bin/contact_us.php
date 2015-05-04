@@ -16,13 +16,17 @@ if(empty($_POST['name'])  		||
 $name = $_POST['name'];
 $email_address = $_POST['email'];
 $phone = $_POST['phone'];
+$company = $_POST['company'];
 $message = $_POST['message'];
+
+$now = new DateTime(null, new DateTimeZone('Europe/Paris'));
+
 
 // Create the email and send the message
 $to = 'contact@moventes.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-$email_subject = "Website Contact Form:  $name";
-$email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
-$headers = "From: noreply@moventes.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$email_subject = "Contact par le site web de Moventes";
+$email_body = "\n\n---------------------------\nFrom: $name <$email_address> \nDate:".$now->format('d M Y H:i')."\nPhone: $phone\nCompany: $company\n\n\n$message";
+$headers = "From: noreply@moventes.com\n";
 $headers .= "Reply-To: $email_address";
 mail($to,$email_subject,$email_body,$headers);
 echo json_encode(array(

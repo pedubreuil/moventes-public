@@ -21,6 +21,7 @@
         <!--        <link href='http://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
         <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="css/cookiecuttr.css" rel="stylesheet"/>
 
         <!-- Custom CSS -->
         <link href="css/moventes.css" rel="stylesheet">
@@ -34,6 +35,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/language/fr_FR.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+              <script src="js/jquery.cookie.js"></script>
+        <script src="js/jquery.cookiecuttr.js"></script>
+
+
 
         <!-- Custom JavaScript -->
         <script src="js/moventes.js"></script>
@@ -65,7 +70,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand page-scroll" href="index.html" title="Moventes"> <img
-                                                                                                 src="img/logo.svg"><span class="brand">Moventes</span></a>
+                                                                                                 src="img/logo.png"><span class="brand">Moventes</span></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="full-navbar-collapse">
@@ -113,10 +118,10 @@
                                     </div>
                                     <div class="media-body">
                                         <ul class="list-group">
-                                            <li class="list-group-item active">Marketing & vente  <span class="label label-success">toujours plus proche de vos clients !</span></li>
+                                            <li class="list-group-item active">Marketing & Vente  <span class="label label-default" style="float:right">toujours plus proche de vos clients !</span></li>
                                             <li class="list-group-item">Améliorer la relation avec vos clients en vous rapprochant d’eux, où qu'ils soient</li>
-                                            <li class="list-group-item">Améliorer l’image de votre entreprise en rendant plus accessible vos services</li>
-                                            <li class="list-group-item">Organiser vos visites chez vos clients en accédant au contenu de votre CRM</li>
+                                            <li class="list-group-item">Améliorer l’image de votre entreprise en rendant plus accessibles vos services</li>
+                                            <li class="list-group-item">Organiser les visites chez vos clients en accédant au contenu de votre CRM</li>
                                             <li class="list-group-item">Créer des devis, valider des bons de commande...</li>
                                         </ul>
                                     </div>
@@ -132,11 +137,11 @@
                                     </div>
                                     <div class="media-body">
                                         <ul class="list-group">
-                                            <li class="list-group-item active">Achats & Logistique  <span class="label label-success">toujours mieux organisé !</span></li>
+                                            <li class="list-group-item active">Achats & Logistique  <span class="label  label-default" style="float:right"> toujours mieux organisé !</span></li>
                                             <li class="list-group-item">Gérer le stockage et les flux de biens dans vos entrepôts</li>
                                             <li class="list-group-item">Suivre les approvisionnements et achats</li>
                                             <li class="list-group-item">Localiser des véhicules de société</li>
-                                            <li class="list-group-item">Optimiser la chaine logistique</li>
+                                            <li class="list-group-item">Optimiser la chaine logistique...</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -152,11 +157,11 @@
                                     </div>
                                     <div class="media-body">
                                         <ul class="list-group">
-                                            <li class="list-group-item active">Production & Technique  <span class="label label-success">toujours plus efficace !</span></li>
+                                            <li class="list-group-item active">Production & Technique  <span class="label  label-default" style="float:right">toujours plus efficace !</span></li>
                                             <li class="list-group-item">Sur un chantier, capturer facilement des données et partager l'information</li>
                                             <li class="list-group-item">Dans les transports, travailler directement depuis sur votre mobile ou tablette</li>
                                             <li class="list-group-item">En clientèle, accéder au système d'information de votre entreprise</li>
-                                            <li class="list-group-item">Sur le terrain, améliorer la réactivité des équipes, optimiser les process et réduire les coûts opérationnels</li>
+                                            <li class="list-group-item">Sur le terrain, améliorer la réactivité des équipes, optimiser les process et réduire les coûts opérationnels...</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -171,11 +176,11 @@
                                     </div>
                                     <div class="media-body">
                                         <ul class="list-group">
-                                            <li class="list-group-item active">Ressources Humaines  <span class="label label-success">toujours plus à l'écoute !</span></li>
+                                            <li class="list-group-item active">Ressources Humaines  <span class="label  label-default" style="float:right">toujours plus à l'écoute !</span></li>
                                             <li class="list-group-item">Gérer les congés, faire le bilan d'entretiens, faire un sondage,...</li>
                                             <li class="list-group-item">Améliorer la communication au sein de l'entreprise</li>
                                             <li class="list-group-item">Accéder en temps réel aux informations des employés</li>
-                                            <li class="list-group-item">Rendre accessibles les principaux indicateurs RH de l'entreprise</li>
+                                            <li class="list-group-item">Rendre accessibles les principaux indicateurs RH de l'entreprise...</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -191,10 +196,10 @@
                                     </div>
                                     <div class="media-body">
                                         <ul class="list-group">
-                                            <li class="list-group-item active">Finances & Administration  <span class="label label-success">toujours mieux informé !</span></li>
+                                            <li class="list-group-item active">Finances & Administration  <span class="label  label-default" style="float:right">toujours mieux informé !</span></li>
                                             <li class="list-group-item">Suivre en temps réel des indicateurs importants de l’entreprise (Chiffre d'affaires, Facturations,...)</li>
                                             <li class="list-group-item">Faciliter la gestion comptable</li>
-                                            <li class="list-group-item">Optimiser la répartition de tâches</li>
+                                            <li class="list-group-item">Optimiser la répartition de tâches...</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -202,7 +207,7 @@
 
                             <div class="clearfix"></div>
                             <div class="col-md-12" style="text-align:right;">
-                                <a href="roi.html" class="btn btn-warning">Votre retour sur investissement<span class="glyphicon glyphicon-chevron-right"></span></a>
+                                <a href="solution.html" class="btn btn-success">Notre solution <span class="glyphicon glyphicon-chevron-right"></span></a>
                             </div>
                         </div>
                         <!-- /.row (nested) -->

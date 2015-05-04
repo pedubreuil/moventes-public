@@ -51,7 +51,10 @@ a:hover .brand{
         font-size: 125%;
         font-weight: bolder;
     }
-
+    .nav-over-header img {
+        max-height:150%;
+        transition: all .5s ease-out ;
+    }
     .nav-over-header .navbar-nav>li>a {
         color:#666;
     }
@@ -270,7 +273,7 @@ body.fixed-bg {
 }
 
 @media only screen and (max-width: 767px) {
-/* xs */
+    /* xs */
     body#offre{
         background-image:  url('../img/bg/offre-xs.jpg');
     }
@@ -322,7 +325,7 @@ body.fixed-bg {
 
 
 @media only screen and (min-width: 1200px) {
-/* lg */
+    /* lg */
 
     /* to 2500px-1100px */
 
@@ -389,7 +392,24 @@ hr.small {
 
 
 
+.basic-left-timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+}
+.basic-left-timeline >li {
+    padding-bottom: 40px;
+}
 
+.basic-left-timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: #eee;
+    left: 25px;
+}
 
 
 
@@ -617,4 +637,93 @@ hr.small {
     margin-bottom: 0;
     text-transform: none;
 }
+
+
+
+#map-canvas {
+    height: 400px;
+}
+
+
+
+
+.venn-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px
+
+}
+.venncircle {
+    width: 200px;
+    height: 200px;
+
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-transition: all 0.8s ;
+    -moz-transition: all 0.8s;
+    transition: all 0.8s;
+    -o-transition: all 0.8s  ;
+    opacity: 0.5;
+
+    color: #E8E8E8;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+
+
+}
+.venncircle:hover {
+    opacity: 0.9;
+    /*    z-index: 5;*/
+    color:#FFFFFF;
+}
+.venncircle > p {
+    display: inline-block;
+    position: relative;
+    margin-top: 90px;
+
+}
+
+
+.venncirctop {
+    margin-bottom: -75px;
+    margin-left: 75px;
+    margin-right: 0px;
+    background-color: #093d5c;
+    z-index: 3;
+    position: relative;
+}
+
+.venncirctop > p {
+    padding-bottom: 20px;
+
+}
+
+.venncirclft {
+    margin-left: 0px;
+    background-color: #e9bf44;
+    z-index: 2;
+    position: absolute;
+
+}
+
+.venncirclft > p {
+    padding-right: 20px;
+
+}
+
+.venncircrt {
+    margin-left: 150px;
+    background-color: #A0A0A0 ;
+    z-index: 1;
+    position: absolute;
+}
+
+.venncircrt > p {
+    padding-left: 20px;
+}
+
+
 
