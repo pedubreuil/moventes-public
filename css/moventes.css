@@ -100,7 +100,6 @@ header {
     position: relative;
 
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
     background-position: center center;
     background-repeat: none;
     background-attachment:scroll;
@@ -197,7 +196,6 @@ section#contact {
     position: relative;
 
     background-attachment: scroll;
-    background-image: url(../img/contact-bg.jpg);
     background-position: center center;
     background-repeat: none;
     background-attachment:scroll;
@@ -295,6 +293,13 @@ body.fixed-bg {
     body#solution{
         background-image:  url('../img/bg/solution-xs.jpg');
     }
+
+    section#contact {
+        background-image: url(../img/bg/contact-xs.jpg);
+    }
+    header {
+        background-image: url(../img/bg/header-xs.jpg);
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
@@ -319,6 +324,12 @@ body.fixed-bg {
     }
     body#solution{
         background-image:  url('../img/bg/solution-md.jpg');
+    }
+    section#contact {
+        background-image: url(../img/bg/contact-md.jpg);
+    }
+    header {
+        background-image: url(../img/bg/header-md.jpg);
     }
 
 }
@@ -350,6 +361,13 @@ body.fixed-bg {
     body#solution{
         background-image:  url('../img/bg/solution-lg.jpg');
     }
+    section#contact {
+        background-image: url(../img/bg/contact-lg.jpg);
+    }
+    header {
+        background-image: url(../img/bg/header-lg.jpg);
+    }
+
 
 }
 
@@ -665,7 +683,7 @@ hr.small {
     -moz-transition: all 0.8s;
     transition: all 0.8s;
     -o-transition: all 0.8s  ;
-    opacity: 0.5;
+    opacity: 0.6;
 
     color: #E8E8E8;
     font-size: 19px;
