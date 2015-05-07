@@ -10,38 +10,35 @@
         <meta name="author" content="">
         <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 
-        <title>Moventes, expert des apps professionnelles sur mesure</title>
+        <title>Notre démarche pour faire votre application mobile et maitriser votre budget</title>
 
-        <!-- Core CSS -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-        <!-- alternative CDN : //maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css  !-->
+        <!--  CSS -->
+        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-        <!-- Plugins CSS -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css">
-        <!--        <link href='http://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
-        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <!-- build:css inc/moventes.min.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="bower_components/bootstrapvalidator/dist/css/bootstrapValidator.css" />
+        <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+        <!-- endbower -->
         <link href="css/cookiecuttr.css" rel="stylesheet"/>
-
-        <!-- Custom CSS -->
         <link href="css/moventes.css" rel="stylesheet">
+        <!-- /build -->
 
 
-        <!-- Core JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <!-- JavaScript -->
 
-        <!-- Plugins JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/language/fr_FR.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-         <script src="js/jquery.cookie.js"></script>
+        <!-- build:js inc/moventes.min.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
+        <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
+        <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+        <!-- endbower -->
         <script src="js/jquery.cookiecuttr.js"></script>
-
-
-
-        <!-- Custom JavaScript -->
         <script src="js/moventes.js"></script>
+        <!-- /build -->
 
 
 
@@ -69,8 +66,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand page-scroll" href="index.html" title="Moventes"> <img
-                                                                                                 src="img/logo.png"><span class="brand">Moventes</span></a>
+                    <a class="navbar-brand page-scroll" href="index.html" title="Moventes"> <img alt="" src="img/logo.png"><span class="brand">Moventes</span></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="full-navbar-collapse">
@@ -97,7 +93,7 @@
 
 
         <!-- Services -->
-        <section id="demarche" class="">
+        <section id="demarche-section" class="">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1">
@@ -225,7 +221,8 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            </li>
+                                        </div>
+                                    </li>
                                     <li>
                                         <div class="tl-circ fa-stack fa-2x">
                                             <i class="fa fa-circle fa-stack-2x text-success"></i>
@@ -242,7 +239,7 @@
                                                     <li>Maintenance de l'application mobile (corrections, évolutions mineures et prises en charge des mises à jour du système d'exploitation des smartphones)</li>
                                                 </ul>
                                                 <br/>
-                                                <center><span class="label label-success">toute la durée de vie de l'application</span>   </center>
+                                                <span class="label label-success text-center">toute la durée de vie de l'application</span>
                                             </div>
                                         </div>
                                     </li>
@@ -252,7 +249,7 @@
                             </div>
 
                             <div class="clearfix"></div>
-                            <div class="col-md-12" style="text-align:right;">
+                            <div class="col-md-12 text-right">
                                 <!--                                <a href="solution.html" class="btn btn-primary">En savoir plus <span class="glyphicon glyphicon-chevron-right"></span></a>-->
                             </div>
                         </div>
@@ -269,23 +266,19 @@
 
 
         <footer>
-            <div style="text-align:center">
-                <ul class="list-inline quicklinks">
-                    <li>
-                        <a href="about.html">Qui sommes nous?</a>
-                    </li>
-                    <li>
-                        <span class="copyright">Copyright &copy; Moventes 2015</span>
-                    </li>
-                </ul>
-            </div>
-            </div>
-        </div>
-    </footer>
+            <ul class="list-inline ">
+                <li>
+                    <a href="about.html">Qui sommes nous?</a>
+                </li>
+                <li>
+                    <span class="copyright">Copyright &copy; Moventes 2015</span>
+                </li>
+            </ul>
+        </footer>
 
 
 
 
-</body>
+    </body>
 
 </html>

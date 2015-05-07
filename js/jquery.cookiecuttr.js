@@ -94,13 +94,13 @@
         };
         // write cookie accept button
         if (cookieAcceptButton) {
-            var cookieAccept = ' <a href="#accept" class="cc-cookie-accept">' + cookieAcceptButtonText + '</a> ';
+            var cookieAccept = ' <a href="#accept" class="cc-cookie-accept btn btn-xs btn-success">' + cookieAcceptButtonText + '</a> ';
         } else {
             var cookieAccept = "";
         }
         // write cookie decline button
         if (cookieDeclineButton) {
-            var cookieDecline = ' <a href="#decline" class="cc-cookie-decline">' + cookieDeclineButtonText + '</a> ';
+            var cookieDecline = ' <a href="#decline" class="cc-cookie-decline btn btn-xs btn-danger">' + cookieDeclineButtonText + '</a> ';
         } else {
             var cookieDecline = "";
         }
@@ -120,9 +120,9 @@
             // write cookie reset button
             if ((cookieResetButton) && (cookieDiscreetReset)) {
                 if (appOrPre) {
-                    $('body').append('<div class="cc-cookies cc-discreet"><a class="cc-cookie-reset" href="#" title="' + cookieResetButtonText + '">' + cookieResetButtonText + '</a></div>');
+                    $('body').append('<div class="cc-cookies cc-discreet"><a class="cc-cookie-reset btn btn-xs btn-danger" href="#" title="' + cookieResetButtonText + '">' + cookieResetButtonText + '</a></div>');
                 } else {
-                    $('body').prepend('<div class="cc-cookies cc-discreet"><a class="cc-cookie-reset" href="#" title="' + cookieResetButtonText + '">' + cookieResetButtonText + '</a></div>');
+                    $('body').prepend('<div class="cc-cookies cc-discreet"><a class="cc-cookie-reset btn btn-xs btn-danger" href="#" title="' + cookieResetButtonText + '">' + cookieResetButtonText + '</a></div>');
                 }
                 //add appropriate CSS depending on position chosen
                 if (cookieDiscreetPosition == "topleft") {
@@ -143,9 +143,9 @@
                 }
             } else if (cookieResetButton) {
                 if (appOrPre) {
-                    $('body').append('<div class="cc-cookies"><a href="#" class="cc-cookie-reset">' + cookieResetButtonText + '</a></div>');
+                    $('body').append('<div class="cc-cookies"><a href="#" class="cc-cookie-reset btn btn-xs btn-danger">' + cookieResetButtonText + '</a></div>');
                 } else {
-                    $('body').prepend('<div class="cc-cookies"><a href="#" class="cc-cookie-reset">' + cookieResetButtonText + '</a></div>');
+                    $('body').prepend('<div class="cc-cookies"><a href="#" class="cc-cookie-reset btn btn-xs btn-danger">' + cookieResetButtonText + '</a></div>');
                 }
             } else {
                 var cookieResetButton = "";
@@ -186,9 +186,9 @@
             }
             if (cookiePolicyPage) { // show policy page overlay
                 if (appOrPre) {
-                    $('body').append('<div class="cc-cookies ' + cookieOverlay + '">' + cookiePolicyPageMessage + " " + ' <a href="#accept" class="cc-cookie-accept">' + cookieAcceptButtonText + '</a> ' + ' <a href="#decline" class="cc-cookie-decline">' + cookieDeclineButtonText + '</a> ' + '</div>');
+                    $('body').append('<div class="cc-cookies ' + cookieOverlay + '">' + cookiePolicyPageMessage + " " + ' <a href="#accept" class="cc-cookie-accept btn btn-xs btn-success">' + cookieAcceptButtonText + '</a> ' + ' <a href="#decline" class="cc-cookie-decline btn btn-xs btn-danger">' + cookieDeclineButtonText + '</a> ' + '</div>');
                 } else {
-                    $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookiePolicyPageMessage + " " + ' <a href="#accept" class="cc-cookie-accept">' + cookieAcceptButtonText + '</a> ' + ' <a href="#decline" class="cc-cookie-decline">' + cookieDeclineButtonText + '</a> ' + '</div>');
+                    $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookiePolicyPageMessage + " " + ' <a href="#accept" class="cc-cookie-accept btn btn-xs btn-success">' + cookieAcceptButtonText + '</a> ' + ' <a href="#decline" class="cc-cookie-decline btn btn-xs btn-danger">' + cookieDeclineButtonText + '</a> ' + '</div>');
                 }
             } else if ((!cookieAnalytics) && (!cookieDiscreetLink)) { // show privacy policy option
                 if (appOrPre) {
@@ -199,10 +199,10 @@
             }
         }
         if ((cookieCutter) && (!cookieCutterDeclineOnly) && (($cookieDeclined) || (!$cookieAccepted))) {
-            $(cookieDisable).html('<div class="cc-cookies-error">' + cookieErrorMessage + ' <a href="#accept" class="cc-cookie-accept">' + cookieAcceptButtonText + '</a> ' + '</div>');
+            $(cookieDisable).html('<div class="cc-cookies-error">' + cookieErrorMessage + ' <a href="#accept" class="cc-cookie-accept btn btn-xs btn-success">' + cookieAcceptButtonText + '</a> ' + '</div>');
         }
         if ((cookieCutter) && (cookieCutterDeclineOnly) && ($cookieDeclined)) {
-            $(cookieDisable).html('<div class="cc-cookies-error">' + cookieErrorMessage + ' <a href="#accept" class="cc-cookie-accept">' + cookieAcceptButtonText + '</a> ' + '</div>');
+            $(cookieDisable).html('<div class="cc-cookies-error">' + cookieErrorMessage + ' <a href="#accept" class="cc-cookie-accept btn btn-xs btn-success">' + cookieAcceptButtonText + '</a> ' + '</div>');
         }
         // if bottom is true, switch div to bottom if not in discreet mode
         if ((cookieNotificationLocationBottom) && (!cookieDiscreetLink)) {

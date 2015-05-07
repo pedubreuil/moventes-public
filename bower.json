@@ -1,0 +1,16 @@
+{
+  "name": "moventes-public",
+  "version": "1.0.0",
+  "dependencies": {
+      "bootstrap":"^3.3.4",
+      "bootstrapvalidator":"^0.5.3",
+      "components-font-awesome":"^4.3.0",
+      "jquery":"^2.1.3",
+      "jquery.easing":"^1.3",
+      "jquery.cookie":"^1.4.1"
+  },
+  "devDependencies": {
+  },
+  "appPath": "app",
+  "moduleName": "moventesPublic"
+}

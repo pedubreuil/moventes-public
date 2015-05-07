@@ -1,4 +1,3 @@
-'use strict';
 
 $(document).ready(function () {
     console.log('document ready');
@@ -74,7 +73,8 @@ $(document).ready(function () {
                     },
                     stringLength: {
                         min: 2,
-                        max: 30
+                        max: 30,
+                        message:'Votre prénom doit être d\'au moins 2 caractères'
                     }
                 }
             },
@@ -85,7 +85,8 @@ $(document).ready(function () {
                     },
                     stringLength: {
                         min: 2,
-                        max: 30
+                        max: 30,
+                        message:'Votre nom doit être d\'au moins 2 caractères'
                     }
                 }
             },
@@ -93,7 +94,8 @@ $(document).ready(function () {
                 validators: {
                     stringLength: {
                         min: 2,
-                        max: 40
+                        max: 40,
+                        message:'Le nom de votre entreprise doit être d\'au moins 2 caractères'
                     }
                 }
             },
@@ -103,13 +105,14 @@ $(document).ready(function () {
                         message:'Veuillez saisir votre adresse email'
                     },
                     emailAddress: {
-                    }
+                        message:'Votre adresse email n\'est pas valide'                                           }
                 }
             },
             phone:{
                 validators: {
                     phone: {
-                        country: 'FR'
+                        country: 'FR',
+                        message:'Votre numéro de téléphone n\'est pas valide'
                     }
                 }
             },
@@ -160,25 +163,26 @@ $(function() {
 
 function initMapSiegeSocial() {
     var mapCanvas = document.getElementById('map-canvas');
-    var imageUrl = 'img/mapicon.png';
-    var myLatLng = new google.maps.LatLng(47.2256583,-1.5462325);
+    var positionNantes = new google.maps.LatLng(47.2256583,-1.5462325);
+    var positionToulouse = new google.maps.LatLng(43.5963286,1.4621036);
+    var positionFrance = new google.maps.LatLng(47.0000, 2.0000);
 
     var mapOptions = {
-        zoom: 6,
+        zoom: 5,
         maxZoom:12,
         minZoom:4,
-        center: myLatLng,
+        center: positionFrance,
         mapTypeId:google.maps.MapTypeId.TERRAIN
     }
     var map = new google.maps.Map(mapCanvas, mapOptions);
 
     var imageSize = new google.maps.Size(40, 40);
 
-    var marker = new google.maps.Marker({
-        position: myLatLng,
+    var markerNantes = new google.maps.Marker({
+        position: positionNantes,
         map: map,
         icon:{
-            url:imageUrl,
+            url:'img/mapicon.png',
             scaledSize:imageSize
         },
         animation: google.maps.Animation.DROP,
@@ -190,25 +194,34 @@ function initMapSiegeSocial() {
         optimized:true
     });
 
-    function toggleBounce() {
+    var markerToulouse = new google.maps.Marker({
+        position: positionToulouse,
+        map: map,
+        icon:{
+            url:'img/mapicon2.png',
+            scaledSize:imageSize
+        },
+        animation: google.maps.Animation.DROP,
+        title: 'Antenne commerciale de Moventes',
+        attribution :{
+            source:'Moventes',
+            webUrl:'http://www.moventes.com/about.html'
+        },
+        optimized:true
+    });
 
-        if (marker.getAnimation() != null) {
-            marker.setAnimation(null);
-        } else {
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-    }
-
-    google.maps.event.addListener(marker, 'click', toggleBounce);
+    //        function toggleBounce() {
+    //
+    //            if (markerNantes.getAnimation() != null) {
+    //                markerNantes.setAnimation(null);
+    //            } else {
+    //                markerNantes.setAnimation(google.maps.Animation.BOUNCE);
+    //            }
+    //        }
+    //        google.maps.event.addListener(markerNantes, 'click', toggleBounce);
 }
 
 
 // https://developers.google.com/maps/documentation/javascript/examples/icon-simple
 // https://developers.google.com/maps/documentation/javascript/reference#MapTypeStyleFeatureType
-
-
-
-
-
-
 
