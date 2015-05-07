@@ -20,6 +20,10 @@ body {
     font-family: 'Kaushan Script', cursive;
     color:#23527c;
 }
+.brand.label-success {
+    font-weight:normal;
+    color:white
+}
 a:hover .brand{
     text-decoration: none;
 }
