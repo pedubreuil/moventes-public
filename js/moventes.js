@@ -18,7 +18,8 @@ $(document).ready(function () {
         //        cookieDiscreetPosition:"topright",
         cookieWhatAreLinkText:"Qu'est ce c'est ?",
         cookieWhatAreTheyLink: 'http://www.cnil.fr/vos-droits/vos-traces/les-cookies/',
-        cookieDomain: "moventes.com"
+        cookieDomain: "moventes.com",
+        reloadOnAccept: false
         //
 
     });

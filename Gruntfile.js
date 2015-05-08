@@ -70,7 +70,7 @@ module.exports = function(grunt) {
                 options: {
                     ignore:[
                         '.nav-over-header',
-                        '.cc-cookies',
+                        /.*cc-cookies.*/,
                         '.btn-danger','.btn-xs',
                         /.*navbar.*/,/.*collapse.*/,
                         '.nav-tabs',

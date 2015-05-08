@@ -50,7 +50,8 @@
             cookieDiscreetLinkText: "Cookies?",
             cookieDiscreetPosition: "topleft", //options: topleft, topright, bottomleft, bottomright
             cookieNoMessage: false, // change to true hide message from all pages apart from your policy page
-            cookieDomain: ""
+            cookieDomain: "",
+            reloadOnAccept:true
         };
         var options = $.extend(defaults, options);
         var message = defaults.cookieMessage.replace('{{cookiePolicyLink}}', defaults.cookiePolicyLink);
@@ -83,6 +84,8 @@
         var cookieDiscreetLinkText = options.cookieDiscreetLinkText;
         var cookieDiscreetPosition = options.cookieDiscreetPosition;
         var cookieNoMessage = options.cookieNoMessage;
+        var reloadOnAccept = options.reloadOnAccept;
+
         // cookie identifier
         var $cookieAccepted = $.cookie('cc_cookie') == "cc_cookie_accept";
         $.cookieAccepted = function () {
@@ -244,33 +247,22 @@
                 $.removeCookie("__utmc",gaCookieParam);
                 $.removeCookie("__utmz",gaCookieParam);
                 $.removeCookie("__utmv",gaCookieParam);
-//                    $.cookie("__utma", null,{
-//                        domain: '.' + options.cookieDomain,
-//                        path: '/'
-//                    });
-//                    $.cookie("__utmb", null, {
-//                        domain: '.' + options.cookieDomain,
-//                        path: '/'
-//                    });
-//                    $.cookie("__utmc", null, {
-//                        domain: '.' + options.cookieDomain,
-//                        path: '/'
-//                    });
-//                    $.cookie("__utmz", null, {
-//                        domain: '.' + options.cookieDomain,
-//                        path: '/'
-//                    });
-//                }
+
             } else {
                 $.cookie("cc_cookie", "cc_cookie_accept", {
                     expires: cookieExpires,
                     path: '/'
                 });
             }
-            $(".cc-cookies").fadeOut(function () {
+            if(reloadOnAccept){
                 // reload page to activate cookies
                 location.reload();
-            });
+            }
+            else {
+                $(".cc-cookies").fadeOut(function () {
+                });
+
+            }
         });
         //reset cookies
         $('a.cc-cookie-reset').click(function (f) {
@@ -290,8 +282,14 @@
                 expires: cookieExpires,
                 path: '/'
             });
-            // reload page to activate cookies
-            location.reload();
+            if(reloadOnAccept){
+                // reload page to activate cookies
+                location.reload();
+            }
+            else {
+                $(".cc-cookies").fadeOut(function () {
+                });
+            }
         });
     };
 })(jQuery);
