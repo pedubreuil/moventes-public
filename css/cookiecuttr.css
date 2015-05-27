@@ -25,4 +25,9 @@
 
 
 /* PE DUBREUIL CUSTO */
-.cc-cookies { margin-left: 20px;font-weight: 100}
+.cc-cookies {
+    margin-left: 20px;
+    font-weight: 100;
+    opacity: 0.85;
+    filter: alpha(opacity=85); /* For IE8 and earlier */
+}
