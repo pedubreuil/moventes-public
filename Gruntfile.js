@@ -75,7 +75,8 @@ module.exports = function(grunt) {
                         /.*navbar.*/,/.*collapse.*/,
                         '.nav-tabs',
                         /.*tooltip.*/,
-                        /.*bv-.*/,/.*has-.*/,'.help-block'
+                        /.*bv-.*/,/.*has-.*/,/.*form-.*/,/.*input-.*/,'.help-block','.glyphicon-remove','.glyphicon-ok','.btn[disabled]',
+                        '.alert-danger','.alert','.alert-success'
                     ],
                     ignoreSheets: [/fonts.googleapis/],
                 },

@@ -120,7 +120,11 @@
                                         </tr>
                                         <tr>
                                             <th>Siège social </th>
-                                            <td>Nantes, Pays-de-Loire</td>
+                                            <td>Nantes (Pays-de-Loire)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Implentations </th>
+                                            <td>Toulouse, Nantes </td>
                                         </tr>
                                         <tr>
                                             <th>Contact </th>
@@ -144,6 +148,31 @@
 
 
         <section id="fondateurs" class="">
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    var changeMemberImage = function changeMemberImage(node,image,code){
+                        console.log('click');
+                        var imageObj = node.find('img');
+                        console.log('current src', imageObj.attr('src'));
+                        if(imageObj.attr('src') === image) {
+                            imageObj.attr('src',code);
+                            imageObj.removeClass('img-circle');
+                        }
+                        else {
+                            imageObj.attr('src',image);
+                            imageObj.addClass('img-circle');
+                        }
+                    };
+
+                    $('#member-pedubreuil').click(function() {
+                        changeMemberImage($(this),"img/pedubreuil.jpg",'img/pedubreuil-qrcode.png');
+                    });
+                    $('#member-sclery').click(function() {
+                        changeMemberImage($(this),"img/sclery.jpg",'img/sclery-qrcode.png');
+                    });
+                });
+            </script>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1">
@@ -151,9 +180,8 @@
                         <hr class="small">
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="team-member">
-                                    <img class="img-responsive img-circle" src="img/pedubreuil.jpg"
-                                         alt=""/>
+                                <div class="team-member"  id="member-pedubreuil">
+                                    <img class="img-responsive img-circle" src="img/pedubreuil.jpg" alt=""/>
                                     <div class="well well-sm" style="position:relative">
                                         <h4>Pierre-Emmanuel DUBREUIL<br/><small>Conseil &amp; Technologie</small></h4><br/>
                                         <div class="text-justify small">
@@ -170,9 +198,8 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="team-member">
-                                    <img class="img-responsive img-circle" src="img/sclery.jpg"
-                                         alt="">
+                                <div class="team-member" id="member-sclery" >
+                                    <img class="img-responsive img-circle" src="img/sclery.jpg"   alt="">
                                     <div class="well well-sm" style="position:relative">
                                         <h4>Sébastien CLERY
                                             <br/>

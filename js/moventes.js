@@ -36,33 +36,12 @@ $(document).ready(function () {
 
 
     console.log('form',$('#contactForm'));
-    $('#contactForm')
-        .bootstrapValidator({
+    $('#contactForm').bootstrapValidator({
         message: 'Ce champ n\'est pas valide',
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
-        },
-        submitHandler: function(validator, form, submitButton) {
-            $.post(form.attr('action'), form.serialize(), function(result) {
-                // The result is a JSON formatted by your back-end
-                // I assume the format is as following:
-                //  {
-                //      valid: true,          // false if the account is not found
-                //      message: 'message'
-                //  }
-                if (result.success === true || result.success === 'true') {
-                    $('#form_submit_success').html(result.message).removeClass('hide');
-                } else {
-                    // The account is not found
-                    // Show the errors
-                    $('#form_submit_error').html(result.message).removeClass('hide');
-
-                    // Enable the submit buttons
-                    $('#contactForm').bootstrapValidator('disableSubmitButtons', false);
-                }
-            }, 'json');
         },
         live: 'enabled',
         submitButtons: 'button[type="submit"]',
@@ -129,7 +108,38 @@ $(document).ready(function () {
                 }
             }
         }
+    })
+        .on('success.form.bv', function(e) {
+        // Prevent form submission
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var $form        = $(e.target),
+            validator    = $form.data('bootstrapValidator'),
+            submitButton = validator.getSubmitButton();
+
+        submitButton.prop("disabled", true);
+        $form.find(':input').prop('disabled',true)
+
+
+        var posting = $.post($form.attr('action'), $form.serialize(), function(result) {console.log(result);});
+        posting.done(function( data ) {
+            var response = jQuery.parseJSON(data);
+            console.log(response.success);
+            if(response.success){
+                $("#contact-block").empty().append('<div class="alert alert-success"  role="alert">'+response.message+'</div>');
+                if(goog_report_conversion){console.log('goog_report_conversion');goog_report_conversion();}
+            }
+            else {
+                $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">'+response.message+'<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+            }
+        }).fail(function() {
+                $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+        });
+
     });
+
+
 
     $('[data-toggle="tooltip"]').tooltip();
 });
