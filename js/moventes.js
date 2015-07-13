@@ -35,7 +35,7 @@ $(document).ready(function () {
 
 
 
-    console.log('form',$('#contactForm'));
+    // console.log('form',$('#contactForm'));
     $('#contactForm').bootstrapValidator({
         message: 'Ce champ n\'est pas valide',
         feedbackIcons: {
@@ -58,7 +58,7 @@ $(document).ready(function () {
                     }
                 }
             },
-            name: {
+            lastname: {
                 validators: {
                     notEmpty: {
                         message:'Veuillez saisir votre nom'
@@ -118,17 +118,20 @@ $(document).ready(function () {
             validator    = $form.data('bootstrapValidator'),
             submitButton = validator.getSubmitButton();
 
+        var dataToSend = $form.serialize();
+        console.log('data to send', dataToSend);
         submitButton.prop("disabled", true);
         $form.find(':input').prop('disabled',true)
 
-
-        var posting = $.post($form.attr('action'), $form.serialize(), function(result) {console.log(result);});
+        var posting = $.post($form.attr('action'), dataToSend, function(result) {
+            console.log('result', result);
+        });
         posting.done(function( data ) {
             var response = jQuery.parseJSON(data);
-            console.log(response.success);
+            console.log('success',response.success);
             if(response.success){
                 $("#contact-block").empty().append('<div class="alert alert-success"  role="alert">'+response.message+'</div>');
-                if(goog_report_conversion){console.log('goog_report_conversion');goog_report_conversion();}
+                if(typeof goog_report_conversion !== undefined){console.log('goog_report_conversion');goog_report_conversion();}
             }
             else {
                 $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">'+response.message+'<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
