@@ -377,6 +377,7 @@
                                                 }).fail(function() {
                                                     $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
                                                 });
+                                                $.cookie("modal_completed", true, { expires: 365, path: '/' });
 
                                             });
                                         });
