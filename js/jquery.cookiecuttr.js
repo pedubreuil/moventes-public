@@ -50,7 +50,7 @@
             cookieDiscreetLinkText: "Cookies?",
             cookieDiscreetPosition: "topleft", //options: topleft, topright, bottomleft, bottomright
             cookieNoMessage: false, // change to true hide message from all pages apart from your policy page
-            cookieDomain: "",
+            cookieDomain: null,
             reloadOnAccept:true
         };
         var options = $.extend(defaults, options);
@@ -182,9 +182,9 @@
                 }
             } else if (cookieAnalytics) { // show analytics overlay
                 if (appOrPre) {
-                    $('body').append('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline + '<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)">' + cookieWhatAreLinkText + '</a></div>');
+                    $('body').append('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline + '<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)" target="_blank">' + cookieWhatAreLinkText + '</a></div>');
                 } else {
-                    $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline + '<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)">' + cookieWhatAreLinkText + '</a></div>');
+                    $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline + '<a href="' + cookieWhatAreTheyLink + '" title="Visit All about cookies (External link)" target="_blank">' + cookieWhatAreLinkText + '</a></div>');
                 }
             }
             if (cookiePolicyPage) { // show policy page overlay
@@ -247,6 +247,10 @@
                 $.removeCookie("__utmc",gaCookieParam);
                 $.removeCookie("__utmz",gaCookieParam);
                 $.removeCookie("__utmv",gaCookieParam);
+
+//                $.removeCookie("300gpBAK",{ path: '/'});
+//                $.removeCookie("300gp",{ path: '/'});
+                $.removeCookie("modal_timeout",{ path: '/'});
 
             } else {
                 $.cookie("cc_cookie", "cc_cookie_accept", {

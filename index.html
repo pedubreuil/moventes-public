@@ -3,48 +3,23 @@
 
     <head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://plus.google.com/117084928015054396102" rel="publisher" />
-        <meta name="author" content="Moventes">
         <meta name="description" content="Moventes, expert des applications mobiles B2B sur mesure hébergées dans le cloud"/>
+        <title>Moventes, expert des applications mobiles B2B sur mesure hébergées dans le cloud</title>
         <link rel="canonical" href="http://moventes.com" />
-        <meta name="robots" content="index, follow"/>
         <meta name="keywords" content=""/>
 
-		<link rel="apple-touch-icon" sizes="57x57" href="http://moventes.com/img/icons/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="http://moventes.com/img/icons/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="http://moventes.com/img/icons/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="http://moventes.com/img/icons/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="http://moventes.com/img/icons/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="http://moventes.com/img/icons/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="http://moventes.com/img/icons/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="http://moventes.com/img/icons/apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="http://moventes.com/img/icons/apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" href="http://moventes.com/img/icons/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="http://moventes.com/img/icons/android-chrome-192x192.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="http://moventes.com/img/icons/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="http://moventes.com/img/icons/favicon-16x16.png" sizes="16x16">
-		<link rel="manifest" href="http://moventes.com/img/icons/manifest.json">
-		<link rel="shortcut icon" href="http://moventes.com/img/icons/favicon.ico">
-		<meta name="msapplication-TileColor" content="#2d89ef">
-		<meta name="msapplication-TileImage" content="/img/icons/mstile-144x144.png">
-		<meta name="msapplication-config" content="/img/icons/browserconfig.xml">
-		<meta name="theme-color" content="#ffffff">
+        <!-- build:include _commonhtmlhead.html -->
+        <!-- /build -->
 
-
-
-        <title>Moventes, expert des applications mobiles B2B sur mesure hébergées dans le cloud</title>
 
         <!--  CSS -->
-        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
         <!-- build:css inc/moventes.min.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="bower_components/bootstrapvalidator/dist/css/bootstrapValidator.css" />
         <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
         <!-- endbower -->
         <link href="css/cookiecuttr.css" rel="stylesheet"/>
         <link href="css/moventes.css" rel="stylesheet">
@@ -72,7 +47,40 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-		<script type="text/javascript" async defer src="https://apis.google.com/js/platform.js?publisherid=117084928015054396102"></script>
+        <script type="text/javascript" async defer src="https://apis.google.com/js/platform.js?publisherid=117084928015054396102"></script>
+
+
+        <script type="application/javascript">
+            fixNavLayout = function(){
+                if ($(".navbar").offset().top > 50 ) {
+                    $(".navbar-fixed-top").removeClass("nav-over-header");
+                } else if($("header").length) {
+                    $(".navbar-fixed-top").addClass("nav-over-header");
+                }
+            };
+
+            $(document).ready(function () {
+                fixNavLayout();
+
+                //jQuery to collapse the navbar on scroll
+                $(window).scroll(function() {
+                    fixNavLayout();
+                });
+
+                // for page scrolling feature - requires jQuery Easing plugin
+                $('a.page-scroll').bind('click', function(event) {
+                    console.log('click for page-scroll ',$(this));
+                    var $anchor = $(this);
+                    console.log( $($anchor.attr('href')).offset().top);
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1500, 'easeInOutExpo');
+                    event.preventDefault();
+                });
+
+            });
+        </script>
+
 
     </head>
 
@@ -126,7 +134,6 @@
 
             </div>
         </header>
-
 
         <!-- Services -->
         <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
@@ -202,25 +209,31 @@
                         <form id="contactForm" method="post" action="bin/contact_us.php" class="form-horizontal">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Votre prénom *" name="firstname">
+                                    <div class="form-group form-group-lg">
+                                        <label class="sr-only" for="firstname">Votre prénom:</label>
+                                        <input type="text" class="form-control" placeholder="Votre prénom *" name="firstname" id="firstname">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Votre nom *" name="lastname">
+                                    <div class="form-group form-group-lg">
+                                        <label class="sr-only" for="lastname">Votre nom:</label>
+                                        <input type="text" class="form-control" placeholder="Votre nom *" name="lastname" id="lastname">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Votre entreprise" name="company">
+                                    <div class="form-group form-group-lg">
+                                        <label class="sr-only" for="company">Votre entreprise:</label>
+                                        <input type="text" class="form-control" placeholder="Votre entreprise" name="company" id="company">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Votre email *" name="email">
+                                    <div class="form-group form-group-lg">
+                                        <label class="sr-only" for="email">Votre email:</label>
+                                        <input type="email" class="form-control" placeholder="Votre email *" name="email" id="email">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="tel" class="form-control" placeholder="Votre téléphone" name="phone">
+                                    <div class="form-group form-group-lg">
+                                        <label class="sr-only" for="phone">Votre téléphone:</label>
+                                        <input type="tel" class="form-control" placeholder="Votre téléphone" name="phone" id="phone">
                                     </div>
                                 </div>
                                 <div class="col-md-offset-1 col-md-6">
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Votre message *" name="message"></textarea>
+                                        <label class="sr-only" for="message">Votre message:</label>
+                                        <textarea class="form-control" placeholder="Votre message *" name="message" id="message"></textarea>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -252,17 +265,132 @@
                                                 conv_handler(opt);
                                             }
                                         }
+
+
+
+
+                                        $(document).ready(function () {
+
+
+                                            // console.log('form',$('#contactForm'));
+                                            $('#contactForm').bootstrapValidator({
+                                                message: 'Ce champ n\'est pas valide',
+                                                feedbackIcons: {
+                                                    valid: 'glyphicon glyphicon-ok',
+                                                    invalid: 'glyphicon glyphicon-remove',
+                                                    validating: 'glyphicon glyphicon-refresh'
+                                                },
+                                                live: 'enabled',
+                                                submitButtons: 'button[type="submit"]',
+                                                fields: {
+                                                    firstname: {
+                                                        validators: {
+                                                            notEmpty: {
+                                                                message:'Veuillez saisir votre prénom'
+                                                            },
+                                                            stringLength: {
+                                                                min: 2,
+                                                                max: 30,
+                                                                message:'Votre prénom doit être d\'au moins 2 caractères'
+                                                            }
+                                                        }
+                                                    },
+                                                    lastname: {
+                                                        validators: {
+                                                            notEmpty: {
+                                                                message:'Veuillez saisir votre nom'
+                                                            },
+                                                            stringLength: {
+                                                                min: 2,
+                                                                max: 30,
+                                                                message:'Votre nom doit être d\'au moins 2 caractères'
+                                                            }
+                                                        }
+                                                    },
+                                                    company: {
+                                                        validators: {
+                                                            stringLength: {
+                                                                min: 2,
+                                                                max: 40,
+                                                                message:'Le nom de votre entreprise doit être d\'au moins 2 caractères'
+                                                            }
+                                                        }
+                                                    },
+                                                    email: {
+                                                        validators: {
+                                                            notEmpty: {
+                                                                message:'Veuillez saisir votre adresse email'
+                                                            },
+                                                            emailAddress: {
+                                                                message:'Votre adresse email n\'est pas valide'                                           }
+                                                        }
+                                                    },
+                                                    phone:{
+                                                        validators: {
+                                                            phone: {
+                                                                country: 'FR',
+                                                                message:'Votre numéro de téléphone n\'est pas valide'
+                                                            }
+                                                        }
+                                                    },
+                                                    message: {
+                                                        validators: {
+                                                            notEmpty: {
+                                                                message:'Veuillez rédiger ici votre message'
+                                                            },
+                                                            stringLength: {
+                                                                min: 5,
+                                                                message:'Votre message est trop court !'
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            })
+                                                .on('success.form.bv', function(e) {
+                                                // Prevent form submission
+                                                e.preventDefault();
+                                                e.stopImmediatePropagation();
+
+                                                var $form        = $(e.target),
+                                                    validator    = $form.data('bootstrapValidator'),
+                                                    submitButton = validator.getSubmitButton();
+
+                                                var dataToSend = $form.serialize();
+                                                console.log('data to send', dataToSend);
+                                                submitButton.replaceWith('<i class="fa fa-spinner fa-spin"></i>');
+                                                $form.find(':input').prop('disabled',true)
+
+                                                var posting = $.post($form.attr('action'), dataToSend, function(result) {
+                                                    console.log('result', result);
+                                                });
+                                                posting.done(function( data ) {
+                                                    var response = jQuery.parseJSON(data);
+                                                    console.log('success',response.success);
+                                                    if(response.success){
+                                                        $("#contact-block").empty().append('<div class="alert alert-success"  role="alert">'+response.message+'</div>');
+                                                        if(typeof goog_report_conversion !== undefined){console.log('goog_report_conversion');goog_report_conversion();}
+                                                    }
+                                                    else {
+                                                        $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">'+response.message+'<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+                                                    }
+                                                }).fail(function() {
+                                                    $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+                                                });
+
+                                            });
+                                        });
+
                                         /* ]]> */
                                     </script>
                                     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js"> </script>
-                                 </div>
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-        <footer>
+        <footer class="bg-white">
             <ul class="list-inline ">
                 <li>
                     <a href="http://moventes.com/about">Qui sommes nous?</a>
@@ -278,6 +406,9 @@
                 </li>
             </ul>
         </footer>
+        <!-- build:include _timeoutmodal.html -->
+        include here timeoutmodal.html
+        <!-- /build -->
 
 
     </body>
