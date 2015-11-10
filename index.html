@@ -1,280 +1,240 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
 
-    <head>
+<head>
 
-        <meta name="description" content="Moventes, expert des applications mobiles B2B sur mesure hébergées dans le cloud"/>
-        <title>Moventes, expert des applications mobiles B2B sur mesure hébergées dans le cloud</title>
-        <link rel="canonical" href="http://moventes.com" />
-        <meta name="keywords" content=""/>
+    <title>Moventes, expert des applications mobiles B2B sur mesure hébergées dans le cloud</title>
+    <meta name="description" content="Moventes, expert des applications mobiles B2B sur mesure hébergées dans le cloud" />
+    <link rel="canonical" href="http://moventes.com/" />
+    <meta name="keywords" content="" />
 
-        <!-- build:include _commonhtmlhead.html -->
-        <!-- /build -->
-
-        <!--  CSS -->
-
-        <!-- build:css inc/moventes.min.css -->
-        <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bower_components/bootstrapvalidator/dist/css/bootstrapValidator.css" />
-        <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
-        <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
-        <!-- endbower -->
-        <link href="css/cookiecuttr.css" rel="stylesheet"/>
-        <link href="css/moventes.css" rel="stylesheet">
-        <!-- /build -->
-
-
-        <!-- JavaScript -->
-
-        <!-- build:js inc/moventes.min.js -->
-        <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
-        <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
-        <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
-        <!-- endbower -->
-        <script src="js/jquery.cookiecuttr.js"></script>
-        <script src="js/moventes.js"></script>
-        <!-- /build -->
+    <!-- build:include:inc _commonhtmlhead.html -->
+    <!-- /build -->
 
 
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 
 
-        <script type="text/javascript" async defer src="https://apis.google.com/js/platform.js?publisherid=117084928015054396102"></script>
 
-        <script type="application/javascript">
-            fixNavLayout = function(){
-                if ($(".navbar").offset().top > 50 ) {
-                    $(".navbar-fixed-top").removeClass("nav-over-header");
-                } else if($("header").length) {
-                    $(".navbar-fixed-top").addClass("nav-over-header");
-                }
-            };
 
-            $(document).ready(function () {
+    <!-- pour rétrécir le menu on scroll down -->
+    <script type="application/javascript">
+        fixNavLayout = function () {
+            if ($(".navbar").offset().top > 50) {
+                $(".navbar-fixed-top").removeClass("nav-over-header");
+            } else if ($("header").length) {
+                $(".navbar-fixed-top").addClass("nav-over-header");
+            }
+        };
+
+        $(document).ready(function () {
+            fixNavLayout();
+
+            //jQuery to collapse the navbar on scroll
+            $(window).scroll(function () {
                 fixNavLayout();
-
-                //jQuery to collapse the navbar on scroll
-                $(window).scroll(function() {
-                    fixNavLayout();
-                });
-
-                // for page scrolling feature - requires jQuery Easing plugin
-                $('a.page-scroll').bind('click', function(event) {
-                    console.log('click for page-scroll ',$(this));
-                    var $anchor = $(this);
-                    console.log( $($anchor.attr('href')).offset().top);
-                    $('html, body').stop().animate({
-                        scrollTop: $($anchor.attr('href')).offset().top
-                    }, 1500, 'easeInOutExpo');
-                    event.preventDefault();
-                });
-
             });
-        </script>
+
+            // for page scrolling feature - requires jQuery Easing plugin
+            $('a.page-scroll').bind('click', function (event) {
+                console.log('click for page-scroll ', $(this));
+                var $anchor = $(this);
+                console.log($($anchor.attr('href')).offset().top);
+                $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top
+                }, 2000, 'easeInOutQuart');
+                event.preventDefault();
+            });
+
+        });
+    </script>
 
 
-    </head>
+</head>
 
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-        <!-- Navigation -->
-        <!--navbar-inverse-->
-        <nav class="navbar navbar-default navbar-fixed-top" id="nav">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#full-navbar-collapse">
-                        <span class="sr-only">Afficher le menu</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#page-top" title="Moventes"> <img alt="" src="img/logo.png"><span class="brand">Moventes</span></a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="full-navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="http://moventes.com/offre">Notre offre</a>
-                        </li>
-                        <li>
-                            <a href="http://moventes.com/demarche">Notre démarche</a>
-                        </li>
-                        <li>
-                            <a href="http://moventes.com/potentiel">Votre potentiel mobilité</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#contact">Nous contacter</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
+    <!-- Navigation -->
+    <!--navbar-inverse-->
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#full-navbar-collapse">
+                    <span class="sr-only">Afficher le menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top" title="Moventes"> <img alt="" src="img/logo.png"><span class="brand">Moventes</span></a>
             </div>
-            <!-- /.container -->
-        </nav>
-
-        <!-- Header -->
-        <header id="top" class="header">
-
-            <div class="text-vertical-center">
-                <h1 class="brand">Moventes</h1>
-                <h3 class="text-header">Spécialiste des applications mobiles pour les professionnels <br/>faites sur mesure et livrées clé-en-main</h3>
-                <br>
-                <a class="btn btn-dark btn-lg page-scroll" href="#services">En savoir plus</a>
-                <a class="btn btn-dark btn-lg page-scroll" href="#contact">Nous contacter</a>
-
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="full-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="http://moventes.com/technologies">Technologies</a>
+                    </li>
+                    <li>
+                        <a href="http://moventes.com/activites">Mobilité en entreprise</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Nous contacter</a>
+                    </li>
+                </ul>
             </div>
-        </header>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-        <!-- Services -->
-        <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-        <section id="services" class="bg-primary">
-            <div class="container text-vertical-center">
-                <div class="row text-center ">
-                    <div class="col-lg-10 col-lg-offset-1">
-                        <h2>Avançons ensemble !</h2>
-                        <hr class="small">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                <a class="service-item" href="http://moventes.com/offre">
-                                    <span class="fa-stack fa-4x">
+    <!-- Header -->
+    <header id="top" class="header b-lazy" data-src="img/bg/header-lg.jpg" data-src-small="img/bg/header-xs.jpg" data-src-medium="img/bg/header-md.jpg">
+
+        <div class="text-vertical-center">
+            <h1 class="brand">Moventes</h1>
+            <h3 class="text-header">Spécialiste des applications mobiles<br/>au service des entreprises</h3>
+            <br>
+            <a class="page-scroll" href="#services" style="color:grey;"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
+
+        </div>
+    </header>
+
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="bg-primary">
+        <div class="container text-vertical-center">
+            <div class="row text-center ">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Avançons ensemble !</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-delay="0.5s">
+                            <a class="service-item" href="http://moventes.com/offre">
+                                <span class="fa-stack fa-4x">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-suitcase fa-stack-1x text-primary"></i>
                                     </span>
-                                    <h4>
+                                <h4>
                                         <strong>Notre offre</strong>
                                     </h4>
-                                    <p>Une prestation complète pour construire à vos côtés votre application mobile B2B hébergée dans le cloud</p>
-                                </a>
-                            </div>
-                            <div class="col-md-4 col-sm-6 ">
-                                <a class="service-item"  href="http://moventes.com/demarche">
-                                    <span class="fa-stack fa-4x">
+                                <p>Une prestation complète pour construire une animated solution mobile sur mesure, multiplatforme et hébergée dans le cloud</p>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-delay="1s">
+                            <a class="service-item" href="http://moventes.com/demarche">
+                                <span class="fa-stack fa-4x">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-connectdevelop fa-stack-1x text-primary"></i>
                                     </span>
-                                    <h4>
+                                <h4>
                                         <strong>Notre démarche</strong>
                                     </h4>
-                                    <p>Une approche professionnelle (du conseil à l'exploitation) pour rester à votre écoute et maitriser votre budget</p>
-                                </a>
-                            </div>
-                            <div class="col-md-4 col-sm-12 ">
-                                <a class="service-item"  href="http://moventes.com/potentiel">
-                                    <span class="fa-stack fa-4x">
+                                <p>Une approche professionnelle (du conseil à l'exploitation) pour rester à votre écoute et maitriser votre budget</p>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-delay="1.5s">
+                            <a class="service-item" href="http://moventes.com/potentiel">
+                                <span class="fa-stack fa-4x">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-mobile fa-stack-1x text-primary"></i>
                                     </span>
-                                    <h4>
+                                <h4>
                                         <strong>Votre potentiel mobilité</strong>
                                     </h4>
-                                    <p>A chaque entreprise, à chaque métier, son application mobile sur mesure !</p>
-                                </a>
-                            </div>
+                                <p>A chaque entreprise, à chaque métier, son gain de productivité grâce à une application mobile sur mesure</p>
+                            </a>
                         </div>
-                        <!-- /.row (nested) -->
                     </div>
-                    <!-- /.col-lg-10 -->
+                    <!-- /.row (nested) -->
                 </div>
-                <!-- /.row -->
+                <!-- /.col-lg-10 -->
             </div>
-            <!-- /.container -->
-        </section>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
 
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Contactez-nous !</h2>
-                        <hr class="small">
-                        <!--                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contactez-nous !</h2>
+                    <hr class="small">
+                    <!--                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
 
-                    </div>
                 </div>
-                <div class="row">
-                    <!--                    mise en page à revoir avec http://www.bootply.com/xGbr8oQevN-->
-                    <div class="col-lg-12" id="contact-block">
-                        <form id="contactForm" method="post" action="bin/contact_us.php" class="form-horizontal">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="form-group form-group-lg">
-                                        <label class="sr-only" for="firstname">Votre prénom:</label>
-                                        <input type="text" class="form-control" placeholder="Votre prénom *" name="firstname" id="firstname">
-                                    </div>
-                                    <div class="form-group form-group-lg">
-                                        <label class="sr-only" for="lastname">Votre nom:</label>
-                                        <input type="text" class="form-control" placeholder="Votre nom *" name="lastname" id="lastname">
-                                    </div>
-                                    <div class="form-group form-group-lg">
-                                        <label class="sr-only" for="company">Votre entreprise:</label>
-                                        <input type="text" class="form-control" placeholder="Votre entreprise" name="company" id="company">
-                                    </div>
-                                    <div class="form-group form-group-lg">
-                                        <label class="sr-only" for="email">Votre email:</label>
-                                        <input type="email" class="form-control" placeholder="Votre email *" name="email" id="email">
-                                    </div>
-                                    <div class="form-group form-group-lg">
-                                        <label class="sr-only" for="phone">Votre téléphone:</label>
-                                        <input type="tel" class="form-control" placeholder="Votre téléphone" name="phone" id="phone">
-                                    </div>
+            </div>
+            <div class="row">
+                <!--                    mise en page à revoir avec http://www.bootply.com/xGbr8oQevN-->
+                <div class="col-lg-12" id="contact-block">
+                    <form id="contactForm" method="post" action="bin/contact_us.php" class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group form-group-lg">
+                                    <label class="sr-only" for="firstname">Votre prénom:</label>
+                                    <input type="text" class="form-control" placeholder="Votre prénom *" name="firstname" id="firstname">
                                 </div>
-                                <div class="col-md-offset-1 col-md-6">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="message">Votre message:</label>
-                                        <textarea class="form-control" placeholder="Votre message *" name="message" id="message"></textarea>
-                                    </div>
+                                <div class="form-group form-group-lg">
+                                    <label class="sr-only" for="lastname">Votre nom:</label>
+                                    <input type="text" class="form-control" placeholder="Votre nom *" name="lastname" id="lastname">
                                 </div>
-                                <div class="clearfix"></div>
-                                <div class="col-lg-12 text-center">
-                                    <button type="submit" class="btn btn-lg btn-dark"><span class="glyphicon glyphicon-envelope"></span> Envoyer le message</button>
+                                <div class="form-group form-group-lg">
+                                    <label class="sr-only" for="company">Votre entreprise:</label>
+                                    <input type="text" class="form-control" placeholder="Votre entreprise" name="company" id="company">
+                                </div>
+                                <div class="form-group form-group-lg">
+                                    <label class="sr-only" for="email">Votre email:</label>
+                                    <input type="email" class="form-control" placeholder="Votre email *" name="email" id="email">
+                                </div>
+                                <div class="form-group form-group-lg">
+                                    <label class="sr-only" for="phone">Votre téléphone:</label>
+                                    <input type="tel" class="form-control" placeholder="Votre téléphone" name="phone" id="phone">
+                                </div>
+                            </div>
+                            <div class="col-md-offset-1 col-md-6">
+                                <div class="form-group">
+                                    <label class="sr-only" for="message">Votre message:</label>
+                                    <textarea class="form-control" placeholder="Votre message *" name="message" id="message"></textarea>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <button type="submit" class="btn btn-lg btn-dark"><span class="glyphicon glyphicon-envelope"></span> Envoyer le message</button>
 
 
-                                    <script type="text/javascript">
-                                        /* <![CDATA[ */
-                                        goog_snippet_vars = function() {
-                                            var w = window;
-                                            w.google_conversion_id = 952666343;
-                                            w.google_conversion_label = "3S_xCNSugl0Q55GixgM";
-                                            w.google_remarketing_only = false;
-                                        }
-                                        // DO NOT CHANGE THE CODE BELOW.
-                                        goog_report_conversion = function(url) {
-                                            goog_snippet_vars();
-                                            window.google_conversion_format = "3";
-                                            window.google_is_call = true;
-                                            var opt = new Object();
-                                            opt.onload_callback = function() {
-                                                if (typeof(url) != 'undefined') {
-                                                    window.location = url;
-                                                }
-                                            }
-                                            var conv_handler = window['google_trackConversion'];
-                                            if (typeof(conv_handler) == 'function') {
-                                                conv_handler(opt);
-                                            }
-                                        }
+                                <script type="text/javascript">
+                                    /* <![CDATA[ */
+//                                    goog_snippet_vars = function () {
+//                                            var w = window;
+//                                            w.google_conversion_id = 952666343;
+//                                            w.google_conversion_label = "3S_xCNSugl0Q55GixgM";
+//                                            w.google_remarketing_only = false;
+//                                        }
+//                                        // DO NOT CHANGE THE CODE BELOW.
+//                                    goog_report_conversion = function (url) {
+//                                        goog_snippet_vars();
+//                                        window.google_conversion_format = "3";
+//                                        window.google_is_call = true;
+//                                        var opt = new Object();
+//                                        opt.onload_callback = function () {
+//                                            if (typeof (url) != 'undefined') {
+//                                                window.location = url;
+//                                            }
+//                                        }
+//                                        var conv_handler = window['google_trackConversion'];
+//                                        if (typeof (conv_handler) == 'function') {
+//                                            conv_handler(opt);
+//                                        }
+//                                    }
 
 
 
-
-                                        $(document).ready(function () {
-
-
-                                            // console.log('form',$('#contactForm'));
-                                            $('#contactForm').bootstrapValidator({
+                                    $(document).ready(function () {
+                                        // console.log('form',$('#contactForm'));
+                                        $('#contactForm').bootstrapValidator({
                                                 message: 'Ce champ n\'est pas valide',
                                                 feedbackIcons: {
                                                     valid: 'glyphicon glyphicon-ok',
@@ -287,24 +247,24 @@
                                                     firstname: {
                                                         validators: {
                                                             notEmpty: {
-                                                                message:'Veuillez saisir votre prénom'
+                                                                message: 'Veuillez saisir votre prénom'
                                                             },
                                                             stringLength: {
                                                                 min: 2,
                                                                 max: 30,
-                                                                message:'Votre prénom doit être d\'au moins 2 caractères'
+                                                                message: 'Votre prénom doit être d\'au moins 2 caractères'
                                                             }
                                                         }
                                                     },
                                                     lastname: {
                                                         validators: {
                                                             notEmpty: {
-                                                                message:'Veuillez saisir votre nom'
+                                                                message: 'Veuillez saisir votre nom'
                                                             },
                                                             stringLength: {
                                                                 min: 2,
                                                                 max: 30,
-                                                                message:'Votre nom doit être d\'au moins 2 caractères'
+                                                                message: 'Votre nom doit être d\'au moins 2 caractères'
                                                             }
                                                         }
                                                     },
@@ -313,106 +273,104 @@
                                                             stringLength: {
                                                                 min: 2,
                                                                 max: 40,
-                                                                message:'Le nom de votre entreprise doit être d\'au moins 2 caractères'
+                                                                message: 'Le nom de votre entreprise doit être d\'au moins 2 caractères'
                                                             }
                                                         }
                                                     },
                                                     email: {
                                                         validators: {
                                                             notEmpty: {
-                                                                message:'Veuillez saisir votre adresse email'
+                                                                message: 'Veuillez saisir votre adresse email'
                                                             },
                                                             emailAddress: {
-                                                                message:'Votre adresse email n\'est pas valide'                                           }
+                                                                message: 'Votre adresse email n\'est pas valide'
+                                                            }
                                                         }
                                                     },
-                                                    phone:{
+                                                    phone: {
                                                         validators: {
                                                             phone: {
                                                                 country: 'FR',
-                                                                message:'Votre numéro de téléphone n\'est pas valide'
+                                                                message: 'Votre numéro de téléphone n\'est pas valide'
                                                             }
                                                         }
                                                     },
                                                     message: {
                                                         validators: {
                                                             notEmpty: {
-                                                                message:'Veuillez rédiger ici votre message'
+                                                                message: 'Veuillez rédiger ici votre message'
                                                             },
                                                             stringLength: {
                                                                 min: 5,
-                                                                message:'Votre message est trop court !'
+                                                                message: 'Votre message est trop court !'
                                                             }
                                                         }
                                                     }
                                                 }
                                             })
-                                                .on('success.form.bv', function(e) {
+                                            .on('success.form.bv', function (e) {
                                                 // Prevent form submission
                                                 e.preventDefault();
                                                 e.stopImmediatePropagation();
 
-                                                var $form        = $(e.target),
-                                                    validator    = $form.data('bootstrapValidator'),
+                                                var $form = $(e.target),
+                                                    validator = $form.data('bootstrapValidator'),
                                                     submitButton = validator.getSubmitButton();
 
                                                 var dataToSend = $form.serialize();
                                                 console.log('data to send', dataToSend);
                                                 submitButton.replaceWith('<i class="fa fa-spinner fa-spin"></i>');
-                                                $form.find(':input').prop('disabled',true)
+                                                $form.find(':input').prop('disabled', true)
 
-                                                var posting = $.post($form.attr('action'), dataToSend, function(result) {
+                                                var posting = $.post($form.attr('action'), dataToSend, function (result) {
                                                     console.log('result', result);
                                                 });
-                                                posting.done(function( data ) {
+                                                posting.done(function (data) {
                                                     var response = jQuery.parseJSON(data);
-                                                    console.log('success',response.success);
-                                                    if(response.success){
-                                                        $("#contact-block").empty().append('<div class="alert alert-success"  role="alert">'+response.message+'</div>');
-                                                        if(typeof goog_report_conversion !== undefined){console.log('goog_report_conversion');goog_report_conversion();}
+                                                    console.log('success', response.success);
+                                                    if (response.success) {
+                                                        $("#contact-block").empty().append('<div class="alert alert-success"  role="alert">' + response.message + '</div>');
+                                                        if (typeof goog_report_conversion !== undefined) {
+                                                            console.log('goog_report_conversion');
+                                                            goog_report_conversion();
+                                                        }
+                                                    } else {
+                                                        $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">' + response.message + '<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
                                                     }
-                                                    else {
-                                                        $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">'+response.message+'<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
-                                                    }
-                                                }).fail(function() {
+                                                }).fail(function () {
                                                     $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
                                                 });
-                                                $.cookie("modal_completed", true, { expires: 365, path: '/' });
+                                                $.cookie("modal_completed", true, {
+                                                    expires: 365,
+                                                    path: '/'
+                                                });
 
                                             });
-                                        });
 
-                                        /* ]]> */
-                                    </script>
-                                    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js"> </script>
-                                </div>
+                                    });
+
+
+
+
+
+
+                                    /* ]]> */
+                                </script>
+<!--
+                                <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js">
+                                </script>
+-->
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
-        <footer class="bg-white">
-            <ul class="list-inline ">
-                <li>
-                    <a href="http://moventes.com/about">Qui sommes nous?</a>
-                </li>
-                <li class="btn-group">
-                    <a class="btn btn-info" href="https://twitter.com/moventes_fr" target="_blank" style="width:45px"><i class="fa fa-twitter fa-lg" title="Suivre Moventes sur Twitter"></i></a>
-                    <a class="btn btn-primary" href="https://www.facebook.com/Moventes.fr" target="_blank" style="width:45px"><i class="fa fa-facebook fa-lg" title="Suivre Moventes sur Facebook"></i></a>
-                    <a class="btn btn-danger" href="https://plus.google.com/117084928015054396102" target="_blank" style="width:45px"><i class="fa fa-google-plus fa-lg" title="Suivre Moventes sur Google+"></i></a>
-                    <a class="btn btn-primary" href="https://www.linkedin.com/company/10046010" target="_blank" style="width:45px"><i class="fa fa-linkedin fa-lg"  title="Suivre Moventes sur LinkedIn"></i></a>
-                </li>
-                <li>
-                    <span class="copyright">Copyright &copy; Moventes 2015</span>
-                </li>
-            </ul>
-        </footer>
-        <!-- build:include _timeoutmodal.html -->
-        include here timeoutmodal.html
-        <!-- /build -->
+        </div>
+    </section>
 
+    <!-- build:include:inc _commonfooter.html -->
+    <!-- /build -->
 
-    </body>
+</body>
 
 </html>

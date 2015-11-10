@@ -8,56 +8,187 @@
         <meta name="keywords" content=""/>
         <title>Moventes, l'expert des applications mobiles professionnelles sur mesure</title>
 
-        <!-- build:include _commonhtmlhead.html -->
-        <!-- /build -->
 
-        <!--  CSS -->
-
-        <!-- build:css inc/moventes.min.css -->
-        <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bower_components/bootstrapvalidator/dist/css/bootstrapValidator.css" />
-        <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
-        <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
-        <!-- endbower -->
-        <link href="css/cookiecuttr.css" rel="stylesheet"/>
-        <link href="css/moventes.css" rel="stylesheet">
+        <!-- build:include:dist _commonhtmlhead.html -->
         <!-- /build -->
 
 
-        <!-- JavaScript -->
-
-        <!-- build:js inc/moventes.min.js -->
-        <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
-        <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
-        <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
-        <!-- endbower -->
-        <script src="js/jquery.cookiecuttr.js"></script>
-        <script src="js/moventes.js"></script>
-        <!-- /build -->
         <script src="https://maps.googleapis.com/maps/api/js"></script>
 
 
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-        <script type="text/javascript" async defer src="https://apis.google.com/js/platform.js?publisherid=117084928015054396102"></script>
 
     </head>
 
     <body id="about" class="fixed-bg" data-spy="scroll" data-target=".navbar-fixed-top">
 
-        <!-- build:include _timeoutmodal.html -->
-        This will be replaced by the content of timeoutmodal.html
-        <!-- /build -->
+        <div class="modal fade" id="timeoutModal" tabindex="-1" role="dialog" aria-labelledby="timeoutModalTitle">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="timeoutModalTitle">
+                    Moventes vous accompagne<br/>
+                    <small>pour trouver et mettre en place une solution de mobilité adaptée à votre entreprise</small>
+                </h4>
+
+            </div>
+            <form action="bin/contact_us.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" >
+
+            <div class="modal-body">
+
+                    <div class="form-group form-group-lg">
+                        <label class="sr-only" for="mce-EMAIL">Email:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-envelope-o"></i></div>
+                            <input class="form-control"  type="email" value="" name="email"  id="mce-EMAIL" placeholder="Votre email">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="sr-only" for="mce-LNAME">Nom:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" class="form-control"  name="lastname"  id="mce-LNAME" placeholder="Votre nom">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="sr-only" for="mce-COMPNY">Entreprise:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-building-o"></i></div>
+                            <input type="text" class="form-control"  name="company" id="mce-COMPNY" placeholder="Votre entreprise">
+                        </div>
+                    </div>
+
+
+<!--
+                    <div class="form-group form-group-sm">
+                        <label class="sr-only" for="mce-ACTIVT">Secteur d'activité:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-industry"></i></div>
+                            <select class="form-control"  name="activity" id="mce-ACTIVT">
+                                <option value="" >Votre secteur d'activité</option>
+                                <option value="agriculture, sylviculture et pêche">agriculture, sylviculture et pêche</option>
+                                <option value="industries extractives">industries extractives</option>
+                                <option value="industrie manufacturière">industrie manufacturière</option>
+                                <option value="électricité, gaz, air conditionné">électricité, gaz, air conditionné</option>
+                                <option value="environnement (eau, déchets, dépollution)">environnement (eau, déchets, dépollution)</option>
+                                <option value="construction, BTP">construction, BTP</option>
+                                <option value="commerce">commerce</option>
+                                <option value="transports et entreposage">transports et entreposage</option>
+                                <option value="hébergement et restauration">hébergement et restauration</option>
+                                <option value="information et communication">information et communication</option>
+                                <option value="finances et assurance">finances et assurance</option>
+                                <option value="immobilier">immobilier</option>
+                                <option value="activités spécialisées, scientifiques et techniques">activités spécialisées, scientifiques et techniques</option>
+                                <option value="services administratifs et de soutien">services administratifs et de soutien</option>
+                                <option value="administration publique">administration publique</option>
+                                <option value="enseignement">enseignement</option>
+                                <option value="santé humaine et action sociale">santé humaine et action sociale</option>
+                                <option value="arts, spectacles et activités récréatives">arts, spectacles et activités récréatives</option>
+                                <option value="autre">autre</option>
+                            </select>
+                        </div>
+                    </div>
+-->
+
+                    <div class="checkbox checkbox-success">
+                        <input type="checkbox" value="1" name="newsletter" id="mce-group[7125]-7125-0"><label for="mce-group[7125]-7125-0">s'abonner à la newsletter mensuelle</label>
+                    </div>
+
+                    <div class="checkbox checkbox-success">
+                        <input type="checkbox" value="1" name="mobilityPotential" id="mce-group[7125]-7125-1"><label for="mce-group[7125]-7125-1">demander une évaluation du potentiel mobilité de l'entreprise</label>
+                    </div>
+                    <div class="checkbox checkbox-success">
+                        <input type="checkbox" value="1" name="quotation" id="mce-group[7125]-7125-2"><label for="mce-group[7125]-7125-2">demander un devis pour réaliser une application mobile B2B</label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Envoyer" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script type="application/javascript">
+    $(document).ready(function () {
+
+
+        // console.log('form',$('#contactForm'));
+        $('#mc-embedded-subscribe-form').bootstrapValidator({
+            message: 'Ce champ n\'est pas valide',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            live: 'enabled',
+            submitButtons: 'input[type="submit"]',
+            fields: {
+                lastname: {
+                    validators: {
+                    }
+                },
+                company: {
+                    validators: {
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message:''
+                        },
+                        emailAddress: {
+                            message:''
+                        }
+                    }
+                }
+            }
+        })
+            .on('success.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            var $form        = $(e.target),
+                validator    = $form.data('bootstrapValidator'),
+                submitButton = validator.getSubmitButton();
+
+            var dataToSend = $form.serialize();
+            console.log('data to send', dataToSend);
+            $form.find(':input').prop('disabled',true)
+
+            submitButton.replaceWith('<i class="fa fa-spinner fa-spin"></i>');
+
+            var posting = $.post($form.attr('action'), dataToSend, function(result) {
+                console.log('result', result);
+            });
+            posting.done(function( data ) {
+                console.log("done !",data);
+                var response = jQuery.parseJSON(data);
+                console.log('success',response.success);
+                if(response.success){
+                    $(".modal-body").empty().append('<div class="alert alert-success"  role="alert">'+response.message+'</div>');
+                    window.setTimeout(function(){$('#timeoutModal').modal('hide');},3000);
+                }
+                else {
+                    $(".modal-body").empty().append('<div class="alert alert-danger"  role="alert">'+response.message+'<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+                }
+            }).fail(function() {
+                $(".modal-body").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+            });
+
+            $.cookie("modal_completed", true, { expires: 365, path: '/' });
+
+        });
+    });
+
+</script>
 
         <!-- Navigation -->
         <!--navbar-inverse-->
@@ -141,63 +272,6 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <script type="text/javascript">
-                                    function initMapSiegeSocial() {
-                                        var mapCanvas = document.getElementById('map-canvas');
-                                        var positionNantes = new google.maps.LatLng(47.2256583,-1.5462325);
-                                        var positionToulouse = new google.maps.LatLng(43.5963286,1.4621036);
-                                        var positionFrance = new google.maps.LatLng(47.0000, 2.0000);
-
-                                        var mapOptions = {
-                                            zoom: 5,
-                                            maxZoom:12,
-                                            minZoom:4,
-                                            center: positionFrance,
-                                            mapTypeId:google.maps.MapTypeId.TERRAIN
-                                        }
-                                        var map = new google.maps.Map(mapCanvas, mapOptions);
-
-                                        var imageSize = new google.maps.Size(40, 40);
-
-                                        var markerNantes = new google.maps.Marker({
-                                            position: positionNantes,
-                                            map: map,
-                                            icon:{
-                                                url:'img/mapicon.png',
-                                                scaledSize:imageSize
-                                            },
-                                            animation: google.maps.Animation.DROP,
-                                            title: 'Siège social de Moventes',
-                                            attribution :{
-                                                source:'Moventes',
-                                                webUrl:'http://www.moventes.com/about.html'
-                                            },
-                                            optimized:true
-                                        });
-
-                                        var markerToulouse = new google.maps.Marker({
-                                            position: positionToulouse,
-                                            map: map,
-                                            icon:{
-                                                url:'img/mapicon2.png',
-                                                scaledSize:imageSize
-                                            },
-                                            animation: google.maps.Animation.DROP,
-                                            title: 'Antenne commerciale de Moventes',
-                                            attribution :{
-                                                source:'Moventes',
-                                                webUrl:'http://www.moventes.com/about.html'
-                                            },
-                                            optimized:true
-                                        });
-                                    }
-                                    // https://developers.google.com/maps/documentation/javascript/examples/icon-simple
-                                    // https://developers.google.com/maps/documentation/javascript/reference#MapTypeStyleFeatureType
-
-
-                                    $(document).ready(function () {google.maps.event.addDomListener(window, 'load', initMapSiegeSocial);   });
-
-                                </script>
                                 <div id="map-canvas"></div>
                             </div>
                         </div>
@@ -208,31 +282,6 @@
 
 
         <section id="fondateurs" class="">
-            <script type="text/javascript">
-                $(document).ready(function () {
-
-                    var changeMemberImage = function changeMemberImage(node,image,code){
-                        console.log('click');
-                        var imageObj = node.find('img');
-                        console.log('current src', imageObj.attr('src'));
-                        if(imageObj.attr('src') === image) {
-                            imageObj.attr('src',code);
-                            imageObj.removeClass('img-circle');
-                        }
-                        else {
-                            imageObj.attr('src',image);
-                            imageObj.addClass('img-circle');
-                        }
-                    };
-
-                    $('#member-pedubreuil').click(function() {
-                        changeMemberImage($(this),"img/pedubreuil.jpg",'img/pedubreuil-qrcode.png');
-                    });
-                    $('#member-sclery').click(function() {
-                        changeMemberImage($(this),"img/sclery.jpg",'img/sclery-qrcode.png');
-                    });
-                });
-            </script>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1">
@@ -356,23 +405,92 @@
         </section>
 
 
-        <footer class="bg-white">
-            <ul class="list-inline ">
-                <li>
-                    <a href="http://moventes.com/about">Qui sommes nous?</a>
-                </li>
-                <li class="btn-group">
-                    <a class="btn btn-info" href="https://twitter.com/moventes_fr" target="_blank" style="width:45px"><i class="fa fa-twitter fa-lg" title="Suivre Moventes sur Twitter"></i></a>
-                    <a class="btn btn-primary" href="https://www.facebook.com/Moventes.fr" target="_blank" style="width:45px"><i class="fa fa-facebook fa-lg" title="Suivre Moventes sur Facebook"></i></a>
-                    <a class="btn btn-danger" href="https://plus.google.com/117084928015054396102" target="_blank" style="width:45px"><i class="fa fa-google-plus fa-lg" title="Suivre Moventes sur Google+"></i></a>
-                    <a class="btn btn-primary" href="https://www.linkedin.com/company/10046010" target="_blank" style="width:45px"><i class="fa fa-linkedin fa-lg"  title="Suivre Moventes sur LinkedIn"></i></a>
-                </li>
-                <li>
-                    <span class="copyright">Copyright &copy; Moventes 2015</span>
-                </li>
-            </ul>
-        </footer>
+        <script type="text/javascript">
+            function initMapSiegeSocial() {
+                var mapCanvas = document.getElementById('map-canvas');
+                var positionNantes = new google.maps.LatLng(47.2256583,-1.5462325);
+                var positionToulouse = new google.maps.LatLng(43.5963286,1.4621036);
+                var positionFrance = new google.maps.LatLng(47.0000, 2.0000);
 
+                var mapOptions = {
+                    zoom: 5,
+                    maxZoom:12,
+                    minZoom:4,
+                    center: positionFrance,
+                    mapTypeId:google.maps.MapTypeId.TERRAIN
+                }
+                var map = new google.maps.Map(mapCanvas, mapOptions);
+
+                var imageSize = new google.maps.Size(40, 40);
+
+                var markerNantes = new google.maps.Marker({
+                    position: positionNantes,
+                    map: map,
+                    icon:{
+                        url:'img/mapicon.png',
+                        scaledSize:imageSize
+                    },
+                    animation: google.maps.Animation.DROP,
+                    title: 'Siège social de Moventes',
+                    attribution :{
+                        source:'Moventes',
+                        webUrl:'http://www.moventes.com/about.html'
+                    },
+                    optimized:true
+                });
+
+                var markerToulouse = new google.maps.Marker({
+                    position: positionToulouse,
+                    map: map,
+                    icon:{
+                        url:'img/mapicon2.png',
+                        scaledSize:imageSize
+                    },
+                    animation: google.maps.Animation.DROP,
+                    title: 'Antenne commerciale de Moventes',
+                    attribution :{
+                        source:'Moventes',
+                        webUrl:'http://www.moventes.com/about.html'
+                    },
+                    optimized:true
+                });
+            }
+            // https://developers.google.com/maps/documentation/javascript/examples/icon-simple
+            // https://developers.google.com/maps/documentation/javascript/reference#MapTypeStyleFeatureType
+
+
+            $(document).ready(function () {
+
+                google.maps.event.addDomListener(window, 'load', initMapSiegeSocial);
+
+
+                var changeMemberImage = function changeMemberImage(node,image,code){
+                    console.log('click');
+                    var imageObj = node.find('img');
+                    console.log('current src', imageObj.attr('src'));
+                    if(imageObj.attr('src') === image) {
+                        imageObj.attr('src',code);
+                        imageObj.removeClass('img-circle');
+                    }
+                    else {
+                        imageObj.attr('src',image);
+                        imageObj.addClass('img-circle');
+                    }
+                };
+
+                $('#member-pedubreuil').click(function() {
+                    changeMemberImage($(this),"img/pedubreuil.jpg",'img/pedubreuil-qrcode.png');
+                });
+                $('#member-sclery').click(function() {
+                    changeMemberImage($(this),"img/sclery.jpg",'img/sclery-qrcode.png');
+                });
+            });
+
+        </script>
+
+
+    <!-- build:include:inc _commonfooter.html -->
+    <!-- /build -->
     </body>
 
 </html>

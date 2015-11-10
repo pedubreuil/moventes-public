@@ -1,7 +1,20 @@
 
 $(document).ready(function () {
+
     console.log('document ready');
     $('[data-toggle="tooltip"]').tooltip();
+
+    var bLazy = new Blazy({
+        breakpoints: [{
+                width: 768,
+                src: 'data-src-small'
+	     },
+            {
+                width: 1200, // max-width
+                src: 'data-src-medium'
+	   }]
+    });
+    new WOW().init();
 
     //--------------------------------------
     //---- COOKIES REMOVED IF ASKED      ---
@@ -36,10 +49,10 @@ $(document).ready(function () {
         //--------------------------------------
         //---- MODAL displayed after timeout ---
 
-        if(! ($.cookie('modal_timeout'))){
+        if(! ($.cookie('modal_timeout')) && !$.cookie('modal_completed')){
             //first time
             console.debug('init cookie modal_timeout');
-            $.cookie("modal_timeout", 0, { expires: 7, path: '/' });
+            $.cookie("modal_timeout", 0, { expires: 3, path: '/' });
         }
         window.setTimeout(modalTimeoutFn, refreshFrequency);
     }
@@ -54,7 +67,7 @@ modalTimeoutFn = function() {
         lastValue += refreshFrequency;
 
         console.debug('modal timeout',lastValue);
-        $.cookie('modal_timeout', lastValue, { expires: 7, path: '/' });
+        $.cookie('modal_timeout', lastValue, { expires: 3, path: '/' });
 
         if(lastValue < 20000){
             console.debug('wait again',refreshFrequency);
