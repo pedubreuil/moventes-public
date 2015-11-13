@@ -98,9 +98,9 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
-//                        dot: true,
+                        //                        dot: true,
                         cwd: 'bower_components',
-                        src: ['bootstrap/dist/fonts/*.*', 'components-font-awesome/fonts/*.*'],
+                        src: ['bootstrap/dist/fonts/*.*', 'components-font-awesome/fonts/*.*'],  //,'google-fonts/ofl/**/*.ttf'
                         dest: 'dist/fonts/',
                         flatten: true,
                         filter: 'isFile'
@@ -160,7 +160,7 @@ module.exports = function (grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
 
                 report: 'min'
-                    //                ,sourceMap:true
+                //                ,sourceMap:true
 
             },
             build: {
@@ -273,8 +273,58 @@ module.exports = function (grunt) {
                     dest: 'dist'
                 }]
             }
-        }
+        },
 
+
+        watch: {
+            jsFiles: {
+                files: ['js/{,*/}*.js','!js/vendor'],
+                tasks: ['copy:forDist'],
+                options: {
+                    event: ['changed'],
+//                    livereload: true,
+
+                },
+            },
+            depFilesExistence : {
+                files: ['js/{,*/}*.js','!js/vendor','css/*.css','!css/vendor'],
+                tasks: ['processhtml:inc', 'copy:forDist', 'processhtml:bower'],
+                options: {
+                    event: ['added','deleted'],
+//                    livereload: true,
+
+                },
+
+            },
+            htmlFiles: {
+                files: ['*.html'],
+                tasks: ['processhtml:inc', 'copy:forDist', 'processhtml:bower'],
+                options: {
+                    event: ['all'],
+//                    livereload: true,
+
+                },
+            },
+            cssFiles: {
+                files: ['css/*.css','!css/vendor'],
+                tasks: ['copy:forDist'],
+                options: {
+                    event: ['changed'],
+//                    livereload: true,
+
+                },
+            },
+            configFiles: {
+                files: [ 'Gruntfile.js' ],
+                options: {
+                    reload: true
+                }
+            },
+            bower: {
+                files: ['bower.json'],
+                tasks: ['processBowerDep']
+            },
+        },
     });
 
     // Load the plugin that provides the tasks.
@@ -289,6 +339,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-prompt');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
     grunt.registerTask('filesToDist', ['processhtml:inc', 'prompt:askImagemin', 'copy:forDist']);
@@ -298,9 +349,9 @@ module.exports = function (grunt) {
     grunt.registerTask('optimJsCss', ['uncss', 'cssmin', 'uglify', 'processhtml:prod']);
 
 
-    grunt.registerTask('dev', ['filesToDist', 'processBowerDep', ]);
+    grunt.registerTask('dev', ['filesToDist', 'processBowerDep', 'watch']);
 
-    grunt.registerTask('default', ['filesToDist', 'processBowerDep', 'optimJsCss'/*, 'htmlmin'*/]);
+    grunt.registerTask('default', ['filesToDist', 'processBowerDep', 'optimJsCss', 'htmlmin']);
 
 
 

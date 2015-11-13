@@ -9,9 +9,9 @@
     "jquery.easing": "*",
     "jquery.cookie": "*",
     "awesome-bootstrap-checkbox": "*",
-    "blazy":"*",
-    "animate.css":"*",
-      "wowjs":"*"
+    "blazy": "*",
+    "animate.css": "*",
+    "wowjs": "*"
   },
   "devDependencies": {},
   "appPath": "app",

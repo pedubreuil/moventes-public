@@ -46,6 +46,37 @@
                 event.preventDefault();
             });
 
+
+
+            $('.service-item').hover(
+                function () {
+                    $(this).find('.service-icon').addClass('animated tada');
+                },
+                function () {
+                    $(this).find('.service-icon').removeClass('animated tada');
+                }
+            );
+
+            $('.offre-item').hover(
+                function () {
+                    $(this).addClass('animated bounce');
+                },
+                function () {
+                    $(this).removeClass('animated bounce');
+                }
+            );
+
+            $('.techno-item').hover(
+                function () {
+                    $(this).addClass('animated pulse');
+                },
+                function () {
+                    $(this).removeClass('animated pulse');
+                }
+            );
+
+
+
         });
     </script>
 
@@ -91,60 +122,56 @@
     <header id="top" class="header b-lazy" data-src="img/bg/header-lg.jpg" data-src-small="img/bg/header-xs.jpg" data-src-medium="img/bg/header-md.jpg">
 
         <div class="text-vertical-center">
-            <h1 class="brand">Moventes</h1>
-            <h3 class="text-header">Spécialiste des applications mobiles<br/>au service des entreprises</h3>
+            <h1 class="brand"><img alt="" src="img/logo.png"> Moventes</h1>
+            <h3 class="text-header">Spécialiste des applications mobiles<br/>pour les professionnels</h3>
             <br>
             <a class="page-scroll" href="#services" style="color:grey;"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
 
         </div>
     </header>
 
+    <!-- ##############################################################
+###################   SECTION  "VOUS"  ######################
+#####################################################################  -->
+
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="bg-primary">
-        <div class="container text-vertical-center">
-            <div class="row text-center ">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Avançons ensemble !</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-delay="0.5s">
-                            <a class="service-item" href="http://moventes.com/offre">
-                                <span class="fa-stack fa-4x">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-suitcase fa-stack-1x text-primary"></i>
-                                    </span>
-                                <h4>
-                                        <strong>Notre offre</strong>
-                                    </h4>
-                                <p>Une prestation complète pour construire une animated solution mobile sur mesure, multiplatforme et hébergée dans le cloud</p>
-                            </a>
+    <section id="vous" class="">
+        <!-- bg-primary -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Vous êtes...</h2>
+                    <!--                    <hr class="small">-->
+                </div>
+            </div>
+            <div class="row text-center">
+
+                <div class="col-md-6">
+                    <a href="http://moventes.com/startup">
+                        <div class="service-item well col-md-12 wow bounceIn" data-wow-delay="0.5s">
+                            <span class="fa-stack fa-4x service-icon">
+                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+                                </span>
+                            <h3>Une startup</h3>
+                            <p class="text-muted">Vous avez une idée innovante ?
+                                <br/>Vous êtes porteur d'un projet d'application mobile ?</p>
                         </div>
-                        <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-delay="1s">
-                            <a class="service-item" href="http://moventes.com/demarche">
-                                <span class="fa-stack fa-4x">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-connectdevelop fa-stack-1x text-primary"></i>
-                                    </span>
-                                <h4>
-                                        <strong>Notre démarche</strong>
-                                    </h4>
-                                <p>Une approche professionnelle (du conseil à l'exploitation) pour rester à votre écoute et maitriser votre budget</p>
-                            </a>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="http://moventes.com/entreprise">
+                        <div class="service-item well col-md-12 wow bounceIn  " data-wow-delay="1s">
+                            <span class="fa-stack fa-4x service-icon">
+                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
+                                </span>
+                            <h3>Une entreprise</h3>
+                            <p class="text-muted">Vous souhaitez moderniser vos outils de travail?
+                                <br/>Vous cherchez à optimiser votre travail et à adapter vos outils à votre mobilité ?</p>
                         </div>
-                        <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-delay="1.5s">
-                            <a class="service-item" href="http://moventes.com/potentiel">
-                                <span class="fa-stack fa-4x">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-mobile fa-stack-1x text-primary"></i>
-                                    </span>
-                                <h4>
-                                        <strong>Votre potentiel mobilité</strong>
-                                    </h4>
-                                <p>A chaque entreprise, à chaque métier, son gain de productivité grâce à une application mobile sur mesure</p>
-                            </a>
-                        </div>
-                    </div>
+                    </a>
                     <!-- /.row (nested) -->
                 </div>
                 <!-- /.col-lg-10 -->
@@ -154,7 +181,350 @@
         <!-- /.container -->
     </section>
 
+    <!-- ##############################################################
+###################   SECTION  OFFRE & TECHNOS  ######################
+#####################################################################  -->
 
+    <section id="offre" class="parallax b-lazy" data-src="img/bg/offre-lg.jpg" data-src-medium="img/bg/offre-md.jpg" data-src-small="img/bg/offre-xs.jpg">
+        <div class="container">
+            <div class="row text-center ">
+                <h2 class="section-heading">Nos offres</h2>
+                <br/>
+            </div>
+            <div class="row text-center">
+
+                <div class="col-lg-3 col-sm-6 ">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default offre-item">
+                            <div class="panel-body media">
+                                <div class="media-left media-middle">
+                                    <i class="fa fa-globe fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">La boutique</h3>
+                                    <p class="text-left">notre incubateur d'applications mobiles pour les professionnels.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 ">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default offre-item">
+                            <div class="panel-body media">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-pencil-square-o fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">La fabrique</h3>
+                                    <p class="text-left">une équipe dédiée à votre projet conçoit, réalise et déploie votre application mobile sur mesure.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 ">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default offre-item">
+                            <div class="panel-body media">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-graduation-cap fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">L'académie</h3>
+                                    <p class="text-left">un expert vous apprend à identifier les potentiels technologiques dans votre vie professionnelle.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 ">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default offre-item">
+                            <div class="panel-body media">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-comments-o fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Le coach?? </h3>
+                                    <p class="text-left">un consultant vous accompagne et vous conseille à chaque étape de votre projet numérique.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- ******************************************
+********* TECHNO (sécurité,...) *************** -->
+
+            <div class="row text-center ">
+                <hr class="small">
+                <br/>
+                <h2 class="section-heading">Les technologies</h2>
+                <br/>
+            </div>
+
+
+            <div class="row text-center ">
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-credit-card fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">Paiement mobile</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <!--fa-mobile-->
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa fa-pencil fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">Signature électronique</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-lock fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">Sécurité/Identification mobile/Tokenisation/encryption (data transfer encrypted over HTTPS)</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1.5s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-user fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">Two-Factor Authentication</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- ******************************************
+********* TECHNO (capteurs,...) *************** -->
+
+            <div class="row text-center ">
+                <hr class="small">
+            </div>
+
+            <div class="row text-center ">
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-wifi fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">Objets connectés</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-qrcode  fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">QR codes</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-rss fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">Bluetooth, NFC, RFID</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1.5s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-video-camera fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">Réalité augmentée</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- ******************************************
+********* TECHNO (backend,...) *************** -->
+
+
+            <div class="row text-center ">
+                <hr class="small">
+            </div>
+
+            <div class="row text-center">
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa fa-cloud fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">mBaaS</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa fa-desktop fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">MAM</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-external-link  fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">Enterprise App Store</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1.5s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-commenting-o  fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">SMS gateway</h3>
+                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+
+<!-- ******************************************
+********* TECHNO (dév) *************** -->
+
+            <div class="row text-center ">
+                <hr class="small">
+            </div>
+
+            <div class="row text-center">
+
+                <div class="col-lg-offset-4 col-lg-4 col-sm-offset-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="http://moventes.com/startup">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-middle">
+                                    <i class="fa  fa-clone fa-4x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading ">Hybride vs Native</h3>
+                                    <p class="text-left">Cross-platform  lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ##############################################################
+###################   SECTION  "CONTACT"  ######################
+#####################################################################  -->
 
     <!-- Contact Section -->
     <section id="contact">
@@ -207,28 +577,28 @@
 
                                 <script type="text/javascript">
                                     /* <![CDATA[ */
-//                                    goog_snippet_vars = function () {
-//                                            var w = window;
-//                                            w.google_conversion_id = 952666343;
-//                                            w.google_conversion_label = "3S_xCNSugl0Q55GixgM";
-//                                            w.google_remarketing_only = false;
-//                                        }
-//                                        // DO NOT CHANGE THE CODE BELOW.
-//                                    goog_report_conversion = function (url) {
-//                                        goog_snippet_vars();
-//                                        window.google_conversion_format = "3";
-//                                        window.google_is_call = true;
-//                                        var opt = new Object();
-//                                        opt.onload_callback = function () {
-//                                            if (typeof (url) != 'undefined') {
-//                                                window.location = url;
-//                                            }
-//                                        }
-//                                        var conv_handler = window['google_trackConversion'];
-//                                        if (typeof (conv_handler) == 'function') {
-//                                            conv_handler(opt);
-//                                        }
-//                                    }
+                                    //                                    goog_snippet_vars = function () {
+                                    //                                            var w = window;
+                                    //                                            w.google_conversion_id = 952666343;
+                                    //                                            w.google_conversion_label = "3S_xCNSugl0Q55GixgM";
+                                    //                                            w.google_remarketing_only = false;
+                                    //                                        }
+                                    //                                        // DO NOT CHANGE THE CODE BELOW.
+                                    //                                    goog_report_conversion = function (url) {
+                                    //                                        goog_snippet_vars();
+                                    //                                        window.google_conversion_format = "3";
+                                    //                                        window.google_is_call = true;
+                                    //                                        var opt = new Object();
+                                    //                                        opt.onload_callback = function () {
+                                    //                                            if (typeof (url) != 'undefined') {
+                                    //                                                window.location = url;
+                                    //                                            }
+                                    //                                        }
+                                    //                                        var conv_handler = window['google_trackConversion'];
+                                    //                                        if (typeof (conv_handler) == 'function') {
+                                    //                                            conv_handler(opt);
+                                    //                                        }
+                                    //                                    }
 
 
 
@@ -356,9 +726,9 @@
 
                                     /* ]]> */
                                 </script>
-<!--
-                                <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js">
-                                </script>
+                                <!--
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js">
+</script>
 -->
                             </div>
                         </div>

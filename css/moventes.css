@@ -11,15 +11,49 @@ html,
 body {
     width: 100%;
     height: 100%;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Roboto',Helvetica,Arial,sans-serif;
+    /*Merriweather, Roboto Slab
+
+Open Sans +   /Open Sans is an upright stressed font with open forms and a neutral but friendly appearance. It was optimized for print, web and mobile interface and has gained extreme popularity over the excellent legibility of the typeface.
+Roboto +    /Roboto is the font we’re using for our blog which features friendly and open curves. The goal of the this font was not to allow distorted letterforms to force a rigid rhythm. In contrast, Roboto doesn’t compromise by allowing letter to be settled into their natural width. This makes for a more natural reading rhythm more commonly found in humanist and serif types.
+Lato ++     /The font is based off classical proportions which are particularly visible in the uppercase in order to give the letterforms a familiar sense of harmony and elegance. The semi-rounded details of the letters give off a feeling of warmth, while the strong structure provides a sense of stability and seriousness.
+
+
+
+PT Sans     / PT Sans is based on Russian sans serif types of the second part of the 20th century, but at the same time has distinctive features of contemporary humanistic designs.
+Ubuntu      / typeface is sans-serif, uses OpenType features and is manually hinted for clarity on desktop and mobile computing screens.
+*/
+    /*
+    Sans serif fonts are simple and straightforward, and lack the “lines” of the serif fonts (“sans” is French for “without”). Because the individual characters of sans serif fonts are less distinct, they are harder to read. A lack of individual detail also gives them less personality. These fonts are typically used for newspaper headlines, photo captions and technical documents. Because computer screen resolutions vary, serif fonts can look blurred on many computers. The simplicity of sans serif fonts makes them easier to read on computers. They are the preferred choice for web site and PowerPoint presentations.
+ Consider a sans serif font for your website if you wish to convey one of these qualities: technical, cool, clean, crisp, youthful, modern or uncluttered. Sans serif fonts are effective as headings, for general text and for text with technical content. However, sans serif fonts can also be viewed as cold and impersonal.
+*/
 }
 
 /* Nav bar */
 .brand {
-    /*    font-family: 'Courgette', cursive;*/
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Courgette', cursive;
+/*    font-family: 'Satisfy', cursive;*/
+/*    font-family: 'Amatic SC', cursive; */
+    /*
+    cursive: A font that has joined strokes that make it look at least somewhat like handwriting.
+Courgette
+    Damion
+Yellowtail
+Satisfy
+
+
+    Sacramento
+Pacifico
+Grand Hotel
+
+    */
     color:#23527c;
 }
+
+
+
+
+
 .brand.label-success {
     font-weight:normal;
     color:white
@@ -164,6 +198,7 @@ section {
     color: #404040;
 }
 /* Section "SERVICE" */
+/*
 section#services {
     width: 100%;
     height: 100%;
@@ -171,14 +206,22 @@ section#services {
     display: table;
     position: relative;
 }
-a.service-item {
-    color:inherit;
+*/
+#service a:hover {
+    text-decoration: none;
 }
 
-a.service-item:hover {
-    text-decoration: none;
-    color:#FFF9AA;
+.service-item:hover {
+    background-color:#FFF9AA;
 }
+
+#offre a:hover {
+    text-decoration: none;
+}
+.offre-item:hover {
+    background-color:#FFF9AA;
+}
+
 
 /* Section "CONTACT" */
 
@@ -588,4 +631,11 @@ hr.small {
 
 .bg-white {
     background-color: #ffffff !important;
+}
+.bg-primary {
+    background-color: #23527c !important;
+}
+
+.text-primary {
+    color: #23527c !important;
 }
