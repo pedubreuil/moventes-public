@@ -13,6 +13,10 @@ $(document).ready(function () {
 	   }],
         success: function () {
             console.log('lazy loading of images finished');
+        },
+        error : function(ele, msg){
+            console.error(msg);
+            console.log(ele);
         }
     });
     new WOW({
