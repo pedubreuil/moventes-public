@@ -110,6 +110,7 @@ module.exports = function (grunt) {
             }
         },
         bower_concat: {
+            // https://www.npmjs.com/package/grunt-bower-concat
             all: {
                 dest: 'dist/js/_bower.js',
                 cssDest: 'dist/css/_bower.css',
@@ -340,6 +341,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-prompt');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-bower-concat');
 
     // Default task(s).
     grunt.registerTask('filesToDist', ['processhtml:inc', 'prompt:askImagemin', 'copy:forDist']);
