@@ -30,10 +30,11 @@ Ubuntu      / typeface is sans-serif, uses OpenType features and is manually hin
 }
 
 
-/* Nav bar */
+/* Nav bar  ---------------------------------------------------------------------------------------------------*/
 
 .brand {
-    font-family: 'Courgette', cursive;
+    font-family: 'Kaushan Script', cursive;
+    /*    font-family: 'Courgette', cursive;*/
     /*    font-family: 'Satisfy', cursive;*/
     /*    font-family: 'Amatic SC', cursive; */
     /*
@@ -50,6 +51,10 @@ Grand Hotel
 
     */
     color: #23527c;
+}
+
+h1.brand {
+    font-size: 8vw;
 }
 
 .brand.label-success {
@@ -104,7 +109,7 @@ a:hover .brand {
 
 .text-header {
     color: #1F2A36;
-/*    font-weight: bolder;*/
+    /*    font-weight: bolder;*/
 }
 
 .panel-heading h4 {
@@ -112,7 +117,7 @@ a:hover .brand {
 }
 
 
-/* Center utils */
+/* Center utils  ---------------------------------------------------------------------------------------------------*/
 
 .text-vertical-center {
     display: table-cell;
@@ -127,8 +132,18 @@ a:hover .brand {
     font-weight: 900;
 }
 
+.row.text-center > div {
+    display: inline-block;
+    float: none;
+}
 
-/* Body background */
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Body background ---------------------------------------------------------------------------------------------------*/
 
 body.fixed-bg {
     background-repeat: no-repeat;
@@ -154,7 +169,7 @@ section.parallax {
 }
 
 
-/* Header */
+/* Header ---------------------------------------------------------------------------------------------------*/
 
 header {
     width: 100%;
@@ -162,6 +177,7 @@ header {
     text-align: center;
     display: table;
     position: relative;
+    background-image: url(../img/bg/header4.jpg);
     background-attachment: scroll;
     background-position: center center;
     background-repeat: none;
@@ -177,8 +193,20 @@ header {
     background-color: transparent;
 }
 
+.decalage-top {
+    padding-top: 150px;
+}
 
-/* Section */
+.top-buffer {
+    margin-top: 20px;
+}
+
+.fond-blanc {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* Section ---------------------------------------------------------------------------------------------------*/
 
 section {
     padding: 40px 0;
@@ -201,8 +229,131 @@ section {
     color: #404040;
 }
 
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
 
-/* Section "SERVICE" */
+h2 {
+    font-family: 'Courgette', cursive;
+    color: #67718e;
+}
+
+
+/* Section "ENJEUX" ---------------------------------------------------------------------------------------------------*/
+
+.enjeux {
+    color: white;
+    height: 300px;
+    font-size: 16px;
+    /*    position: relative;*/
+}
+
+.enjeux::before {
+    background-size: cover;
+    opacity: 1;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.problem {
+    /* padding: 15px;*/
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.solution {
+    /*padding: 15px;*/
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+
+/* Section "ENJEUX 1" */
+
+#enjeux1 > .problem {
+    background-color: rgba(103, 113, 142, 1);
+}
+
+/*#enjeux1::before {
+    background: url(../img/enjeux-1.jpg);
+}*/
+
+
+/* Section "ENJEUX 2" */
+
+#enjeux2 > .problem {
+    background-color: rgba(169, 152, 120, 1);
+}
+
+/*#enjeux2::before {
+    background: url(../img/enjeux-2.jpg);
+}*/
+
+
+/* Section "ENJEUX 3" */
+
+#enjeux3 > .problem {
+    background-color: rgba(223, 191, 68, 1);
+}
+
+/*#enjeux3::before {
+    background: url(../img/enjeux-3.jpg);
+}*/
+
+.separateur {
+    border-left: solid thick #fff;
+}
+
+
+/* Section "APPROCHE" ---------------------------------------------------------------------------------------------------*/
+
+
+/*.img-approche {
+    background-size: cover;
+    width: 100%;
+}*/
+
+.approche1 {
+    background-color: rgba(103, 113, 142, 1);
+}
+
+.approche2 {
+    background-color: rgba(169, 152, 120, 1);
+}
+
+.approche3 {
+    background-color: rgba(223, 191, 68, 1);
+}
+
+.legend-approche {
+    font-family: 'Courgette', cursive;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+/* Section "SERVICE" ---------------------------------------------------------------------------------------------------*/
 
 
 /*

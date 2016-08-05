@@ -100,7 +100,7 @@ module.exports = function (grunt) {
                         expand: true,
                         //                        dot: true,
                         cwd: 'bower_components',
-                        src: ['bootstrap/dist/fonts/*.*', 'components-font-awesome/fonts/*.*'],  //,'google-fonts/ofl/**/*.ttf'
+                        src: ['bootstrap/dist/fonts/*.*', 'components-font-awesome/fonts/*.*'], //,'google-fonts/ofl/**/*.ttf'
                         dest: 'dist/fonts/',
                         flatten: true,
                         filter: 'isFile'
@@ -110,18 +110,42 @@ module.exports = function (grunt) {
             }
         },
         bower_concat: {
-            // https://www.npmjs.com/package/grunt-bower-concat
+
             all: {
-                dest: 'dist/js/_bower.js',
-                cssDest: 'dist/css/_bower.css',
+                dest: {
+                    'js': 'dist/js/_bower.js',
+                    'css': 'dist/css/_bower.css'
+                },
+                //    exclude: [
+                //      'jquery',
+                //      'modernizr'
+                //    ],
+                //    dependencies: {
+                //      'underscore': 'jquery',
+                //      'backbone': 'underscore',
+                //      'jquery-mousewheel': 'jquery'
+                //    },
                 bowerOptions: {
-                    //      relative: false
+                    relative: false
                 },
                 mainFiles: {
                     'bootstrap': ['dist/css/bootstrap.css', 'dist/js/bootstrap.js'],
                 }
 
             }
+
+            // https://www.npmjs.com/package/grunt-bower-concat
+            //            all: {
+            //                dest: 'dist/js/_bower.js',
+            //                cssDest: 'dist/css/_bower.css',
+            //                bowerOptions: {
+            //                    //      relative: false
+            //                },
+            //                mainFiles: {
+            //                    'bootstrap': ['dist/css/bootstrap.css', 'dist/js/bootstrap.js'],
+            //                }
+            //
+            //            }
         },
 
         /* --------------------------------------
@@ -161,7 +185,7 @@ module.exports = function (grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
 
                 report: 'min'
-                //                ,sourceMap:true
+                    //                ,sourceMap:true
 
             },
             build: {
@@ -180,7 +204,7 @@ module.exports = function (grunt) {
         uglify: {
             build: {
                 'files': {
-                    'dist/js/moventes.min.js': ['dist/js/_bower.js', 'js/*.js','!js/vendor'],
+                    'dist/js/moventes.min.js': ['dist/js/_bower.js', 'js/*.js', '!js/vendor'],
                 },
                 options: {
                     banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
@@ -279,20 +303,20 @@ module.exports = function (grunt) {
 
         watch: {
             jsFiles: {
-                files: ['js/{,*/}*.js','!js/vendor'],
+                files: ['js/{,*/}*.js', '!js/vendor'],
                 tasks: ['copy:forDist'],
                 options: {
                     event: ['changed'],
-//                    livereload: true,
+                    //                    livereload: true,
 
                 },
             },
-            depFilesExistence : {
-                files: ['js/{,*/}*.js','!js/vendor','css/*.css','!css/vendor'],
+            depFilesExistence: {
+                files: ['js/{,*/}*.js', '!js/vendor', 'css/*.css', '!css/vendor'],
                 tasks: ['processhtml:inc', 'copy:forDist', 'processhtml:bower'],
                 options: {
-                    event: ['added','deleted'],
-//                    livereload: true,
+                    event: ['added', 'deleted'],
+                    //                    livereload: true,
 
                 },
 
@@ -302,21 +326,21 @@ module.exports = function (grunt) {
                 tasks: ['processhtml:inc', 'copy:forDist', 'processhtml:bower'],
                 options: {
                     event: ['all'],
-//                    livereload: true,
+                    //                    livereload: true,
 
                 },
             },
             cssFiles: {
-                files: ['css/*.css','!css/vendor'],
+                files: ['css/*.css', '!css/vendor'],
                 tasks: ['copy:forDist'],
                 options: {
                     event: ['changed'],
-//                    livereload: true,
+                    //                    livereload: true,
 
                 },
             },
             configFiles: {
-                files: [ 'Gruntfile.js' ],
+                files: ['Gruntfile.js'],
                 options: {
                     reload: true
                 }

@@ -47,13 +47,95 @@
             });
 
 
+            //jQuery to create transition between problem and solution by fade
 
-            $('.service-item').hover(
+            $(this).find('.problem').show();
+            $(this).find('.solution').hide();
+
+            $('.enjeux').click(
                 function () {
-                    $(this).find('.service-icon').addClass('animated tada');
+                    if ($(this).find('.problem').is(":visible")) {
+                        console.log('problem shown => will inverse');
+                        var that = $(this);
+                        $(this).find('.problem').hide();
+                        $(this).find('.solution').fadeIn("slow");
+
+                    } else {
+                        console.log('problem hidden => will inverse');
+                        var that = $(this);
+                        $(this).find('.solution').hide();
+                        $(this).find('.problem').fadeIn("slow");
+                    }
+                }
+            );
+
+            //jQuery to display solution when scrolling
+
+            $(document).scroll(function () {
+                //var fromTop = $(this).scrollTop();
+                // ($('.problem').offset().top - $(window).scrollTop()) ;
+                var fromTop = $('.enjeux').offset().top - $(this).scrollTop();
+                console.log(fromTop);
+                if (fromTop < 150) {
+                    $(this).find('.problem').hide();
+                    $(this).find('.solution').fadeIn("slow");
+                } else {
+                    $(this).find('.solution').hide();
+                    $(this).find('.problem').fadeIn("slow");
+                }
+            });
+
+
+
+
+
+
+
+
+            //jQuery to display solution or problem when hover
+            $('.enjeux').hover(
+                function () {
+
+                    if ($(this).find('.problem').is(":visible")) {
+                        console.log('problem shown => will inverse');
+                        var that = $(this);
+                        $(this).find('.problem').hide();
+                        $(this).find('.solution').fadeIn("slow");
+
+                    } else {
+                        console.log('problem hidden => will inverse');
+                        var that = $(this);
+                        $(this).find('.solution').hide();
+                        $(this).find('.problem').fadeIn("slow");
+                    }
                 },
                 function () {
-                    $(this).find('.service-icon').removeClass('animated tada');
+                    if ($(this).find('.solution').is(":visible")) {
+                        $(this).find('.solution').hide();
+                        $(this).find('.problem').fadeIn("slow");
+                    } else {
+                        $(this).find('.problem').hide();
+                        $(this).find('.solution').fadeIn("slow");
+                    }
+                }
+            );
+
+            /*-------------------------------------------------------------------*/
+
+            $('.home-item').hover(
+                function () {
+                    $(this).find('.home-icon').addClass('animated pulse');
+                },
+                function () {
+                    $(this).find('.home-icon').removeClass('animated pulse');
+                }
+            );
+            $('.service-item').hover(
+                function () {
+                    $(this).find('.service-icon').addClass('animated rotateIn');
+                },
+                function () {
+                    $(this).find('.service-icon').removeClass('animated rotateIn');
                 }
             );
 
@@ -103,16 +185,16 @@
             <div class="collapse navbar-collapse" id="full-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#vous">Notre approche</a>
+                        <a class="page-scroll" href="#approche">Notre approche</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#approche">Nos valeurs</a>
+                        <a class="page-scroll" href="valeurs.html">Nos valeurs</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Notre entreprise</a>
+                        <a class="page-scroll" href="expertise.html">Notre expertise</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Notre histoire</a>
+                        <a class="page-scroll" href="histoire.html">Notre histoire</a>
                     </li>
                 </ul>
             </div>
@@ -122,14 +204,67 @@
     </nav>
 
     <!-- Header -->
-    <header id="top" class="header b-lazy" data-src="img/bg/header-lg.jpg" data-src-small="img/bg/header-xs.jpg" data-src-medium="img/bg/header-md.jpg">
-
-        <div class="text-vertical-center">
-            <h1 class="brand"><img alt="" src="img/logo.png"> Moventes</h1>
-            <h3 class="text-header">Partenaire informatique des startups/h3>
-            <br>
-            <a class="page-scroll" href="#vous" style="color:grey;"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
-
+    <header id="top">
+        <div class="container decalage-top">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 fond-blanc">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="brand"><img alt="Logo Moventes" src="img/logo.png"> Moventes</h1>
+                            <h3 class="text-header">Partenaire informatique des startups</h3>
+                            <p>Pour développer la plateforme web ou mobile de votre startup, il peut être difficile de trouver le cofondateur informatique idéal... Moventes concrétise avec vous ce projet de startup, en relevant ses défis technologiques et en coachant un développeur qui pourra devenir votre futur directeur informatique !
+                            </p>
+                        </div>
+                    </div>
+                    <!--   <a class="page-scroll" href="#enjeux" style="color:grey;"><i class="fa fa-chevron-circle-down fa-4x"></i></a>-->
+                    <div class="row text-center equal-height top-buffer">
+                        <div class="col-xs-12 col-md-3">
+                            <a href="#">
+                                <div class="home-item wow fadeIn" data-wow-delay="1s">
+                                    <span class="fa-stack fa-4x home-icon">
+                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                    <h3>Préparation</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-md-1">
+                            <div class="home-item wow fadeIn " data-wow-delay="1.5s">
+                                <i class="fa fa-chevron-right fa-4x"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <a href="#">
+                                <div class="home-item wow fadeIn" data-wow-delay="2s">
+                                    <span class="fa-stack fa-4x home-icon">
+                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
+                                </span>
+                                    <h3>Consctruction</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-md-1">
+                            <div class="home-item wow fadeIn" data-wow-delay="2.5s">
+                                <i class="fa fa-chevron-right fa-4x"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <a href="http://moventes.com/entreprise">
+                                <div class="home-item wow fadeIn" data-wow-delay="3s">
+                                    <span class="fa-stack fa-4x home-icon">
+                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+                                </span>
+                                    <h3>Croissance</h3>
+                                </div>
+                            </a>
+                            <!-- /.row (nested) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -139,165 +274,265 @@
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="enjeux" class="">
-        <!-- bg-primary -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <!--                    <h2 class="section-heading">Vous êtes...</h2>-->
-                    <!--                    <hr class="small">-->
-                </div>
-            </div>
-            <div class="row text-center equal-height">
-                <div class="col-md-4">
-                    <a href="http://moventes.com/startup">
-                        <div class="service-item well col-md-12 wow bounceIn" data-wow-delay="0.5s">
-                            <span class="fa-stack fa-4x service-icon">
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
-                                </span>
-                            <h3>Vous êtes une startup</h3>
-                            <p class="text-muted">Vous avez une idée innovante ?
-                                <br/>Vous êtes porteur d'un projet d'application mobile ?</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="http://moventes.com/entreprise">
-                        <div class="service-item well col-md-12 wow bounceIn  " data-wow-delay="1s">
-                            <span class="fa-stack fa-4x service-icon">
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa fa-child fa-stack-1x fa-inverse"></i>
-                                </span>
-                            <h3>Vous êtes un artisan</h3>
-                            <p class="text-muted">Vous cherchez à agrandir votre clientèle gagner du temps grâce au numérique?</p>
-                        </div>
-                    </a>
-                    <!-- /.row (nested) -->
-                </div>
-                <div class="col-md-4">
-                    <a href="http://moventes.com/entreprise">
-                        <div class="service-item well col-md-12 wow bounceIn  " data-wow-delay="1s">
-                            <span class="fa-stack fa-4x service-icon">
-                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
-                                </span>
-                            <h3>Vous êtes une entreprise PME/TGE</h3>
-                            <p class="text-muted">Vous souhaitez moderniser vos outils de travail?
-                                <br/>Vous cherchez à optimiser votre travail et à adapter vos outils à votre mobilité ?</p>
-                        </div>
-                    </a>
-                    <!-- /.row (nested) -->
-                </div>
-
-                <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
+    <section id="enjeux" class="container-fluid">
+        <div class="row text-center ">
+            <h2 class="section-heading">Les enjeux d'un entrepreneur</h2>
         </div>
-        <!-- /.container -->
+        <div class="row top-buffer">
+            <div class="col-md-4 enjeux" id="enjeux1">
+                <div class="row problem">
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                        <p>Difficulté à trouver un co-fondateur informatique, fiable et expérimenté</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
+                        <p>Besoin d'avoir en interne la maitrise de la solution informatique</p>
+                    </div>
+                </div>
+                <div class="row solution">
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                        <span class="fa-stack fa-4x home-icon">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                        <p>Les développeurs de Moventes sont formés et coachés pour les <b>besoins spécifiques</b>  de la startup, qui peut ensuite les embaucher pour <b>conserver le savoir-faire</b> technique en interne</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 enjeux" id="enjeux2">
+                <div class="row problem">
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                        <p>Difficulté à figer le concept face au risque d'avoir une solution qui ne répond pas au besoin du marché</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
+                        <p>besoin d'avoir une stratégie claire et convaincante</p>
+                    </div>
+                </div>
+                <div class="row solution">
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                        <span class="fa-stack fa-4x home-icon">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                        <p>Moventes vous aide dans la <b>conception collaborative</b> de la solution et de son business model , et dans l'élaboration des supports de <b>communication</b> (BP, vidéo, page web,...)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 enjeux" id="enjeux3">
+                <div class="row problem">
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                        <p>Difficulté à s'adapter aux contraintes budgétaires</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
+                        <p>Besoin d'avoir une gestion fine et flexible du projet</p>
+                    </div>
+                </div>
+                <div class="row solution">
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                        <span class="fa-stack fa-4x home-icon">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-money fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                        <p>Basé sur une relation de confiance, Moventes facture au <b>prix coûtant</b> le temps effectif de travail, tout en assurant une <b>implication</b> forte de l'équipe dans la réussite de votre projet</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <!-- ##############################################################
 ###################   SECTION  "APPROCHE"  ######################
 #####################################################################  -->
 
-    <section id="approche" class="parallax b-lazy" data-src="img/bg/offre-lg.jpg" data-src-medium="img/bg/offre-md.jpg" data-src-small="img/bg/offre-xs.jpg">
-        <div class="container">
-            <div class="row text-center ">
-                <h2 class="section-heading">Les offres de <span class="brand">Moventes</span></h2>
-                <br/>
+    <section id="approche" class="container">
+        <div class="row text-center ">
+            <h2 class="section-heading">Notre approche</h2>
+        </div>
+
+        <div class="row top-buffer wow slideInLeft vertical-alig">
+            <figure class="col-md-4">
+                <img class="img-responsive center-block" src="../img/approche-11.jpg" alt="préparation" width="100%" />
+                <figcaption class="legend-approche approche1">Partenaire plutot que consultant</figcaption>
+            </figure>
+            <div class="col-md-8">
+                <h4 class="">Préparation</h4>
+                <ul>
+                    <li>Définition des fonctionnalités de la solution informatique et de son modèle économique</li>
+                    <li>Sondage du marché et confrontation de la maquette à des early adopters</li>
+                    <li>Réalisation de supports pour "vendre" le concept et lever des fonds </li>
+                </ul>
+                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-croissance">
+                    Notre accompagnement
+                    <br>en savoir plus
+                </a>
             </div>
-            <div class="row text-center equal-height text-primary">
-                <div class="col-lg-3 col-sm-6 ">
-                    <div class="panel panel-default offre-item">
-                        <div class="panel-body media">
-                            <a href="#">
-                                <div class="media-left media-middle">
-                                    <i class="fa  fa-comments-o fa-4x media-object"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">L'accélérateur d'innovation</h3>
-                                    <p class="text-left">Diagnostic et proposition d'une stratégie de mobilité IT adaptée à vos usages professionnels.</p>
-                                    <!-- innovation participative, de management des idées, de boite à idées :
-un consultant vous accompagne et vous conseille à chaque étape de votre projet numérique
-                                    notre méthodologie participative fait émerger l'innovation numérique dans
+        </div>
 
-                                    https://fr.m.wikipedia.org/wiki/Innovation_participative
-                                    pr faire émerger les innovations possibles en terme de mobilité IT -->
+
+        <div class="row top-buffer wow slideInRight vertical-align">
+            <div class="col-md-8">
+                <h4>Construction</h4>
+                <ul>
+                    <li>Conception technique et cahier des charges</li>
+                    <li>Recrutement et formation des développeurs par Moventes</li>
+                    <li>Développement de la solution web ou mobile</li>
+                    <li>Coaching et soutien technique par un ingénieur expérimenté</li>
+                </ul>
+                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-croissance">
+                    Notre contrat de confiance
+                    <br>en savoir plus
+                </a>
+            </div>
+            <figure class="col-md-4">
+                <img class="img-responsive center-block" src="../img/approche-22.jpg" alt="construction" width="100%" />
+                <figcaption class="legend-approche approche2">Coach plutôt que manager</figcaption>
+            </figure>
+        </div>
+
+
+        <div class="row top-buffer wow slideInLeft vertical-align">
+            <figure class="col-md-4">
+                <img class="img-responsive center-block" src="../img/approche-33.jpg" alt="croissance" width="100%" />
+                <figcaption class="legend-approche approche3">Allié plutôt que prestataire</figcaption>
+            </figure>
+            <div class="col-md-8">
+                <h4 class="media-heading">Croissance</h4>
+                <ul>
+                    <li>Assistance technique lors de la commercialisation de la plateforme</li>
+                    <li>Opportunité d'embaucher le(s) développeur(s) qui ont travaillé dessus, pour monter une direction informatique interne</li>
+                </ul>
+                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-croissance">
+                    Notre politique RH
+                    <br>en savoir plus
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ##############################################################
+###################   MODAL  "PRESENTATION"  ######################
+#####################################################################  -->
+
+    <!-- ************ MODAL Croissance *************** -->
+
+    <div class="modal fade" id="modal-croissance" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal-title-pay">Croisance</h4>
+                </div>
+                <div class="modal-body text-left">
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title text-center"> In App Purchase (IAP)</h5>
                                 </div>
-                            </a>
+                                <div class="panel-body">
+                                    Pour les achats <i>in-apps</i>, le
+                                    <abbr title="" data-toggle="tooltip" data-placement="bottom" data-original-title="App Store pour iPhones et Google Play pour Android">store d'applications</abbr> sert d'intermédiaire (en prélevant une commission de 30% sur les transactions) pour débiter le compte bancaire de l’utilisateur.
+                                    <br/>
+                                    <br/> Ce mode de paiement est imposé pour tous les achats permettant de débloquer des fonctionnalités (ou acquérir des "biens immatériels") de cette application mobile.
+                                </div>
+                            </div>
                         </div>
+                        <div class="col-md-4 ">
+                            <div class=" panel panel-default">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title text-center">Porte-monnaie électronique</h5>
+                                </div>
+                                <div class="panel-body">
+                                    Le portefeuille électronique (digital wallet) permet de faire des achats en ligne (via un compte sécurisé) ou en magasin (via un téléphone, par NFC, Bluetooth ou SMS).
+                                    <br/> Il existe de nombreuses solutions, telles que :
+                                    <ul class="list-inline text-center">
+                                        <li><a href="https://www.paypal.com/fr/" target="_blank">PayPal</a></li>
+                                        <li><a href="https://wallet.google.com/" target="_blank">Google Wallet</a></li>
+                                        <li><a href="https://www.mpesa.in/" target="_blank">M-Pesa</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ">
+                            <div class=" panel panel-default">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title text-center">Carte bancaire</h5>
+                                </div>
+                                <div class="panel-body">
+                                    Les achats peuvent être faits directement par carte bancaire, en recopiant son numéro à 16 chiffres et son cryptogramme.
+                                    <br/> Seuls les <abbr title="Prestataires de Service de Paiement" data-toggle="tooltip" data-placement="bottom" data-original-title="Prestataires de Service de Paiement ">PSP</abbr> respectant les normes de sécurité PCI DSS sont autorisés à traiter et stocker ces informations de carte bancaire.
+                                    <br/> Un contrat <abbr title="Vente A Distance" data-toggle="tooltip" data-placement="bottom" data-original-title="Vente A Distance">VAD</abbr> est fourni par un établissement acquéreur pour pouvoir encaisser les transactions.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="well text-center">
+                        <span class="brand">Moventes</span><i> sélectionne pour chaque application mobile la méthode de paiement la plus adaptée aux besoins des utilisateurs, grâce à une analyse détaillée des coûts et contraintes des différentes solutions technologiques existantes.</i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ##############################################################
+###################   SECTION  "PRESENTATION"  ######################
+#####################################################################  -->
+
+    <section id="presentation">
+        <div class="row text-center ">
+            <h2 class="section-heading">Présentation</h2>
+        </div>
+        <div class="row text-center equal-height text-primary">
+            <div class="col-lg-3 col-sm-6">
+                <div class="panel panel-default offre-item ">
+                    <div class="panel-body media">
+                        <a href="valeurs.html">
+                            <div class="media-body">
+                                <h3 class="media-heading">Nos valeurs</h3>
+                                <p>En savoir plus</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 ">
-
-                    <div class=" panel panel-default offre-item">
-                        <div class="panel-body media">
-                            <a href="#">
-                                <div class="media-left media-middle">
-                                    <i class="fa  fa-pencil-square-o fa-4x media-object"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">La fabrique</h3>
-                                    <p class="text-left">une équipe dédiée à votre projet conçoit, réalise et déploie votre application mobile ou site web sur mesure.</p>
-                                    <!-- https://hbr.org/2014/01/the-secret-to-lean-innovation-is-making-learning-a-priority/-->
-                                </div>
-                            </a>
-                        </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 ">
+                <div class="panel panel-default offre-item">
+                    <div class="panel-body media">
+                        <a href="expertise.html">
+                            <div class="media-body">
+                                <h3 class="media-heading">Notre expertise</h3>
+                                <p>En savoir plus</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-sm-6 ">
-                    <div class=" panel panel-default offre-item ">
-                        <div class="panel-body media">
-                            <a href="#">
-
-                                <div class="media-left media-middle">
-                                    <i class="fa fa-globe fa-4x media-object"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">La boutique</h3>
-                                    <p class="text-left">Des applications mobiles dédiées aux professionnels et accessibles à tous.</p>
-                                </div>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 ">
-
-                    <div class=" panel panel-default offre-item">
-
-                        <div class="panel-body media">
-                            <a href="#">
-
-                                <div class="media-left media-middle">
-                                    <i class="fa  fa-graduation-cap fa-4x media-object"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">L'académie</h3>
-                                    <p class="text-left">un expert vous aide à identifier les potentiels technologiques dans votre vie professionnelle.
-
-                                    - Formation et appropriation des outils numériques par les salariés de l’entreprise : formation aux outils
-
-mis en œuvre dans l’entreprise, à la gestion des systèmes d’information, ...Les outils mis en œuvre doivent
-
-pouvoir être utilisés au mieux et de façon efficace par l’entreprise elle-même
-                                    </p>
-                                </div>
-                            </a>
-
-                        </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 ">
+                <div class="panel panel-default offre-item">
+                    <div class="panel-body media">
+                        <a href="histoire.html">
+                            <div class="media-body">
+                                <h3 class="media-heading">Notre histoire</h3>
+                                <p>En savoir plus</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /.container -->
     </section>
-    <!-- ##############################################################
-###################   SECTION  "APPROCHE"  ######################
-#####################################################################  -->
-
 
 
 

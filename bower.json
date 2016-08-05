@@ -11,7 +11,7 @@
     "awesome-bootstrap-checkbox": "*",
     "blazy": "*",
     "animate.css": "*",
-    "wowjs": "*"
+    "wow": "wowjs#^1.1.2"
   },
   "devDependencies": {},
   "appPath": "app",

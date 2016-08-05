@@ -26,8 +26,17 @@ $(document).ready(function () {
         mobile: true, // default
         live: true // default
     }).init();
+    //TODO A REMPLACER PLUS TARD PAR ScrollReveal
+    //TODO bower install scrollreveal --save
 
-
+//        var config = {
+//          viewFactor : 0.15,
+//          duration   : 800,
+//          distance   : "0px",
+//          scale      : 0.8
+//        };
+//
+//        window.sr = ScrollReveal( config );
 
     //--------------------------------------
     //---- COOKIES REMOVED IF ASKED      ---
