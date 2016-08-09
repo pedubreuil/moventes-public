@@ -49,85 +49,56 @@
 
             //jQuery to create transition between problem and solution by fade
 
-            $(this).find('.problem').show();
-            $(this).find('.solution').hide();
+            function inverseAffichageEnjeu() {
+                var problem = $(this).find('.problem');
+                var solution = $(this).find('.solution');
 
-            $('.enjeux').click(
-                function () {
-                    if ($(this).find('.problem').is(":visible")) {
-                        console.log('problem shown => will inverse');
-                        var that = $(this);
-                        $(this).find('.problem').hide();
-                        $(this).find('.solution').fadeIn("slow");
+                if (problem.is(":visible")) {
+                    console.log('problem shown => will inverse');
+                    problem.hide();
+                    solution.fadeIn("slow");
 
-                    } else {
-                        console.log('problem hidden => will inverse');
-                        var that = $(this);
-                        $(this).find('.solution').hide();
-                        $(this).find('.problem').fadeIn("slow");
-                    }
+                } else if (solution.is(":visible")) {
+                    console.log('problem hidden => will inverse');
+                    solution.hide();
+                    problem.fadeIn("slow");
                 }
-            );
+            }
+
+            $('.enjeux').click(inverseAffichageEnjeu);
+
+            //jQuery to display solution or problem when hover
+            $('.enjeux').hover(inverseAffichageEnjeu, inverseAffichageEnjeu);
 
             //jQuery to display solution when scrolling
 
-            $(document).scroll(function () {
-                //var fromTop = $(this).scrollTop();
-                // ($('.problem').offset().top - $(window).scrollTop()) ;
-                var fromTop = $('.enjeux').offset().top - $(this).scrollTop();
-                console.log(fromTop);
-                if (fromTop < 150) {
-                    $(this).find('.problem').hide();
-                    $(this).find('.solution').fadeIn("slow");
-                } else {
-                    $(this).find('.solution').hide();
-                    $(this).find('.problem').fadeIn("slow");
-                }
-            });
+            function defAffichageEnjeuPosition() {
+                $('.enjeux').each(function (index) {
+                    var fromTop = $(this).offset().top - $(document).scrollTop();
+                    var problem = $(this).find('.problem');
+                    var solution = $(this).find('.solution');
 
-
-
-
-
-
-
-
-            //jQuery to display solution or problem when hover
-            $('.enjeux').hover(
-                function () {
-
-                    if ($(this).find('.problem').is(":visible")) {
-                        console.log('problem shown => will inverse');
-                        var that = $(this);
-                        $(this).find('.problem').hide();
-                        $(this).find('.solution').fadeIn("slow");
-
-                    } else {
-                        console.log('problem hidden => will inverse');
-                        var that = $(this);
-                        $(this).find('.solution').hide();
-                        $(this).find('.problem').fadeIn("slow");
+                    if (fromTop <= 150 && problem.is(":visible")) {
+                        problem.hide();
+                        solution.fadeIn("slow");
+                    } else if (fromTop > 150 && solution.is(":visible")) {
+                        solution.hide();
+                        problem.fadeIn("slow");
                     }
-                },
-                function () {
-                    if ($(this).find('.solution').is(":visible")) {
-                        $(this).find('.solution').hide();
-                        $(this).find('.problem').fadeIn("slow");
-                    } else {
-                        $(this).find('.problem').hide();
-                        $(this).find('.solution').fadeIn("slow");
-                    }
-                }
-            );
+                });
+
+            }
+            $(document).scroll(defAffichageEnjeuPosition);
+            defAffichageEnjeuPosition();
 
             /*-------------------------------------------------------------------*/
 
             $('.home-item').hover(
                 function () {
-                    $(this).find('.home-icon').addClass('animated pulse');
+                    $(this).find('.home-icon').addClass('animated tada');
                 },
                 function () {
-                    $(this).find('.home-icon').removeClass('animated pulse');
+                    $(this).find('.home-icon').removeClass('animated tada');
                 }
             );
             $('.service-item').hover(
@@ -207,10 +178,14 @@
     <header id="top">
         <div class="container decalage-top">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2 fond-blanc">
+                <div class="col-md-offset-1 col-md-10 fond-blanc">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="brand"><img alt="Logo Moventes" src="img/logo.png"> Moventes</h1>
+                            <h1 class="brand"><img alt="Logo Moventes" class="hidden-xs" src="img/logo.png"> Moventes</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
                             <h3 class="text-header">Partenaire informatique des startups</h3>
                             <p>Pour développer la plateforme web ou mobile de votre startup, il peut être difficile de trouver le cofondateur informatique idéal... Moventes concrétise avec vous ce projet de startup, en relevant ses défis technologiques et en coachant un développeur qui pourra devenir votre futur directeur informatique !
                             </p>
@@ -219,7 +194,7 @@
                     <!--   <a class="page-scroll" href="#enjeux" style="color:grey;"><i class="fa fa-chevron-circle-down fa-4x"></i></a>-->
                     <div class="row text-center equal-height top-buffer">
                         <div class="col-xs-12 col-md-3">
-                            <a href="#">
+                            <a href="#approche">
                                 <div class="home-item wow fadeIn" data-wow-delay="1s">
                                     <span class="fa-stack fa-4x home-icon">
                                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -235,13 +210,13 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-3">
-                            <a href="#">
+                            <a href="#approche">
                                 <div class="home-item wow fadeIn" data-wow-delay="2s">
                                     <span class="fa-stack fa-4x home-icon">
                                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                                         <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
                                 </span>
-                                    <h3>Consctruction</h3>
+                                    <h3>Construction</h3>
                                 </div>
                             </a>
                         </div>
@@ -251,7 +226,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-3">
-                            <a href="http://moventes.com/entreprise">
+                            <a href="#approche">
                                 <div class="home-item wow fadeIn" data-wow-delay="3s">
                                     <span class="fa-stack fa-4x home-icon">
                                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -274,483 +249,409 @@
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="enjeux" class="container-fluid">
-        <div class="row text-center ">
-            <h2 class="section-heading">Les enjeux d'un entrepreneur</h2>
-        </div>
-        <div class="row top-buffer">
-            <div class="col-md-4 enjeux" id="enjeux1">
-                <div class="row problem">
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
-                        <p>Difficulté à trouver un co-fondateur informatique, fiable et expérimenté</p>
+    <div class="fond-parallax">
+        <section id="enjeux" class="container-fluid">
+            <div class="row text-center ">
+                <h2 class="section-heading">Les enjeux d'un entrepreneur</h2>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-md-4 enjeux wow fadeInUpBig" id="enjeux1">
+                    <div class="row problem">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Difficulté à trouver un co-fondateur informatique, fiable et expérimenté</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
+                            <p>Besoin d'avoir en interne la maitrise de la solution informatique</p>
+                        </div>
                     </div>
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
-                        <p>Besoin d'avoir en interne la maitrise de la solution informatique</p>
-                    </div>
-                </div>
-                <div class="row solution">
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
-                        <span class="fa-stack fa-4x home-icon">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <div class="row solution">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <span class="fa-stack fa-4x home-icon">
+                            <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
                         </span>
-                    </div>
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
-                        <p>Les développeurs de Moventes sont formés et coachés pour les <b>besoins spécifiques</b>  de la startup, qui peut ensuite les embaucher pour <b>conserver le savoir-faire</b> technique en interne</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 enjeux" id="enjeux2">
-                <div class="row problem">
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
-                        <p>Difficulté à figer le concept face au risque d'avoir une solution qui ne répond pas au besoin du marché</p>
-                    </div>
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
-                        <p>besoin d'avoir une stratégie claire et convaincante</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Les développeurs de Moventes sont formés et coachés pour les <b>besoins spécifiques</b> de la startup, qui peut ensuite les embaucher pour <b>conserver le savoir-faire</b> technique en interne</p>
+                        </div>
                     </div>
                 </div>
-                <div class="row solution">
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
-                        <span class="fa-stack fa-4x home-icon">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <div class="col-md-4 enjeux wow fadeInUpBig" id="enjeux2">
+                    <div class="row problem">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Difficulté à figer le concept face au risque d'avoir une solution qui ne répond pas au besoin du marché</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
+                            <p>besoin d'avoir une stratégie claire et convaincante</p>
+                        </div>
+                    </div>
+                    <div class="row solution">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <span class="fa-stack fa-4x home-icon">
+                            <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
                         </span>
-                    </div>
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
-                        <p>Moventes vous aide dans la <b>conception collaborative</b> de la solution et de son business model , et dans l'élaboration des supports de <b>communication</b> (BP, vidéo, page web,...)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 enjeux" id="enjeux3">
-                <div class="row problem">
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
-                        <p>Difficulté à s'adapter aux contraintes budgétaires</p>
-                    </div>
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
-                        <p>Besoin d'avoir une gestion fine et flexible du projet</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Moventes vous aide dans la <b>conception collaborative</b> de la solution et de son business model , et dans l'élaboration des supports de <b>communication</b> (BP, vidéo, page web,...)</p>
+                        </div>
                     </div>
                 </div>
-                <div class="row solution">
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
-                        <span class="fa-stack fa-4x home-icon">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <div class="col-md-4 enjeux wow fadeInUpBig" id="enjeux3">
+                    <div class="row problem">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Difficulté à s'adapter aux contraintes budgétaires</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
+                            <p>Besoin d'avoir une gestion fine et flexible du projet</p>
+                        </div>
+                    </div>
+                    <div class="row solution">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <span class="fa-stack fa-4x home-icon">
+                            <i class="fa fa-circle fa-stack-2x" ></i>
                             <i class="fa fa-money fa-stack-1x fa-inverse"></i>
                         </span>
-                    </div>
-                    <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
-                        <p>Basé sur une relation de confiance, Moventes facture au <b>prix coûtant</b> le temps effectif de travail, tout en assurant une <b>implication</b> forte de l'équipe dans la réussite de votre projet</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Basé sur une relation de confiance, Moventes facture au <b>prix coûtant</b> le temps effectif de travail, tout en assurant une <b>implication</b> forte de l'équipe dans la réussite de votre projet</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- ##############################################################
+        <!-- ##############################################################
 ###################   SECTION  "APPROCHE"  ######################
 #####################################################################  -->
 
-    <section id="approche" class="container">
-        <div class="row text-center ">
-            <h2 class="section-heading">Notre approche</h2>
-        </div>
-
-        <div class="row top-buffer wow slideInLeft vertical-alig">
-            <figure class="col-md-4">
-                <img class="img-responsive center-block" src="../img/approche-11.jpg" alt="préparation" width="100%" />
-                <figcaption class="legend-approche approche1">Partenaire plutot que consultant</figcaption>
-            </figure>
-            <div class="col-md-8">
-                <h4 class="">Préparation</h4>
-                <ul>
-                    <li>Définition des fonctionnalités de la solution informatique et de son modèle économique</li>
-                    <li>Sondage du marché et confrontation de la maquette à des early adopters</li>
-                    <li>Réalisation de supports pour "vendre" le concept et lever des fonds </li>
-                </ul>
-                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-croissance">
+        <section id="approche" class="container-fluid">
+            <div class="row text-center">
+                <h2 class="section-heading">Notre approche</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-10">
+                    <div id="preparation" class="row top-buffer row-eq-height">
+                        <figure class="col-md-4 wow slideInLeft">
+                            <img class="img-responsive center-block" src="../img/approche-1.jpg" alt="préparation" width="100%" />
+                            <figcaption class="legend-approche approche1">Partenaire plutot que consultant</figcaption>
+                        </figure>
+                        <div class="col-md-4 wow zoomIn approche1Txt">
+                            <h4>Préparation</h4>
+                            <ul>
+                                <li>Définition des fonctionnalités de la solution informatique et de son modèle économique</li>
+                                <li>Sondage du marché et confrontation de la maquette à des early adopters</li>
+                                <li>Réalisation de supports pour "vendre" le concept et lever des fonds </li>
+                            </ul>
+                            <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-preparation">
                     Notre accompagnement
-                    <br>en savoir plus
-                </a>
-            </div>
-        </div>
-
-
-        <div class="row top-buffer wow slideInRight vertical-align">
-            <div class="col-md-8">
-                <h4>Construction</h4>
-                <ul>
-                    <li>Conception technique et cahier des charges</li>
-                    <li>Recrutement et formation des développeurs par Moventes</li>
-                    <li>Développement de la solution web ou mobile</li>
-                    <li>Coaching et soutien technique par un ingénieur expérimenté</li>
-                </ul>
-                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-croissance">
+                        </a>
+                        </div>
+                    </div>
+                    <div id="construction" class="row top-buffer row-eq-height">
+                        <figure class="col-md-4 col-md-push-8 wow slideInRight">
+                            <img class="img-responsive center-block" src="../img/approche-22.jpg" alt="construction" width="100%" />
+                            <figcaption class="legend-approche approche2">Coach plutôt que manager</figcaption>
+                        </figure>
+                        <div class="col-md-offset-4 col-md-4 col-md-pull-4 wow zoomIn approche2Txt">
+                            <h4>Construction</h4>
+                            <ul>
+                                <li>Conception technique et cahier des charges</li>
+                                <li>Recrutement et formation des développeurs par Moventes</li>
+                                <li>Développement de la solution web ou mobile</li>
+                                <li>Coaching et soutien technique par un ingénieur expérimenté</li>
+                            </ul>
+                            <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-construction">
                     Notre contrat de confiance
-                    <br>en savoir plus
                 </a>
-            </div>
-            <figure class="col-md-4">
-                <img class="img-responsive center-block" src="../img/approche-22.jpg" alt="construction" width="100%" />
-                <figcaption class="legend-approche approche2">Coach plutôt que manager</figcaption>
-            </figure>
-        </div>
-
-
-        <div class="row top-buffer wow slideInLeft vertical-align">
-            <figure class="col-md-4">
-                <img class="img-responsive center-block" src="../img/approche-33.jpg" alt="croissance" width="100%" />
-                <figcaption class="legend-approche approche3">Allié plutôt que prestataire</figcaption>
-            </figure>
-            <div class="col-md-8">
-                <h4 class="media-heading">Croissance</h4>
-                <ul>
-                    <li>Assistance technique lors de la commercialisation de la plateforme</li>
-                    <li>Opportunité d'embaucher le(s) développeur(s) qui ont travaillé dessus, pour monter une direction informatique interne</li>
-                </ul>
-                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-croissance">
+                        </div>
+                    </div>
+                    <div id="croissance" class="row top-buffer row-eq-height">
+                        <figure class="col-md-4 wow slideInLeft">
+                            <img class="img-responsive center-block" src="../img/approche-33.jpg" alt="croissance" width="100%" />
+                            <figcaption class="legend-approche approche3">Allié plutôt que prestataire</figcaption>
+                        </figure>
+                        <div class="col-md-4 wow zoomIn approche3Txt">
+                            <h4>Croissance</h4>
+                            <ul>
+                                <li>Assistance technique lors de la commercialisation de la plateforme</li>
+                                <li>Opportunité d'embaucher le(s) développeur(s) qui ont travaillé dessus, pour monter une direction informatique interne</li>
+                            </ul>
+                            <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-croissance">
                     Notre politique RH
-                    <br>en savoir plus
                 </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ##############################################################
-###################   MODAL  "PRESENTATION"  ######################
+        </section>
+
+        <!-- ##############################################################
+###################   MODAL  "APPROCHE"  ######################
 #####################################################################  -->
 
-    <!-- ************ MODAL Croissance *************** -->
+        <!-- ************ MODAL Préparation *************** -->
 
-    <div class="modal fade" id="modal-croissance" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-pay">Croisance</h4>
-                </div>
-                <div class="modal-body text-left">
-                    <div class="row">
-                        <div class="col-md-4 ">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title text-center"> In App Purchase (IAP)</h5>
-                                </div>
-                                <div class="panel-body">
-                                    Pour les achats <i>in-apps</i>, le
-                                    <abbr title="" data-toggle="tooltip" data-placement="bottom" data-original-title="App Store pour iPhones et Google Play pour Android">store d'applications</abbr> sert d'intermédiaire (en prélevant une commission de 30% sur les transactions) pour débiter le compte bancaire de l’utilisateur.
-                                    <br/>
-                                    <br/> Ce mode de paiement est imposé pour tous les achats permettant de débloquer des fonctionnalités (ou acquérir des "biens immatériels") de cette application mobile.
+        <div class="modal fade" id="modal-preparation" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-pay">Croisance</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        <div class="row">
+                            <div class="col-md-4 ">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center"> In App Purchase (IAP)</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Pour les achats <i>in-apps</i>, le
+                                        <abbr title="" data-toggle="tooltip" data-placement="bottom" data-original-title="App Store pour iPhones et Google Play pour Android">store d'applications</abbr> sert d'intermédiaire (en prélevant une commission de 30% sur les transactions) pour débiter le compte bancaire de l’utilisateur.
+                                        <br/>
+                                        <br/> Ce mode de paiement est imposé pour tous les achats permettant de débloquer des fonctionnalités (ou acquérir des "biens immatériels") de cette application mobile.
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-md-4 ">
+                                <div class=" panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Porte-monnaie électronique</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Le portefeuille électronique (digital wallet) permet de faire des achats en ligne (via un compte sécurisé) ou en magasin (via un téléphone, par NFC, Bluetooth ou SMS).
+                                        <br/> Il existe de nombreuses solutions, telles que :
+                                        <ul class="list-inline text-center">
+                                            <li><a href="https://www.paypal.com/fr/" target="_blank">PayPal</a></li>
+                                            <li><a href="https://wallet.google.com/" target="_blank">Google Wallet</a></li>
+                                            <li><a href="https://www.mpesa.in/" target="_blank">M-Pesa</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class=" panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Carte bancaire</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Les achats peuvent être faits directement par carte bancaire, en recopiant son numéro à 16 chiffres et son cryptogramme.
+                                        <br/> Seuls les <abbr title="Prestataires de Service de Paiement" data-toggle="tooltip" data-placement="bottom" data-original-title="Prestataires de Service de Paiement ">PSP</abbr> respectant les normes de sécurité PCI DSS sont autorisés à traiter et stocker ces informations de carte bancaire.
+                                        <br/> Un contrat <abbr title="Vente A Distance" data-toggle="tooltip" data-placement="bottom" data-original-title="Vente A Distance">VAD</abbr> est fourni par un établissement acquéreur pour pouvoir encaisser les transactions.
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="col-md-4 ">
-                            <div class=" panel panel-default">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title text-center">Porte-monnaie électronique</h5>
-                                </div>
-                                <div class="panel-body">
-                                    Le portefeuille électronique (digital wallet) permet de faire des achats en ligne (via un compte sécurisé) ou en magasin (via un téléphone, par NFC, Bluetooth ou SMS).
-                                    <br/> Il existe de nombreuses solutions, telles que :
-                                    <ul class="list-inline text-center">
-                                        <li><a href="https://www.paypal.com/fr/" target="_blank">PayPal</a></li>
-                                        <li><a href="https://wallet.google.com/" target="_blank">Google Wallet</a></li>
-                                        <li><a href="https://www.mpesa.in/" target="_blank">M-Pesa</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class=" panel panel-default">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title text-center">Carte bancaire</h5>
-                                </div>
-                                <div class="panel-body">
-                                    Les achats peuvent être faits directement par carte bancaire, en recopiant son numéro à 16 chiffres et son cryptogramme.
-                                    <br/> Seuls les <abbr title="Prestataires de Service de Paiement" data-toggle="tooltip" data-placement="bottom" data-original-title="Prestataires de Service de Paiement ">PSP</abbr> respectant les normes de sécurité PCI DSS sont autorisés à traiter et stocker ces informations de carte bancaire.
-                                    <br/> Un contrat <abbr title="Vente A Distance" data-toggle="tooltip" data-placement="bottom" data-original-title="Vente A Distance">VAD</abbr> est fourni par un établissement acquéreur pour pouvoir encaisser les transactions.
-                                </div>
-                            </div>
+
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> sélectionne pour chaque application mobile la méthode de paiement la plus adaptée aux besoins des utilisateurs, grâce à une analyse détaillée des coûts et contraintes des différentes solutions technologiques existantes.</i>
                         </div>
 
                     </div>
-
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span><i> sélectionne pour chaque application mobile la méthode de paiement la plus adaptée aux besoins des utilisateurs, grâce à une analyse détaillée des coûts et contraintes des différentes solutions technologiques existantes.</i>
-                    </div>
-
                 </div>
             </div>
         </div>
+
+        <!-- ************ MODAL Construction *************** -->
+
+        <div class="modal fade" id="modal-construction" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-pay">Croisance</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        <div class="row">
+                            <div class="col-md-4 ">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center"> In App Purchase (IAP)</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Pour les achats <i>in-apps</i>, le
+                                        <abbr title="" data-toggle="tooltip" data-placement="bottom" data-original-title="App Store pour iPhones et Google Play pour Android">store d'applications</abbr> sert d'intermédiaire (en prélevant une commission de 30% sur les transactions) pour débiter le compte bancaire de l’utilisateur.
+                                        <br/>
+                                        <br/> Ce mode de paiement est imposé pour tous les achats permettant de débloquer des fonctionnalités (ou acquérir des "biens immatériels") de cette application mobile.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class=" panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Porte-monnaie électronique</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Le portefeuille électronique (digital wallet) permet de faire des achats en ligne (via un compte sécurisé) ou en magasin (via un téléphone, par NFC, Bluetooth ou SMS).
+                                        <br/> Il existe de nombreuses solutions, telles que :
+                                        <ul class="list-inline text-center">
+                                            <li><a href="https://www.paypal.com/fr/" target="_blank">PayPal</a></li>
+                                            <li><a href="https://wallet.google.com/" target="_blank">Google Wallet</a></li>
+                                            <li><a href="https://www.mpesa.in/" target="_blank">M-Pesa</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class=" panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Carte bancaire</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Les achats peuvent être faits directement par carte bancaire, en recopiant son numéro à 16 chiffres et son cryptogramme.
+                                        <br/> Seuls les <abbr title="Prestataires de Service de Paiement" data-toggle="tooltip" data-placement="bottom" data-original-title="Prestataires de Service de Paiement ">PSP</abbr> respectant les normes de sécurité PCI DSS sont autorisés à traiter et stocker ces informations de carte bancaire.
+                                        <br/> Un contrat <abbr title="Vente A Distance" data-toggle="tooltip" data-placement="bottom" data-original-title="Vente A Distance">VAD</abbr> est fourni par un établissement acquéreur pour pouvoir encaisser les transactions.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> sélectionne pour chaque application mobile la méthode de paiement la plus adaptée aux besoins des utilisateurs, grâce à une analyse détaillée des coûts et contraintes des différentes solutions technologiques existantes.</i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ************ MODAL Croissance *************** -->
+
+        <div class="modal fade" id="modal-croissance" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-pay">Croisance</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        <div class="row">
+                            <div class="col-md-4 ">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center"> In App Purchase (IAP)</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Pour les achats <i>in-apps</i>, le
+                                        <abbr title="" data-toggle="tooltip" data-placement="bottom" data-original-title="App Store pour iPhones et Google Play pour Android">store d'applications</abbr> sert d'intermédiaire (en prélevant une commission de 30% sur les transactions) pour débiter le compte bancaire de l’utilisateur.
+                                        <br/>
+                                        <br/> Ce mode de paiement est imposé pour tous les achats permettant de débloquer des fonctionnalités (ou acquérir des "biens immatériels") de cette application mobile.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class=" panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Porte-monnaie électronique</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Le portefeuille électronique (digital wallet) permet de faire des achats en ligne (via un compte sécurisé) ou en magasin (via un téléphone, par NFC, Bluetooth ou SMS).
+                                        <br/> Il existe de nombreuses solutions, telles que :
+                                        <ul class="list-inline text-center">
+                                            <li><a href="https://www.paypal.com/fr/" target="_blank">PayPal</a></li>
+                                            <li><a href="https://wallet.google.com/" target="_blank">Google Wallet</a></li>
+                                            <li><a href="https://www.mpesa.in/" target="_blank">M-Pesa</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class=" panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Carte bancaire</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Les achats peuvent être faits directement par carte bancaire, en recopiant son numéro à 16 chiffres et son cryptogramme.
+                                        <br/> Seuls les <abbr title="Prestataires de Service de Paiement" data-toggle="tooltip" data-placement="bottom" data-original-title="Prestataires de Service de Paiement ">PSP</abbr> respectant les normes de sécurité PCI DSS sont autorisés à traiter et stocker ces informations de carte bancaire.
+                                        <br/> Un contrat <abbr title="Vente A Distance" data-toggle="tooltip" data-placement="bottom" data-original-title="Vente A Distance">VAD</abbr> est fourni par un établissement acquéreur pour pouvoir encaisser les transactions.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> sélectionne pour chaque application mobile la méthode de paiement la plus adaptée aux besoins des utilisateurs, grâce à une analyse détaillée des coûts et contraintes des différentes solutions technologiques existantes.</i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ##############################################################
+###################   SECTION  "EN SAVOIR PLUS"  ######################
+#####################################################################  -->
+        <section id="enSavoirPlus" class="container-fluid">
+
+
+            <div class="row text-center ">
+                <h2 class="section-heading">En savoir plus</h2>
+            </div>
+
+
+
+
+            <!--            <div class="row top-buffer">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="row text-center equal-height">
+                        <div class="col-xs-12 col-md-3 wow rotateIn">
+                            <a href="valeurs.html" class="cercle cercle-valeur">
+                                <p>NOS VALEURS</p>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-md-3 col-md-offset-1 wow rotateIn">
+                            <a href="expertise.html" class="cercle cercle-expertise">
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-md-3 col-md-offset-1 wow rotateIn">
+                            <a href="histoire.html" class="cercle cercle-histoire">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="row top-buffer">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="row text-center equal-height">
+
+                        <div class="col-xs-12 col-md-3 wow zoomIn savoir">
+                            <a href="valeurs.html">
+                                <img src="../img/nosValeurs.jpg" class="img-circle" alt="">
+                                <p><span class="savoirColor1">Nos valeurs</span></p>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-md-3 col-md-offset-1 wow zoomIn savoir">
+                            <a href="expertise.html">
+                                <img src="../img/notreExpertise.jpg" class="img-circle" alt="">
+                                <p><span class="savoirColor2">Notre expertise</span></p>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-12 col-md-3 col-md-offset-1 wow zoomIn savoir">
+                            <a href="histoire.html">
+                                <img src="../img/notreHistoire.jpg" class="img-circle" alt="">
+                                <p><span class="savoirColor3">Notre histoire</span></p>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
     </div>
 
-
-
-    <!-- ##############################################################
-###################   SECTION  "PRESENTATION"  ######################
-#####################################################################  -->
-
-    <section id="presentation">
-        <div class="row text-center ">
-            <h2 class="section-heading">Présentation</h2>
-        </div>
-        <div class="row text-center equal-height text-primary">
-            <div class="col-lg-3 col-sm-6">
-                <div class="panel panel-default offre-item ">
-                    <div class="panel-body media">
-                        <a href="valeurs.html">
-                            <div class="media-body">
-                                <h3 class="media-heading">Nos valeurs</h3>
-                                <p>En savoir plus</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 ">
-                <div class="panel panel-default offre-item">
-                    <div class="panel-body media">
-                        <a href="expertise.html">
-                            <div class="media-body">
-                                <h3 class="media-heading">Notre expertise</h3>
-                                <p>En savoir plus</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 ">
-                <div class="panel panel-default offre-item">
-                    <div class="panel-body media">
-                        <a href="histoire.html">
-                            <div class="media-body">
-                                <h3 class="media-heading">Notre histoire</h3>
-                                <p>En savoir plus</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- ##############################################################
-###################   SECTION  "CONTACT" à inclure dans une MODAL  ######################
-#####################################################################  -->
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contactez-nous !</h2>
-                    <hr class="small">
-                    <!--                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
-
-                </div>
-            </div>
-            <div class="row">
-                <!--                    mise en page à revoir avec http://www.bootply.com/xGbr8oQevN-->
-                <div class="col-lg-12" id="contact-block">
-                    <form id="contactForm" method="post" action="bin/contact_us.php" class="form-horizontal">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="form-group form-group-lg">
-                                    <label class="sr-only" for="firstname">Votre prénom:</label>
-                                    <input type="text" class="form-control" placeholder="Votre prénom *" name="firstname" id="firstname">
-                                </div>
-                                <div class="form-group form-group-lg">
-                                    <label class="sr-only" for="lastname">Votre nom:</label>
-                                    <input type="text" class="form-control" placeholder="Votre nom *" name="lastname" id="lastname">
-                                </div>
-                                <div class="form-group form-group-lg">
-                                    <label class="sr-only" for="company">Votre entreprise:</label>
-                                    <input type="text" class="form-control" placeholder="Votre entreprise" name="company" id="company">
-                                </div>
-                                <div class="form-group form-group-lg">
-                                    <label class="sr-only" for="email">Votre email:</label>
-                                    <input type="email" class="form-control" placeholder="Votre email *" name="email" id="email">
-                                </div>
-                                <div class="form-group form-group-lg">
-                                    <label class="sr-only" for="phone">Votre téléphone:</label>
-                                    <input type="tel" class="form-control" placeholder="Votre téléphone" name="phone" id="phone">
-                                </div>
-                            </div>
-                            <div class="col-md-offset-1 col-md-6">
-                                <div class="form-group">
-                                    <label class="sr-only" for="message">Votre message:</label>
-                                    <textarea class="form-control" placeholder="Votre message *" name="message" id="message"></textarea>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <button type="submit" class="btn btn-lg btn-dark"><span class="glyphicon glyphicon-envelope"></span> Envoyer le message</button>
-
-
-                                <script type="text/javascript">
-                                    /* <![CDATA[ */
-                                    //                                    goog_snippet_vars = function () {
-                                    //                                            var w = window;
-                                    //                                            w.google_conversion_id = 952666343;
-                                    //                                            w.google_conversion_label = "3S_xCNSugl0Q55GixgM";
-                                    //                                            w.google_remarketing_only = false;
-                                    //                                        }
-                                    //                                        // DO NOT CHANGE THE CODE BELOW.
-                                    //                                    goog_report_conversion = function (url) {
-                                    //                                        goog_snippet_vars();
-                                    //                                        window.google_conversion_format = "3";
-                                    //                                        window.google_is_call = true;
-                                    //                                        var opt = new Object();
-                                    //                                        opt.onload_callback = function () {
-                                    //                                            if (typeof (url) != 'undefined') {
-                                    //                                                window.location = url;
-                                    //                                            }
-                                    //                                        }
-                                    //                                        var conv_handler = window['google_trackConversion'];
-                                    //                                        if (typeof (conv_handler) == 'function') {
-                                    //                                            conv_handler(opt);
-                                    //                                        }
-                                    //                                    }
-
-
-
-                                    $(document).ready(function () {
-                                        // console.log('form',$('#contactForm'));
-                                        $('#contactForm').bootstrapValidator({
-                                                message: 'Ce champ n\'est pas valide',
-                                                feedbackIcons: {
-                                                    valid: 'glyphicon glyphicon-ok',
-                                                    invalid: 'glyphicon glyphicon-remove',
-                                                    validating: 'glyphicon glyphicon-refresh'
-                                                },
-                                                live: 'enabled',
-                                                submitButtons: 'button[type="submit"]',
-                                                fields: {
-                                                    firstname: {
-                                                        validators: {
-                                                            notEmpty: {
-                                                                message: 'Veuillez saisir votre prénom'
-                                                            },
-                                                            stringLength: {
-                                                                min: 2,
-                                                                max: 30,
-                                                                message: 'Votre prénom doit être d\'au moins 2 caractères'
-                                                            }
-                                                        }
-                                                    },
-                                                    lastname: {
-                                                        validators: {
-                                                            notEmpty: {
-                                                                message: 'Veuillez saisir votre nom'
-                                                            },
-                                                            stringLength: {
-                                                                min: 2,
-                                                                max: 30,
-                                                                message: 'Votre nom doit être d\'au moins 2 caractères'
-                                                            }
-                                                        }
-                                                    },
-                                                    company: {
-                                                        validators: {
-                                                            stringLength: {
-                                                                min: 2,
-                                                                max: 40,
-                                                                message: 'Le nom de votre entreprise doit être d\'au moins 2 caractères'
-                                                            }
-                                                        }
-                                                    },
-                                                    email: {
-                                                        validators: {
-                                                            notEmpty: {
-                                                                message: 'Veuillez saisir votre adresse email'
-                                                            },
-                                                            emailAddress: {
-                                                                message: 'Votre adresse email n\'est pas valide'
-                                                            }
-                                                        }
-                                                    },
-                                                    phone: {
-                                                        validators: {
-                                                            phone: {
-                                                                country: 'FR',
-                                                                message: 'Votre numéro de téléphone n\'est pas valide'
-                                                            }
-                                                        }
-                                                    },
-                                                    message: {
-                                                        validators: {
-                                                            notEmpty: {
-                                                                message: 'Veuillez rédiger ici votre message'
-                                                            },
-                                                            stringLength: {
-                                                                min: 5,
-                                                                message: 'Votre message est trop court !'
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            })
-                                            .on('success.form.bv', function (e) {
-                                                // Prevent form submission
-                                                e.preventDefault();
-                                                e.stopImmediatePropagation();
-
-                                                var $form = $(e.target),
-                                                    validator = $form.data('bootstrapValidator'),
-                                                    submitButton = validator.getSubmitButton();
-
-                                                var dataToSend = $form.serialize();
-                                                console.log('data to send', dataToSend);
-                                                submitButton.replaceWith('<i class="fa fa-spinner fa-spin"></i>');
-                                                $form.find(':input').prop('disabled', true)
-
-                                                var posting = $.post($form.attr('action'), dataToSend, function (result) {
-                                                    console.log('result', result);
-                                                });
-                                                posting.done(function (data) {
-                                                    var response = jQuery.parseJSON(data);
-                                                    console.log('success', response.success);
-                                                    if (response.success) {
-                                                        $("#contact-block").empty().append('<div class="alert alert-success"  role="alert">' + response.message + '</div>');
-                                                        if (typeof goog_report_conversion !== undefined) {
-                                                            console.log('goog_report_conversion');
-                                                            goog_report_conversion();
-                                                        }
-                                                    } else {
-                                                        $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">' + response.message + '<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
-                                                    }
-                                                }).fail(function () {
-                                                    $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
-                                                });
-                                                $.cookie("modal_completed", true, {
-                                                    expires: 365,
-                                                    path: '/'
-                                                });
-
-                                            });
-
-                                    });
-
-
-
-
-
-
-                                    /* ]]> */
-                                </script>
-                                <!--
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js">
-</script>
--->
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- build:include:inc _commonfooter.html -->
     <!-- /build -->

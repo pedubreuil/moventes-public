@@ -66,6 +66,10 @@ a:hover .brand {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .navbar-brand {
     display: inline;
     /*    overflow: hidden;*/
@@ -99,7 +103,7 @@ a:hover .brand {
         transition: all .5s ease-out;
     }
     .nav-over-header .navbar-nav>li>a {
-        color: #666;
+        color: #23527c;
     }
 }
 
@@ -142,6 +146,13 @@ a:hover .brand {
     align-items: center;
 }
 
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
 
 /* Body background ---------------------------------------------------------------------------------------------------*/
 
@@ -177,7 +188,7 @@ header {
     text-align: center;
     display: table;
     position: relative;
-    background-image: url(../img/bg/header4.jpg);
+    background-image: url(../img/bg/header2.jpg);
     background-attachment: scroll;
     background-position: center center;
     background-repeat: none;
@@ -236,14 +247,20 @@ section {
 
 h2 {
     font-family: 'Courgette', cursive;
-    color: #67718e;
+    color: #23527c;
+    background-color: white;
+    margin: 10px;
 }
 
 
 /* Section "ENJEUX" ---------------------------------------------------------------------------------------------------*/
 
+#enjeux {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
 .enjeux {
-    color: white;
+    color: rgba(255, 255, 255, 1);
     height: 300px;
     font-size: 16px;
     /*    position: relative;*/
@@ -264,6 +281,7 @@ h2 {
 .problem {
     /* padding: 15px;*/
     background-size: cover;
+    /*background-color: rgba(255, 255, 255, 0); */
     top: 0;
     left: 0;
     right: 0;
@@ -274,7 +292,7 @@ h2 {
 
 .solution {
     /*padding: 15px;*/
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.8);
     color: black;
     left: 0;
     bottom: 0;
@@ -288,9 +306,14 @@ h2 {
 
 /* Section "ENJEUX 1" */
 
-#enjeux1 > .problem {
+#enjeux1 {
     background-color: rgba(103, 113, 142, 1);
 }
+
+#enjeux1 .home-icon {
+    color: rgba(103, 113, 142, 1);
+}
+
 
 /*#enjeux1::before {
     background: url(../img/enjeux-1.jpg);
@@ -299,9 +322,14 @@ h2 {
 
 /* Section "ENJEUX 2" */
 
-#enjeux2 > .problem {
+#enjeux2 {
     background-color: rgba(169, 152, 120, 1);
 }
+
+#enjeux2 .home-icon {
+    color: rgba(169, 152, 120, 1);
+}
+
 
 /*#enjeux2::before {
     background: url(../img/enjeux-2.jpg);
@@ -310,9 +338,14 @@ h2 {
 
 /* Section "ENJEUX 3" */
 
-#enjeux3 > .problem {
+#enjeux3 {
     background-color: rgba(223, 191, 68, 1);
 }
+
+#enjeux3 .home-icon {
+    color: rgba(223, 191, 68, 1);
+}
+
 
 /*#enjeux3::before {
     background: url(../img/enjeux-3.jpg);
@@ -331,6 +364,15 @@ h2 {
     width: 100%;
 }*/
 
+.fond-parallax {
+    background: url(../img/bg/header3.jpg) center 0 no-repeat fixed;
+    background-size: cover;
+}
+
+#approche {
+     background-color: rgba(255, 255, 255, 0.8);
+}
+
 .approche1 {
     background-color: rgba(103, 113, 142, 1);
 }
@@ -343,6 +385,18 @@ h2 {
     background-color: rgba(223, 191, 68, 1);
 }
 
+.approche1Txt {
+    background-color: rgba(103, 113, 142, 0.5);
+}
+
+.approche2Txt {
+    background-color: rgba(169, 152, 120, 0.5);
+}
+
+.approche3Txt {
+    background-color: rgba(223, 191, 68, 0.5);
+}
+
 .legend-approche {
     font-family: 'Courgette', cursive;
     color: white;
@@ -351,6 +405,150 @@ h2 {
     font-size: 18px;
 }
 
+
+/* Section "EN SAVOIR PLUS" ---------------------------------------------------------------------------------------------------*/
+
+#enSavoirPlus {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.savoir a:hover img {
+    opacity: 0.7;
+    filter: alpha(opacity=70); /* For IE8 and earlier */
+    position: relative;
+        top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+}
+.savoir a:hover p {
+  visibility: visible;
+  opacity: 1;
+
+    font-family: 'Courgette', cursive;
+    color: white;
+/*    font-weight: bold;*/
+    font-size:x-large;
+
+
+    z-index: 99;
+    position: absolute;
+        top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+/*        background-color: rgba(223, 191, 68,0.5);*/
+
+}
+.savoir a p {
+   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+
+}
+
+.savoir a:hover p  span{
+    padding: 10px 10px 10px 10px;
+}
+
+.savoirColor1 {
+    background-color: rgba(103, 113, 142, 0.9);
+}
+
+.savoirColor2 {
+    background-color: rgba(169, 152, 120, 0.9);
+}
+
+.savoirColor3 {
+    background-color: rgba(223, 191, 68, 0.9);
+}
+
+.savoir a img {
+    opacity: 1;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+/*
+.savoir a::after {
+    background-color: rgba(223, 191, 68, 0.5);
+    z-index: 999;
+    background-size: cover;
+    opacity: 1;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: relative;
+}
+*/
+/*
+
+.savoir::before {
+    background-size: cover;
+    opacity: 1;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+.savoir {
+    background-color: rgba(223, 191, 68, 0.5);
+}
+
+
+#savoir1::before {
+    background: url(../img/nosValeurs.jpg);
+    background-image: url(../img/nosValeurs.jpg)
+}
+*/
+
+
+/*
+
+
+
+
+.cercle {
+    border-radius: 50%;
+    width: 100%;
+    height: 265px;
+
+    background-image: url(../img/notreHistoire.jpg)
+}
+
+.cercle:hover {
+ opacity: 0.2;
+ background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.cercle-valeur {
+    background-image: url(../img/nosValeurs.jpg)
+}
+.cercle-expertise {
+    background-image: url(../img/notreExpertise.jpg)
+}
+.cercle-histoire {
+    background-image: url(../img/notreHistoire.jpg)
+}
+*/
 
 
 /* Section "SERVICE" ---------------------------------------------------------------------------------------------------*/
@@ -379,7 +577,7 @@ section#services {
 }
 
 .offre-item:hover {
-    background-color: #FFF9AA;
+    background-color: rgba(254, 203, 13, 0.3);
 }
 
 
@@ -413,16 +611,23 @@ footer {
     padding-bottom: 10px;
     padding-right: 0;
     padding-left: 0;
-    margin-top: 20px;
+    /*    margin-top: 20px;*/
     margin-bottom: 0;
     margin-right: 0;
     margin-left: 0;
     text-align: center;
-    font-size: 90%
+    font-size: 90%;
+    background-color: lightgrey;
+    /*background-color: #23527c;*/
+    color: #23527c;
 }
 
 footer ul {
     margin: 0;
+}
+
+.traitgauche {
+    border-left: 1px solid white;
 }
 
 
