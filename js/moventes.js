@@ -1,7 +1,70 @@
-$(document).ready(function () {
+    $(document).ready(function () {
 
-    console.log('document ready');
-    $('[data-toggle="tooltip"]').tooltip();
+        var currentPage = window.location.href.split('#')[0];
+
+        function scrollToSection(href, event) {
+            console.log('target href ', href);
+            console.log('currentPage ', currentPage);
+            var splittedHref =  href.split('#');
+
+            var targetSectionId =splittedHref[1];
+            console.log('target currentPage',currentPage.indexOf(splittedHref[0]) !== -1);
+            if (currentPage.indexOf(splittedHref[0]) !== -1) {
+                if (targetSectionId) {
+                    console.log('click for page-scroll to ', targetSectionId);
+                    $('html, body').stop().animate({
+                        scrollTop: $('#' + targetSectionId).offset().top
+                    }, 2000, 'easeInOutQuart');
+                    if(event){
+                        event.preventDefault();
+                    }
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        scrollToSection(window.location.href);
+
+        // for page scrolling feature - requires jQuery Easing plugin
+        $('a').bind('click', function (event) {
+                var $anchor = $(this);
+                var href = $anchor.attr('href');
+                return scrollToSection(href, event);
+        });
+
+
+    //      $('a[href*="#"]:not([href="#"])').click(function() {
+    //    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    //      var target = $(this.hash);
+    //      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    //      if (target.length) {
+    //        $('html, body').animate({
+    //          scrollTop: target.offset().top
+    //        }, 1000);
+    //        return false;
+    //      }
+    //    }
+    //  });
+
+
+    //        $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
+
+    $('.nav a').each(function () {
+        var currentHref = $(this).attr('href');
+        console.log('currentHref ', currentHref);
+        console.log('currentPage ', currentPage);
+        if (currentHref == currentPage) {
+            $(this).parent().addClass("active");
+        } else {
+            $(this).parent().removeClass("active");
+        }
+    });
+
+
+
+
+    console.log('document ready'); $('[data-toggle="tooltip"]').tooltip();
 
     var bLazy = new Blazy({
         breakpoints: [{
@@ -14,12 +77,13 @@ $(document).ready(function () {
         success: function () {
             console.log('lazy loading of images finished');
         },
-        error : function(ele, msg){
+        error: function (ele, msg) {
             console.error(msg);
             console.log(ele);
         }
     });
-    new WOW({
+
+        new WOW({
         boxClass: 'wow', // default
         animateClass: 'animated', // default
         offset: 0, // default
@@ -29,14 +93,14 @@ $(document).ready(function () {
     //TODO A REMPLACER PLUS TARD PAR ScrollReveal
     //TODO bower install scrollreveal --save
 
-//        var config = {
-//          viewFactor : 0.15,
-//          duration   : 800,
-//          distance   : "0px",
-//          scale      : 0.8
-//        };
-//
-//        window.sr = ScrollReveal( config );
+    //        var config = {
+    //          viewFactor : 0.15,
+    //          duration   : 800,
+    //          distance   : "0px",
+    //          scale      : 0.8
+    //        };
+    //
+    //        window.sr = ScrollReveal( config );
 
     //--------------------------------------
     //---- COOKIES REMOVED IF ASKED      ---
@@ -91,32 +155,32 @@ $(document).ready(function () {
         window.setTimeout(modalTimeoutFn, refreshFrequency);
     }
 
-});
+    });
 
 
-refreshFrequency = 2000;
-modalTimeoutFn = function () {
-    if (!$.cookieDeclined() && !$.cookie('modal_completed')) {
-        var lastValue = parseInt($.cookie('modal_timeout'));
-        lastValue += refreshFrequency;
+    refreshFrequency = 2000;
+    modalTimeoutFn = function () {
+        if (!$.cookieDeclined() && !$.cookie('modal_completed')) {
+            var lastValue = parseInt($.cookie('modal_timeout'));
+            lastValue += refreshFrequency;
 
-        console.debug('modal timeout', lastValue);
-        $.cookie('modal_timeout', lastValue, {
-            expires: 3,
-            path: '/'
-        });
+            console.debug('modal timeout', lastValue);
+            $.cookie('modal_timeout', lastValue, {
+                expires: 3,
+                path: '/'
+            });
 
-        if (lastValue < 20000) {
-            console.debug('wait again', refreshFrequency);
-            window.setTimeout(modalTimeoutFn, refreshFrequency);
-        } else if (lastValue == 20000) {
-            // here since 20 sec
-            //open modal
-            console.debug('open modal', $('#timeoutModal'));
-            $('#timeoutModal').modal('toggle');
-            $('#timeoutModal').modal('show');
-        } else {
-            //do nothing
+            if (lastValue < 20000) {
+                console.debug('wait again', refreshFrequency);
+                window.setTimeout(modalTimeoutFn, refreshFrequency);
+            } else if (lastValue == 20000) {
+                // here since 20 sec
+                //open modal
+                console.debug('open modal', $('#timeoutModal'));
+                $('#timeoutModal').modal('toggle');
+                $('#timeoutModal').modal('show');
+            } else {
+                //do nothing
+            }
         }
-    }
-};
+    };

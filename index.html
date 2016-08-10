@@ -26,24 +26,14 @@
                 $(".navbar-fixed-top").addClass("nav-over-header");
             }
         };
-
         $(document).ready(function () {
-            fixNavLayout();
 
+
+
+            fixNavLayout();
             //jQuery to collapse the navbar on scroll
             $(window).scroll(function () {
                 fixNavLayout();
-            });
-
-            // for page scrolling feature - requires jQuery Easing plugin
-            $('a.page-scroll').bind('click', function (event) {
-                console.log('click for page-scroll ', $(this));
-                var $anchor = $(this);
-                console.log($($anchor.attr('href')).offset().top);
-                $('html, body').stop().animate({
-                    scrollTop: $($anchor.attr('href')).offset().top
-                }, 2000, 'easeInOutQuart');
-                event.preventDefault();
             });
 
 
@@ -138,44 +128,13 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <!-- Navigation -->
-    <!--navbar-inverse-->
-    <nav class="navbar navbar-default navbar-fixed-top" id="nav">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#full-navbar-collapse">
-                    <span class="sr-only">Afficher le menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top" title="Moventes"> <img alt="" src="img/logo.png"><span class="brand">Moventes</span></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="full-navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#approche">Notre approche</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="valeurs.html">Nos valeurs</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="expertise.html">Notre expertise</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="histoire.html">Notre histoire</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+
+    <!-- build:include:inc _commonmenu.html -->
+    <!-- /build -->
+
 
     <!-- Header -->
-    <header id="top">
+    <header id="top" class="header b-lazy" data-src="img/bg/header2-lg.jpg" data-src-small="img/bg/header2-xs.jpg" data-src-medium="img/bg/header2-md.jpg">
         <div class="container decalage-top">
             <div class="row">
                 <div class="col-md-offset-1 col-md-10 fond-blanc">
@@ -240,6 +199,13 @@
                     </div>
                 </div>
             </div>
+
+
+            <a href="index.html#enjeux" class="header_chevron">
+                <i class="fa fa-chevron-circle-down fa-4x" aria-hidden="true"></i>
+            </a>
+
+
         </div>
     </header>
 
@@ -248,8 +214,10 @@
 #####################################################################  -->
 
     <!-- Services -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <div class="fond-parallax">
+    <!--
+class="fond-parallax"
+The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <div  class="parallax b-lazy" data-src="img/bg/header3-lg.jpg" data-src-medium="img/bg/header3-md.jpg" data-src-small="img/bg/header3-xs.jpg">
         <section id="enjeux" class="container-fluid">
             <div class="row text-center ">
                 <h2 class="section-heading">Les enjeux d'un entrepreneur</h2>
@@ -344,9 +312,7 @@
                                 <li>Sondage du marché et confrontation de la maquette à des early adopters</li>
                                 <li>Réalisation de supports pour "vendre" le concept et lever des fonds </li>
                             </ul>
-                            <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-preparation">
-                    Notre accompagnement
-                        </a>
+                            <!--                            <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-preparation">Notre accompagnement</a>-->
                         </div>
                     </div>
                     <div id="construction" class="row top-buffer row-eq-height">
@@ -362,9 +328,7 @@
                                 <li>Développement de la solution web ou mobile</li>
                                 <li>Coaching et soutien technique par un ingénieur expérimenté</li>
                             </ul>
-                            <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-construction">
-                    Notre contrat de confiance
-                </a>
+                            <!--                            <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-construction">Notre contrat de confiance</a>-->
                         </div>
                     </div>
                     <div id="croissance" class="row top-buffer row-eq-height">
@@ -378,9 +342,7 @@
                                 <li>Assistance technique lors de la commercialisation de la plateforme</li>
                                 <li>Opportunité d'embaucher le(s) développeur(s) qui ont travaillé dessus, pour monter une direction informatique interne</li>
                             </ul>
-                            <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-croissance">
-                    Notre politique RH
-                </a>
+                            <!--                            <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-croissance">Notre politique RH</a>-->
                         </div>
                     </div>
                 </div>
@@ -625,10 +587,10 @@
                     <div class="row text-center equal-height">
 
                         <div class="col-xs-12 col-md-3 wow zoomIn savoir">
-                            <a href="valeurs.html">
+                            <!--          <a href="valeurs.html">
                                 <img src="../img/nosValeurs.jpg" class="img-circle" alt="">
                                 <p><span class="savoirColor1">Nos valeurs</span></p>
-                            </a>
+                            </a>-->
                         </div>
                         <div class="col-xs-12 col-md-3 col-md-offset-1 wow zoomIn savoir">
                             <a href="expertise.html">
