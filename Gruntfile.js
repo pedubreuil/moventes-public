@@ -73,7 +73,8 @@ module.exports = function (grunt) {
                         cwd: 'for_dist',
                         src: ['**'],
                         dest: 'dist/',
-                        filter: 'isFile'
+                        filter: 'isFile',
+                        dot:true
                     },
                     {
                         expand: true,

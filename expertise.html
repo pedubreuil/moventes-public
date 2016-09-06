@@ -1,8 +1,61 @@
- <!-- ******************************************
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+
+<head>
+
+    <title>Moventes, expert des applications mobiles pour les professionnels</title>
+    <meta name="description" content="Moventes, expert des applications mobiles pour les professionnels" />
+    <link rel="canonical" href="http://moventes.com/" />
+    <meta name="keywords" content="" />
+
+    <!-- build:include:inc _commonhtmlhead.html -->
+    <!-- /build -->
+
+
+
+
+
+
+
+    <!-- pour rétrécir le menu on scroll down -->
+    <script type="application/javascript">
+        $(document).ready(function () {
+
+            $('.techno-item').hover(
+                function () {
+                    $(this).addClass('animated pulse');
+                },
+                function () {
+                    $(this).removeClass('animated pulse');
+                }
+            );
+
+
+
+        });
+    </script>
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- build:include:inc _commonmenu.html -->
+    <!-- /build -->
+
+
+
+    <!-- ##############################################################
+###################   SECTION  "TECHNO"  ######################
+#####################################################################  -->
+
+    <section id="old" class="parallax b-lazy" data-src="img/bg/header4-lg.jpg" data-src-medium="img/bg/header4-md.jpg" data-src-small="img/bg/header4-xs.jpg">
+        <div class="container">
+
+            <!-- ******************************************
 ********* TECHNO (sécurité,...) *************** -->
 
             <div class="row text-center " id="technos">
-                <hr class="small">
                 <br/>
                 <h2 class="section-heading">Les technologies de <span class="brand">Moventes</span></h2>
                 <br/>
@@ -122,56 +175,7 @@
 
                         </div>
                     </a>
-
-
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
-                    <a href="#" data-toggle="modal" data-target="#modal-wireless">
-                        <div class="panel panel-default techno-item">
-                            <div class="panel-body media text-success">
-                                <div class="media-left media-top">
-                                    <i class="fa  fa-rss fa-2x media-object"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading ">Bluetooth, NFC, RFID</h4>
-                                    <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1.5s">
-                    <a href="#" data-toggle="modal" data-target="#modal-augmented">
-                        <div class="panel panel-default techno-item">
-                            <div class="panel-body media text-success">
-                                <div class="media-left media-top">
-                                    <i class="fa  fa-video-camera fa-2x media-object"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading ">Réalité augmentée</h4>
-                                    <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-
-
-                </div>
-            </div>
-
-
-            <!-- ******************************************
-********* TECHNO (backend,...) *************** -->
-
-
-            <div class="row text-center hidden-lg">
-                <hr class="small">
-            </div>
-
-            <div class="row text-center equal-height">
                 <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                     <a href="#" data-toggle="modal" data-target="#modal-mbaas">
                         <div class="panel panel-default techno-item">
@@ -187,71 +191,8 @@
 
                         </div>
                     </a>
-
                 </div>
-
-                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                    <a href="#" data-toggle="modal" data-target="#modal-mam">
-                        <div class="panel panel-default techno-item">
-                            <div class="panel-body media text-success">
-                                <div class="media-left media-top">
-                                    <i class="fa fa-desktop fa-2x media-object"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading ">MAM</h4>
-                                    <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
-                    <a href="#" data-toggle="modal" data-target="#modal-store">
-                        <div class="panel panel-default techno-item">
-                            <div class="panel-body media text-success">
-                                <div class="media-left media-top">
-                                    <i class="fa  fa-external-link  fa-2x media-object"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading ">Enterprise App Store</h4>
-                                    <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1.5s">
-                    <a href="#" data-toggle="modal" data-target="#modal-sms">
-                        <div class="panel panel-default techno-item">
-                            <div class="panel-body media text-success">
-                                <div class="media-left media-top">
-                                    <i class="fa  fa-commenting-o  fa-2x media-object"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading ">SMS gateway</h4>
-                                    <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-
-            <!-- ******************************************
-********* TECHNO (dév) *************** -->
-
-            <div class="row text-center hidden-lg">
-                <hr class="small">
-            </div>
-
-            <div class="row text-center">
-
-                <div class="col-lg-offset-4 col-lg-4 col-sm-offset-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                     <a href="#" data-toggle="modal" data-target="#modal-hybrid">
                         <div class="panel panel-default techno-item">
                             <div class="panel-body media text-success">
@@ -266,11 +207,120 @@
 
                         </div>
                     </a>
+                </div>
 
+                <!--<div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
+                    <a href="#" data-toggle="modal" data-target="#modal-wireless">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-top">
+                                    <i class="fa  fa-rss fa-2x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading ">Bluetooth, NFC, RFID</h4>-->
+                <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
+                <!--  </div>
+                            </div>
 
+                        </div>
+                    </a>
 
                 </div>
-                <div class="col-lg-offset-4 col-lg-4 col-sm-offset-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1.5s">
+                    <a href="#" data-toggle="modal" data-target="#modal-augmented">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-top">
+                                    <i class="fa  fa-video-camera fa-2x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading ">Réalité augmentée</h4>-->
+                <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
+                <!-- </div>
+                            </div>
+
+                        </div>
+                    </a>
+
+
+                </div>-->
+            </div>
+
+
+            <!-- ******************************************
+********* TECHNO (backend,...) *************** -->
+
+
+            <div class="row text-center hidden-lg">
+                <hr class="small">
+            </div>
+
+            <div class="row text-center equal-height">
+
+
+                <!--<div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                    <a href="#" data-toggle="modal" data-target="#modal-mam">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-top">
+                                    <i class="fa fa-desktop fa-2x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading ">MAM</h4>-->
+                <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
+                <!--</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
+                    <a href="#" data-toggle="modal" data-target="#modal-store">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-top">
+                                    <i class="fa  fa-external-link  fa-2x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading ">Enterprise App Store</h4>-->
+                <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
+                <!-- </div>
+                            </div>
+
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay="1.5s">
+                    <a href="#" data-toggle="modal" data-target="#modal-sms">
+                        <div class="panel panel-default techno-item">
+                            <div class="panel-body media text-success">
+                                <div class="media-left media-top">
+                                    <i class="fa  fa-commenting-o  fa-2x media-object"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading ">SMS gateway</h4>-->
+                <!--                                    <p class="text-left">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
+                <!--</div>
+                            </div>
+
+                        </div>
+                    </a>
+
+                </div>-->
+            </div>
+
+            <!-- ******************************************
+********* TECHNO (dév) *************** -->
+
+            <div class="row text-center hidden-lg">
+                <hr class="small">
+            </div>
+
+            <div class="row text-center">
+
+
+                <!--<div class="col-lg-offset-4 col-lg-4 col-sm-offset-3 col-sm-6 wow fadeIn" data-wow-delay="1s">
                     <a href="#" data-toggle="modal" data-target="#modal-geo">
                         <div class="panel panel-default techno-item">
                             <div class="panel-body media text-success">
@@ -278,9 +328,9 @@
                                     <i class="fa  fa-clone fa-2x media-object"></i>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading ">Geolocalisation (beacons, GPS)</h4>
-                                    <!--                                    <p class="text-left">Cross-platform  lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
-                                </div>
+                                    <h4 class="media-heading ">Geolocalisation (beacons, GPS)</h4>-->
+                <!--                                    <p class="text-left">Cross-platform  lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>-->
+                <!--</div>
                             </div>
 
                         </div>
@@ -288,632 +338,231 @@
 
 
 
-                </div>
+                </div>-->
 
             </div>
         </div>
-    </section>
 
 
-
-<!-- ******************************************
+        <!-- ******************************************
 ********* TECHNOS - MODALS *************** -->
 
 
 
-
-
-
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-sign" tabindex="-1" role="dialog" aria-labelledby="modal-title-sign">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-sign">Signature électronique</h4>
-                </div>
-                <div class="modal-body text-left">
-                    Pour être valide, une signature numérique doit permettre d'identifier la personne (ou l'organisme) qui a apposé sa signature, et de garantir que le document n'a pas été altéré depuis la signature.
-                    <!--
+        <!-- Modal -->
+        <div class="modal fade" id="modal-sign" tabindex="-1" role="dialog" aria-labelledby="modal-title-sign">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-sign">Signature électronique</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        Pour être valide, une signature numérique doit permettre d'identifier la personne (ou l'organisme) qui a apposé sa signature, et de garantir que le document n'a pas été altéré depuis la signature.
+                        <!--
                     <ul>
                         <li></li>
                         <li></li>
                     </ul>
 -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title text-center">Identité du signataire</h5>
-                                </div>
-                                <div class="panel-body">
-                                    L'identité numérique du signataire (entreprise ou personne physique) est définie par un certificat.
-                                    <br/> Ce certificat peut être délivré par une autorité de certification, qui agit comme tiers de confiance reconnu par les autorités.
-                                    <br/> Un contrôle de l'identité du signataire peut être fait lors de l'utilisation de son certificat (mode de passe, code à usage unique,...).
-                                    <!--
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Identité du signataire</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        L'identité numérique du signataire (entreprise ou personne physique) est définie par un certificat.
+                                        <br/> Ce certificat peut être délivré par une autorité de certification, qui agit comme tiers de confiance reconnu par les autorités.
+                                        <br/> Un contrôle de l'identité du signataire peut être fait lors de l'utilisation de son certificat (mode de passe, code à usage unique,...).
+                                        <!--
                                     <abbr title="xx" data-toggle="tooltip" data-placement="bottom" data-original-title="xxx">xx</abbr>
                                     <br/>
 -->
-                                    <!--<br/> CertEurope -->
+                                        <!--<br/> CertEurope -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Intégrité du document</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ol>
+                                            <li>Une empreinte digitale du document (condensé du texte unique) est générée à l'aide d'une méthode de hachage (MD5 ou SHA)</li>
+                                            <li>Cette empreinte est encryptée à l'aide du certificat du signataire pour obtenir un sceau, qui est aposé au document.</li>
+                                        </ol>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title text-center">Intégrité du document</h5>
-                                </div>
-                                <div class="panel-body">
-                                    <ol>
-                                        <li>Une empreinte digitale du document (condensé du texte unique) est générée à l'aide d'une méthode de hachage (MD5 ou SHA)</li>
-                                        <li>Cette empreinte est encryptée à l'aide du certificat du signataire pour obtenir un sceau, qui est aposé au document.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <br/>
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span> <i>est en partenariat avec des autorités de certification françaises afin de proposer
+                        <br/>
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span> <i>est en partenariat avec des autorités de certification françaises afin de proposer
                         à ses clients des solutions de signature électronique clé-en-main et fiables.</i>
+                        </div>
                     </div>
-                </div>
-                <!--
+                    <!--
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
 -->
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="modal-sso" tabindex="-1" role="dialog" aria-labelledby="modal-title-sso">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-sso">Single Sign-On (SSO)</h4>
-                </div>
-                <div class="modal-body text-left">
-                    <abbr title="Single Sign-On" data-toggle="tooltip" data-placement="bottom" data-original-title="Single Sign-On">SSO</abbr> permet à un utilisateur d'accéder à plusieurs sites et applications avec la même authentification.
-                    <br/> La gestion fédérée des identités améliore la sécurité en permettant l'authentification unique. Elle est composée de plusieurs technologies :
-                    <br/>
-                    <br/>
-                    <div class="row text-center">
-
-                        <div class="col-md-4">
-                            <ul class="list-group">
-                                <li class="list-group-item active">
-                                    <h4>Identity Providers</h4>
-                                </li>
-                                <li class="list-group-item">
-                                    <h5>Social Login</h5>
-                                    <ul class="list-inline">
-                                        <li><a href="https://developers.google.com/identity/" target="_blank">Google</a></li>
-                                        <li><a href="https://www.dropbox.com/developers-v1/core/docs#oa2-authorize" target="_blank">Dropbox</a></li>
-                                        <li><a href="https://dev.onedrive.com/auth/readme.htm" target="_blank">Microsoft</a></li>
-                                        <li><a href="https://developers.facebook.com/docs/facebook-login" target="_blank">Facebook</a></li>
-                                        <li><a href="https://developer.linkedin.com/docs/oauth2" target="_blank">LinkedIn</a></li>
-                                        <li><a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm" target="_blank">Salesforce</a></li>
-                                    </ul>
-                                </li>
-                                <li class="list-group-item">
-                                    <h5>plateforme <abbr title="IDentity provider as a Service" data-toggle="tooltip" data-placement="bottom" data-original-title="IDentity provider as a Service">IDaaS</abbr></h5>
-                                    <ul class="list-inline">
-                                        <li><a href="https://www.okta.com/">Okta</a></li>
-                                        <li><a href="https://www.onelogin.com/">OneLogin</a></li>
-                                        <li><a href="https://www.pingidentity.com/en/products/pingfederate.html">Ping Identity</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-4">
-                            <ul class="list-group">
-                                <li class="list-group-item active">
-                                    <h4>Protocoles</h4>
-                                    <!-- (délégation d'autorisation)-->
-                                </li>
-                                <li class="list-group-item">
-                                    <h5>OAuth 1.0</h5>
-                                </li>
-                                <li class="list-group-item">
-                                    <h5>SAML</h5>
-                                </li>
-                                <li class="list-group-item">
-                                    <h5>OAuth 2.0 et OpenID Connect<!-- (layer on top of OAuth2) --></h5>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <ul class="list-group">
-                                <li class="list-group-item active">
-                                    <h4>Annuaires</h4>
-                                </li>
-                                <li class="list-group-item">
-                                    <h5>serveur LDAP</h5>
-                                    <ul class="list-inline">
-                                        <li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa746492(v=vs.85).aspx" target="_blank">Microsoft ActiveDirectory</a></li>
-                                        <li><a href="https://www.netiq.com/products/edirectory/" target="_blank">MicroFocus eDirectory</a></li>
-                                        <li><a href="https://directory.apache.org/apacheds/" target="_blank">ApacheDS</a></li>
-                                        <li><a href="http://www.openldap.org/" target="_blank">OpenLDAP</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modal-sso" tabindex="-1" role="dialog" aria-labelledby="modal-title-sso">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-sso">Single Sign-On (SSO)</h4>
                     </div>
+                    <div class="modal-body text-left">
+                        <abbr title="Single Sign-On" data-toggle="tooltip" data-placement="bottom" data-original-title="Single Sign-On">SSO</abbr> permet à un utilisateur d'accéder à plusieurs sites et applications avec la même authentification.
+                        <br/> La gestion fédérée des identités améliore la sécurité en permettant l'authentification unique. Elle est composée de plusieurs technologies :
+                        <br/>
+                        <br/>
+                        <div class="row text-center">
 
-                    <div class="well text-center">
-                        <i>Les applications réalisées par </i><span class="brand">Moventes</span><i> utilisent les moyens d'identification existants des professionnels (en se connectant par exemple à l'Active Directory existant de l'entreprise).</i>
-                    </div>
-
-                </div>
-                <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
--->
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-authentication" tabindex="-1" role="dialog" aria-labelledby="modal-title-authentication">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-authentication">authentification forte</h4>
-                </div>
-                <div class="modal-body text-left">
-                    La <abbr title="Two-Factor Authentication" data-toggle="tooltip" data-placement="bottom" data-original-title="Two-Factor Authentication">2FA</abbr> impose une double vérification pour se connecter (afin de pallier les faiblesses de l'authentification unique par mot de passe).
-                    <br/> Ce deuxième facteur d'identification peut être une clé USB, une mesure biométrique, ou un <abbr title="One-Time Password" data-toggle="tooltip" data-placement="bottom" data-original-title="One-Time Password">OTP</abbr> (code unique, valide pendant une durée limitée):
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title">Application mobile</h5>
-                                </div>
-                                <div class="panel-body">
-                                    La <i>Mobile Token App</i> est une application mobile qui génère un code unique à l'aide de l'horloge du smartphone.
-                                    <br/>Exemple: <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank">Google Authenticator</a>
-                                </div>
+                            <div class="col-md-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item active">
+                                        <h4>Identity Providers</h4>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>Social Login</h5>
+                                        <ul class="list-inline">
+                                            <li><a href="https://developers.google.com/identity/" target="_blank">Google</a></li>
+                                            <li><a href="https://www.dropbox.com/developers-v1/core/docs#oa2-authorize" target="_blank">Dropbox</a></li>
+                                            <li><a href="https://dev.onedrive.com/auth/readme.htm" target="_blank">Microsoft</a></li>
+                                            <li><a href="https://developers.facebook.com/docs/facebook-login" target="_blank">Facebook</a></li>
+                                            <li><a href="https://developer.linkedin.com/docs/oauth2" target="_blank">LinkedIn</a></li>
+                                            <li><a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm" target="_blank">Salesforce</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>plateforme <abbr title="IDentity provider as a Service" data-toggle="tooltip" data-placement="bottom" data-original-title="IDentity provider as a Service">IDaaS</abbr></h5>
+                                        <ul class="list-inline">
+                                            <li><a href="https://www.okta.com/">Okta</a></li>
+                                            <li><a href="https://www.onelogin.com/">OneLogin</a></li>
+                                            <li><a href="https://www.pingidentity.com/en/products/pingfederate.html">Ping Identity</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="panel  panel-primary">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title">SMS</h5>
-                                </div>
-                                <div class="panel-body">
-                                    Un SMS est envoyé au téléphone portable de l'utilisateur pour l'identifier.
-                                    <br/>Exemples:
-                                    <ul class="list-inline text-center">
-                                        <li><a href="https://www.twilio.com/sms" target="_blank">Twilio</a></li>
-                                        <li><a href="https://isms.fi/?language=en#" target="_blank">isms</a></li>
-                                    </ul>
-                                </div>
+
+                            <div class="col-md-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item active">
+                                        <h4>Protocoles</h4>
+                                        <!-- (délégation d'autorisation)-->
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>OAuth 1.0</h5>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>SAML</h5>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>OAuth 2.0 et OpenID Connect<!-- (layer on top of OAuth2) --></h5>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="panel  panel-primary">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title">Empreinte digitale</h5>
-                                </div>
-                                <div class="panel-body">
-                                    Les nouveaux smartphones intègrent un lecteur d'empreinte digitale pour sécuriser l'identification:
-                                    <ul class="list-inline">
-                                        <li><a href="https://support.apple.com/fr-fr/HT201371" target="_blank">Apple Touch ID</a></li>
-                                        <li><a href="https://www.android.com/intl/fr_fr/versions/marshmallow-6-0/" target="_blank">Android Fingerprint Authentication</a></li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="well text-center">
-                        <i>Grâce à ces technologies d'authentification forte,</i> <span class="brand">Moventes</span><i> renforce la sécurité de ses applications mobiles.</i>
-                    </div>
-                </div>
-
-            </div>
-            <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
--->
-        </div>
-    </div>
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-qr" tabindex="-1" role="dialog" aria-labelledby="modal-title-qr">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-qr">QR codes</h4>
-                </div>
-                <div class="modal-body text-left">
-                    Le code QR est un code-barres à deux dimensions (data matrix) constitué de modules noirs disposés dans un carré à fond blanc.
-                    <br/> Il peut stocker jusqu'à 4 296 caractères alphanumériques, avec un système de redondance pour la correction d'erreur.
-
-                    <br/> Pour lire un code QR, l'utilisateur de smartphone peut utiliser:
-                    <ul class="list-inline text-center">
-                        <li><a href="https://itunes.apple.com/en/app/qr-reader-for-iphone/id368494609?mt=8" target="_blank">QR Reader</a> sur iPhone</li>
-                        <li><a href="https://play.google.com/store/apps/details?id=com.google.zxing.client.android" target="_blank">Barcode Scanner</a> sur Android</li>
-                    </ul>
-                    <br/>
-
-                    <div class="media">
-
-                        <div class="media-left media-middle">
-                            <img class="media-object visible-lg-inline" src="img/pedubreuil-qrcode.png" alt="QR code">
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">Il peut contenir :</h4>
-
-                            <ul>
-                                <li>du texte</li>
-                                <li>l'adresse d'un site internet</li>
-                                <li>la carte de visite d'une personne (vCard, MeCard)</li>
-                                <li>un numéro de téléphone</li>
-                                <li>un rendez-vous ou un événement (iCalendar)</li>
-                                <li>les informations pour se connecter à un réseau Wifi</li>
-                                <li>le lien pour télécharger une application</li>
-                                <li>une localisation</li>
-                                <li>...</li>
-                            </ul>
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span><i> intègre la lecture de QR codes dans ses applications pour importer facilement des informations, ou pour promouvoir leur téléchargement.</i>
-                    </div>
-                </div>
-                <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
--->
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-wireless" tabindex="-1" role="dialog" aria-labelledby="modal-title-wireless">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-wireless">Bluetooth, NFC, RFID</h4>
-                </div>
-                <div class="modal-body text-left">
-
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span><i> .</i>
-                    </div>
-
-                </div>
-                <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
--->
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-iot" tabindex="-1" role="dialog" aria-labelledby="modal-title-iot">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-iot">Objets connectés</h4>
-                </div>
-                <div class="modal-body text-left">
-                    <div class="well">Avec <span class="brand">Moventes</span>, emmenez votre entreprise encore plus loin dans la mobilité, en mettant en place des capteurs connectés pour collecter des données à distance, localiser des objets, mesurer la température et l'humidité, contrôler des machines,... en temps réel depuis votre application mobile !</div>
-<!--                    <img class="img-responsive b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" data-src="img/internetofthingsfortheenterprise.png" data-src-medium="img/internetofthingsfortheenterprise.png" data-src-small="img/internetofthingsfortheenterprise.png" alt="L'internet des objets pour l'entreprise">-->
-                    <img class="img-responsive" src="img/internetofthingsfortheenterprise.png" alt="L'internet des objets pour l'entreprise">
-                </div>
-                <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
--->
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-augmented" tabindex="-1" role="dialog" aria-labelledby="modal-title-augmented">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-augmented">Réalité augmentée</h4>
-                </div>
-                <div class="modal-body text-left">
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span><i> .</i>
-                    </div>
-
-                </div>
-                <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
--->
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-mbaas" tabindex="-1" role="dialog" aria-labelledby="modal-title-mbaas">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-mbaas">mBaaS</h4>
-                </div>
-                <div class="modal-body text-left">
-                    <div class="row">
-                        <div class="col-md-6 well">Une <b>solution mobile</b> se compose de:
-                            <ul>
-                                <li>un <i>front-end</i>, une application mobile installée sur le smartphone des utilisateurs</li>
-                                <li>un <i>back-end</i> composé d'une base de données et de scripts serveur avec lesquels l'application mobile intéragit</li>
-                            </ul>La plateforme mBaaS (<i>mobile Back-end as a Service</i>) fournit des "briques" facilement assemblables pour constituer le back-end rapidement, ainsi que l'hébergement de celui-ci dans le <abbr title="" data-toggle="tooltip" data-placement="bottom" data-original-title="serveurs distants accessibles via internet et loués à la demande">cloud</abbr> (public ou privé) pour toute la durée de vie de l'application.</div>
-                        <div class="col-md-6">
-                            <ul class="list-group">
-                                <li class="list-group-item active">Fonctionnalités d'une plateforme mBaaS</li>
-                                <li class="list-group-item">stockage et gestion des données</li>
-                                <li class="list-group-item">identification et gestion des utilisateurs</li>
-                                <li class="list-group-item">accès aux autres données existantes de l'entreprise</li>
-                                <li class="list-group-item">envoi de notifications aux utilisateurs de l'application</li>
-                                <li class="list-group-item">statistiques d’utilisation de l'application</li>
-                                <li class="list-group-item">synchronisations entre le smartphone et le serveur</li>
-                                <li class="list-group-item">sécurisation des échanges de données</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <br/>
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span><i> .</i>
-                    </div>
-                    <br/>
-
-                    <div class="row">
-                        <div class="col-md-offset-1 col-md-10 text-center">
-                            <a href="img/mbaas.png" target="_blank"><img class="img-responsive" src="img/mbaas.png" alt="architecture mBaaS"></a>
-                        </div>
-
-                    </div>
-                </div>
-                <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
--->
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-mam" tabindex="-1" role="dialog" aria-labelledby="modal-title-mam">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-mam">MAM</h4>
-                </div>
-                <div class="modal-body text-left">
-
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span><i> .</i>
-                    </div>
-
-                </div>
-                <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
--->
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-store" tabindex="-1" role="dialog" aria-labelledby="modal-title-store">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-store">Enterprise App Store</h4>
-                </div>
-                <div class="modal-body text-left">
-
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span><i> .</i>
-                    </div>
-
-                </div>
-                <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
--->
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-pay" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-pay">Paiement mobile</h4>
-                </div>
-                <div class="modal-body text-left">
-
-                    <div class="row">
-                        <div class="col-md-4 ">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title text-center"> In App Purchase (IAP)</h5>
-                                </div>
-                                <div class="panel-body">
-                                    Pour les achats <i>in-apps</i>, le
-                                    <abbr title="" data-toggle="tooltip" data-placement="bottom" data-original-title="App Store pour iPhones et Google Play pour Android">store d'applications</abbr> sert d'intermédiaire (en prélevant une commission de 30% sur les transactions) pour débiter le compte bancaire de l’utilisateur.
-                                    <br/>
-                                    <br/> Ce mode de paiement est imposé pour tous les achats permettant de débloquer des fonctionnalités (ou acquérir des "biens immatériels") de cette application mobile.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class=" panel panel-default">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title text-center">Porte-monnaie électronique</h5>
-                                </div>
-                                <div class="panel-body">
-                                    Le portefeuille électronique (digital wallet) permet de faire des achats en ligne (via un compte sécurisé) ou en magasin (via un téléphone, par NFC, Bluetooth ou SMS).
-                                    <br/> Il existe de nombreuses solutions, telles que :
-                                    <ul class="list-inline text-center">
-                                        <li><a href="https://www.paypal.com/fr/" target="_blank">PayPal</a></li>
-                                        <li><a href="https://wallet.google.com/" target="_blank">Google Wallet</a></li>
-                                        <li><a href="https://www.mpesa.in/" target="_blank">M-Pesa</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class=" panel panel-default">
-                                <div class="panel-heading">
-                                    <h5 class="panel-title text-center">Carte bancaire</h5>
-                                </div>
-                                <div class="panel-body">
-                                    Les achats peuvent être faits directement par carte bancaire, en recopiant son numéro à 16 chiffres et son cryptogramme.
-                                    <br/> Seuls les <abbr title="Prestataires de Service de Paiement" data-toggle="tooltip" data-placement="bottom" data-original-title="Prestataires de Service de Paiement ">PSP</abbr> respectant les normes de sécurité PCI DSS sont autorisés à traiter et stocker ces informations de carte bancaire.
-                                    <br/> Un contrat <abbr title="Vente A Distance" data-toggle="tooltip" data-placement="bottom" data-original-title="Vente A Distance">VAD</abbr> est fourni par un établissement acquéreur pour pouvoir encaisser les transactions.
-                                </div>
+                            <div class="col-md-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item active">
+                                        <h4>Annuaires</h4>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>serveur LDAP</h5>
+                                        <ul class="list-inline">
+                                            <li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa746492(v=vs.85).aspx" target="_blank">Microsoft ActiveDirectory</a></li>
+                                            <li><a href="https://www.netiq.com/products/edirectory/" target="_blank">MicroFocus eDirectory</a></li>
+                                            <li><a href="https://directory.apache.org/apacheds/" target="_blank">ApacheDS</a></li>
+                                            <li><a href="http://www.openldap.org/" target="_blank">OpenLDAP</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
-                    </div>
+                        <div class="well text-center">
+                            <i>Les applications réalisées par </i><span class="brand">Moventes</span><i> utilisent les moyens d'identification existants des professionnels (en se connectant par exemple à l'Active Directory existant de l'entreprise).</i>
+                        </div>
 
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span><i> sélectionne pour chaque application mobile la méthode de paiement la plus adaptée aux besoins des utilisateurs, grâce à une analyse détaillée des coûts et contraintes des différentes solutions technologiques existantes.</i>
                     </div>
-
-                </div>
-                <!--
+                    <!--
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
 -->
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="modal-sms" tabindex="-1" role="dialog" aria-labelledby="modal-title-sms">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-sms">SMS gateway</h4>
-                </div>
-                <div class="modal-body text-left">
 
-                    <div class="well text-center">
-                        <span class="brand">Moventes</span><i> .</i>
+        <!-- Modal -->
+        <div class="modal fade" id="modal-authentication" tabindex="-1" role="dialog" aria-labelledby="modal-title-authentication">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-authentication">authentification forte</h4>
                     </div>
-
-                </div>
-                <!--
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-body text-left">
+                        La <abbr title="Two-Factor Authentication" data-toggle="tooltip" data-placement="bottom" data-original-title="Two-Factor Authentication">2FA</abbr> impose une double vérification pour se connecter (afin de pallier les faiblesses de l'authentification unique par mot de passe).
+                        <br/> Ce deuxième facteur d'identification peut être une clé USB, une mesure biométrique, ou un <abbr title="One-Time Password" data-toggle="tooltip" data-placement="bottom" data-original-title="One-Time Password">OTP</abbr> (code unique, valide pendant une durée limitée):
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">Application mobile</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        La <i>Mobile Token App</i> est une application mobile qui génère un code unique à l'aide de l'horloge du smartphone.
+                                        <br/>Exemple: <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank">Google Authenticator</a>
+                                    </div>
                                 </div>
--->
-            </div>
-        </div>
-    </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel  panel-primary">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">SMS</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Un SMS est envoyé au téléphone portable de l'utilisateur pour l'identifier.
+                                        <br/>Exemples:
+                                        <ul class="list-inline text-center">
+                                            <li><a href="https://www.twilio.com/sms" target="_blank">Twilio</a></li>
+                                            <li><a href="https://isms.fi/?language=en#" target="_blank">isms</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel  panel-primary">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">Empreinte digitale</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Les nouveaux smartphones intègrent un lecteur d'empreinte digitale pour sécuriser l'identification:
+                                        <ul class="list-inline">
+                                            <li><a href="https://support.apple.com/fr-fr/HT201371" target="_blank">Apple Touch ID</a></li>
+                                            <li><a href="https://www.android.com/intl/fr_fr/versions/marshmallow-6-0/" target="_blank">Android Fingerprint Authentication</a></li>
+                                        </ul>
 
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal-hybrid" tabindex="-1" role="dialog" aria-labelledby="modal-title-hybrid">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal-title-hybrid">Hybride vs Native</h4>
-                </div>
-                <div class="modal-body text-left">
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title text-center">Application <b>hybride</b> (multi-plateforme)</h4></div>
-                                <div class="panel-body text-left">
-                                    <ul class="list-inline text-center">
-                                        <li><i class="fa fa-html5 fa-2x"></i></li>
-                                        <li></li>
-                                        <li><i class="fa fa-arrow-right  fa-2x"></i></li>
-                                        <li></li>
-                                        <li><i class="fa fa-android fa-2x"></i></li>
-                                        <li><i class="fa fa-apple fa-2x"></i></li>
-                                        <li><i class="fa fa-windows fa-2x"></i></li>
-                                    </ul>
-                                    <br/> Développée une seule fois en HTML5, Javascript et CSS, l'application web est ensuite "packagée" sous forme d'applications mobiles, une pour chaque plateforme (Android, iOS, Windows Phone,...).
-                                    <br>Le design "responsive" de cette application web lui permet de s'adapter à toute taille d'écran.
-                                    <br>Nous nous appuyons pour cela sur notre expertise dans des technologies reconnues:
-                                    <ul class="list-inline text-center">
-                                        <li><a href="https://cordova.apache.org/" target="_blank">Apache Cordova</a></li>
-                                        <li><a href="https://angularjs.org/" target="_blank">AngularJS</a></li>
-                                        <li><a href="http://ionicframework.com/" target="_blank">Ionic</a></li>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title text-center">Application <b>native</b></h4></div>
-                                <div class="panel-body text-left">
-                                    <ul class="list-inline text-center">
-                                        <li><i class="fa fa-code fa-2x"></i></li>
-                                        <li></li>
-                                        <li><i class="fa fa-arrow-right  fa-2x"></i></li>
-                                        <li></li>
-                                        <li><i class="fa fa-android fa-2x"></i></li>
-                                    </ul>
-                                    <br/> Pour plus de performance, l'application mobile peut être développée dans le language natif de la plateforme.
-                                    <br>Nous pouvons ainsi réaliser votre application mobile spécifiquement pour Android.
-                                </div>
-                            </div>
+                        <div class="well text-center">
+                            <i>Grâce à ces technologies d'authentification forte,</i> <span class="brand">Moventes</span><i> renforce la sécurité de ses applications mobiles.</i>
                         </div>
-                    </div>
-
-                    <div class="well text-center">
-                        <i>Pendant la conception de votre app, <span  class="brand">Moventes</span> vous accompagnera dans le choix de la technologie la plus adaptée à vos besoins.</i>
                     </div>
 
                 </div>
@@ -924,8 +573,408 @@
 -->
             </div>
         </div>
-    </div>
 
 
 
+        <!-- Modal -->
+        <div class="modal fade" id="modal-qr" tabindex="-1" role="dialog" aria-labelledby="modal-title-qr">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-qr">QR codes</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        Le code QR est un code-barres à deux dimensions (data matrix) constitué de modules noirs disposés dans un carré à fond blanc.
+                        <br/> Il peut stocker jusqu'à 4 296 caractères alphanumériques, avec un système de redondance pour la correction d'erreur.
 
+                        <br/> Pour lire un code QR, l'utilisateur de smartphone peut utiliser:
+                        <ul class="list-inline text-center">
+                            <li><a href="https://itunes.apple.com/en/app/qr-reader-for-iphone/id368494609?mt=8" target="_blank">QR Reader</a> sur iPhone</li>
+                            <li><a href="https://play.google.com/store/apps/details?id=com.google.zxing.client.android" target="_blank">Barcode Scanner</a> sur Android</li>
+                        </ul>
+                        <br/>
+
+                        <div class="media">
+
+                            <div class="media-left media-middle">
+                                <img class="media-object visible-lg-inline" src="img/pedubreuil-qrcode.png" alt="QR code">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Il peut contenir :</h4>
+
+                                <ul>
+                                    <li>du texte</li>
+                                    <li>l'adresse d'un site internet</li>
+                                    <li>la carte de visite d'une personne (vCard, MeCard)</li>
+                                    <li>un numéro de téléphone</li>
+                                    <li>un rendez-vous ou un événement (iCalendar)</li>
+                                    <li>les informations pour se connecter à un réseau Wifi</li>
+                                    <li>le lien pour télécharger une application</li>
+                                    <li>une localisation</li>
+                                    <li>...</li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> intègre la lecture de QR codes dans ses applications pour importer facilement des informations, ou pour promouvoir leur téléchargement.</i>
+                        </div>
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-wireless" tabindex="-1" role="dialog" aria-labelledby="modal-title-wireless">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-wireless">Bluetooth, NFC, RFID</h4>
+                    </div>
+                    <div class="modal-body text-left">
+
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> .</i>
+                        </div>
+
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-iot" tabindex="-1" role="dialog" aria-labelledby="modal-title-iot">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-iot">Objets connectés</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        <div class="well">Avec <span class="brand">Moventes</span>, emmenez votre entreprise encore plus loin dans la mobilité, en mettant en place des capteurs connectés pour collecter des données à distance, localiser des objets, mesurer la température et l'humidité, contrôler des machines,... en temps réel depuis votre application mobile !</div>
+                        <!--                    <img class="img-responsive b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" data-src="img/internetofthingsfortheenterprise.png" data-src-medium="img/internetofthingsfortheenterprise.png" data-src-small="img/internetofthingsfortheenterprise.png" alt="L'internet des objets pour l'entreprise">-->
+                        <img class="img-responsive" src="img/internetofthingsfortheenterprise.png" alt="L'internet des objets pour l'entreprise">
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-augmented" tabindex="-1" role="dialog" aria-labelledby="modal-title-augmented">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-augmented">Réalité augmentée</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> .</i>
+                        </div>
+
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-mbaas" tabindex="-1" role="dialog" aria-labelledby="modal-title-mbaas">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-mbaas">mBaaS</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        <div class="row">
+                            <div class="col-md-6 well">Une <b>solution mobile</b> se compose de:
+                                <ul>
+                                    <li>un <i>front-end</i>, une application mobile installée sur le smartphone des utilisateurs</li>
+                                    <li>un <i>back-end</i> composé d'une base de données et de scripts serveur avec lesquels l'application mobile intéragit</li>
+                                </ul>La plateforme mBaaS (<i>mobile Back-end as a Service</i>) fournit des "briques" facilement assemblables pour constituer le back-end rapidement, ainsi que l'hébergement de celui-ci dans le <abbr title="" data-toggle="tooltip" data-placement="bottom" data-original-title="serveurs distants accessibles via internet et loués à la demande">cloud</abbr> (public ou privé) pour toute la durée de vie de l'application.</div>
+                            <div class="col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item active">Fonctionnalités d'une plateforme mBaaS</li>
+                                    <li class="list-group-item">stockage et gestion des données</li>
+                                    <li class="list-group-item">identification et gestion des utilisateurs</li>
+                                    <li class="list-group-item">accès aux autres données existantes de l'entreprise</li>
+                                    <li class="list-group-item">envoi de notifications aux utilisateurs de l'application</li>
+                                    <li class="list-group-item">statistiques d’utilisation de l'application</li>
+                                    <li class="list-group-item">synchronisations entre le smartphone et le serveur</li>
+                                    <li class="list-group-item">sécurisation des échanges de données</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> .</i>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-md-offset-1 col-md-10 text-center">
+                                <a href="img/mbaas.png" target="_blank"><img class="img-responsive" src="img/mbaas.png" alt="architecture mBaaS"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-mam" tabindex="-1" role="dialog" aria-labelledby="modal-title-mam">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-mam">MAM</h4>
+                    </div>
+                    <div class="modal-body text-left">
+
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> .</i>
+                        </div>
+
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-store" tabindex="-1" role="dialog" aria-labelledby="modal-title-store">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-store">Enterprise App Store</h4>
+                    </div>
+                    <div class="modal-body text-left">
+
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> .</i>
+                        </div>
+
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-pay" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-pay">Paiement mobile</h4>
+                    </div>
+                    <div class="modal-body text-left">
+
+                        <div class="row">
+                            <div class="col-md-4 ">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center"> In App Purchase (IAP)</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Pour les achats <i>in-apps</i>, le
+                                        <abbr title="" data-toggle="tooltip" data-placement="bottom" data-original-title="App Store pour iPhones et Google Play pour Android">store d'applications</abbr> sert d'intermédiaire (en prélevant une commission de 30% sur les transactions) pour débiter le compte bancaire de l’utilisateur.
+                                        <br/>
+                                        <br/> Ce mode de paiement est imposé pour tous les achats permettant de débloquer des fonctionnalités (ou acquérir des "biens immatériels") de cette application mobile.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class=" panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Porte-monnaie électronique</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Le portefeuille électronique (digital wallet) permet de faire des achats en ligne (via un compte sécurisé) ou en magasin (via un téléphone, par NFC, Bluetooth ou SMS).
+                                        <br/> Il existe de nombreuses solutions, telles que :
+                                        <ul class="list-inline text-center">
+                                            <li><a href="https://www.paypal.com/fr/" target="_blank">PayPal</a></li>
+                                            <li><a href="https://wallet.google.com/" target="_blank">Google Wallet</a></li>
+                                            <li><a href="https://www.mpesa.in/" target="_blank">M-Pesa</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class=" panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Carte bancaire</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        Les achats peuvent être faits directement par carte bancaire, en recopiant son numéro à 16 chiffres et son cryptogramme.
+                                        <br/> Seuls les <abbr title="Prestataires de Service de Paiement" data-toggle="tooltip" data-placement="bottom" data-original-title="Prestataires de Service de Paiement ">PSP</abbr> respectant les normes de sécurité PCI DSS sont autorisés à traiter et stocker ces informations de carte bancaire.
+                                        <br/> Un contrat <abbr title="Vente A Distance" data-toggle="tooltip" data-placement="bottom" data-original-title="Vente A Distance">VAD</abbr> est fourni par un établissement acquéreur pour pouvoir encaisser les transactions.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> sélectionne pour chaque application mobile la méthode de paiement la plus adaptée aux besoins des utilisateurs, grâce à une analyse détaillée des coûts et contraintes des différentes solutions technologiques existantes.</i>
+                        </div>
+
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modal-sms" tabindex="-1" role="dialog" aria-labelledby="modal-title-sms">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-sms">SMS gateway</h4>
+                    </div>
+                    <div class="modal-body text-left">
+
+                        <div class="well text-center">
+                            <span class="brand">Moventes</span><i> .</i>
+                        </div>
+
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-hybrid" tabindex="-1" role="dialog" aria-labelledby="modal-title-hybrid">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-hybrid">Hybride vs Native</h4>
+                    </div>
+                    <div class="modal-body text-left">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title text-center">Application <b>hybride</b> (multi-plateforme)</h4></div>
+                                    <div class="panel-body text-left">
+                                        <ul class="list-inline text-center">
+                                            <li><i class="fa fa-html5 fa-2x"></i></li>
+                                            <li></li>
+                                            <li><i class="fa fa-arrow-right  fa-2x"></i></li>
+                                            <li></li>
+                                            <li><i class="fa fa-android fa-2x"></i></li>
+                                            <li><i class="fa fa-apple fa-2x"></i></li>
+                                            <li><i class="fa fa-windows fa-2x"></i></li>
+                                        </ul>
+                                        <br/> Développée une seule fois en HTML5, Javascript et CSS, l'application web est ensuite "packagée" sous forme d'applications mobiles, une pour chaque plateforme (Android, iOS, Windows Phone,...).
+                                        <br>Le design "responsive" de cette application web lui permet de s'adapter à toute taille d'écran.
+                                        <br>Nous nous appuyons pour cela sur notre expertise dans des technologies reconnues:
+                                        <ul class="list-inline text-center">
+                                            <li><a href="https://cordova.apache.org/" target="_blank">Apache Cordova</a></li>
+                                            <li><a href="https://angularjs.org/" target="_blank">AngularJS</a></li>
+                                            <li><a href="http://ionicframework.com/" target="_blank">Ionic</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title text-center">Application <b>native</b></h4></div>
+                                    <div class="panel-body text-left">
+                                        <ul class="list-inline text-center">
+                                            <li><i class="fa fa-code fa-2x"></i></li>
+                                            <li></li>
+                                            <li><i class="fa fa-arrow-right  fa-2x"></i></li>
+                                            <li></li>
+                                            <li><i class="fa fa-android fa-2x"></i></li>
+                                        </ul>
+                                        <br/> Pour plus de performance, l'application mobile peut être développée dans le language natif de la plateforme.
+                                        <br>Nous pouvons ainsi réaliser votre application mobile spécifiquement pour Android.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="well text-center">
+                            <i>Pendant la conception de votre app, <span  class="brand">Moventes</span> vous accompagnera dans le choix de la technologie la plus adaptée à vos besoins.</i>
+                        </div>
+
+                    </div>
+                    <!--
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+-->
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- build:include:inc _commonfooter.html -->
+    <!-- /build -->
+</body>
+
+
+</html>
