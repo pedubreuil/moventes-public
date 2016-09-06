@@ -107,6 +107,17 @@ module.exports = function (grunt) {
                     },
                 ],
 
+            },
+            imgToDist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'img',
+                        src: ['**', '!icons'],
+                        dest: 'dist/img',
+                        filter: 'isFile'
+                    },
+                                              ]
             }
         },
         bower_concat: {
@@ -375,7 +386,7 @@ module.exports = function (grunt) {
     grunt.registerTask('optimJsCss', ['uncss', 'cssmin', 'uglify', 'processhtml:prod']);
 
 
-    grunt.registerTask('dev', ['filesToDist', 'processBowerDep', 'watch']);
+    grunt.registerTask('dev', ['processhtml:inc', 'copy:imgToDist', 'copy:forDist', 'processBowerDep', 'watch']);
 
     grunt.registerTask('default', ['filesToDist', 'processBowerDep', 'optimJsCss', 'htmlmin']);
 
