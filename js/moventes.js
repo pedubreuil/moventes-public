@@ -144,43 +144,43 @@
         //--------------------------------------
         //---- MODAL displayed after timeout ---
 
-        if (!($.cookie('modal_timeout')) && !$.cookie('modal_completed')) {
-            //first time
-            console.debug('init cookie modal_timeout');
-            $.cookie("modal_timeout", 0, {
-                expires: 3,
-                path: '/'
-            });
-        }
-        window.setTimeout(modalTimeoutFn, refreshFrequency);
+//        if (!($.cookie('modal_timeout')) && !$.cookie('modal_completed')) {
+//            //first time
+//            console.debug('init cookie modal_timeout');
+//            $.cookie("modal_timeout", 0, {
+//                expires: 3,
+//                path: '/'
+//            });
+//        }
+//        window.setTimeout(modalTimeoutFn, refreshFrequency);
     }
 
     });
 
 
-    refreshFrequency = 2000;
-    modalTimeoutFn = function () {
-        if (!$.cookieDeclined() && !$.cookie('modal_completed')) {
-            var lastValue = parseInt($.cookie('modal_timeout'));
-            lastValue += refreshFrequency;
-
-            console.debug('modal timeout', lastValue);
-            $.cookie('modal_timeout', lastValue, {
-                expires: 3,
-                path: '/'
-            });
-
-            if (lastValue < 20000) {
-                console.debug('wait again', refreshFrequency);
-                window.setTimeout(modalTimeoutFn, refreshFrequency);
-            } else if (lastValue == 20000) {
-                // here since 20 sec
-                //open modal
-                console.debug('open modal', $('#timeoutModal'));
-                $('#timeoutModal').modal('toggle');
-                $('#timeoutModal').modal('show');
-            } else {
-                //do nothing
-            }
-        }
-    };
+//    refreshFrequency = 2000;
+//    modalTimeoutFn = function () {
+//        if (!$.cookieDeclined() && !$.cookie('modal_completed')) {
+//            var lastValue = parseInt($.cookie('modal_timeout'));
+//            lastValue += refreshFrequency;
+//
+//            console.debug('modal timeout', lastValue);
+//            $.cookie('modal_timeout', lastValue, {
+//                expires: 3,
+    //                path: '/'
+    //            });
+    //
+    //            if (lastValue < 20000) {
+    //                console.debug('wait again', refreshFrequency);
+    //                window.setTimeout(modalTimeoutFn, refreshFrequency);
+    //            } else if (lastValue == 20000) {
+    //                // here since 20 sec
+    //                //open modal
+    //                console.debug('open modal', $('#timeoutModal'));
+    //                $('#timeoutModal').modal('toggle');
+    //                $('#timeoutModal').modal('show');
+//            } else {
+//                //do nothing
+//            }
+//        }
+//    };
