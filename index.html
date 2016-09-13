@@ -120,42 +120,6 @@
 
 
 
-            /*-------------------------------------------------------------------*/
-
-            $('.home-item').hover(
-                function () {
-                    $(this).find('.home-icon').addClass('animated pulse');
-                },
-                function () {
-                    $(this).find('.home-icon').removeClass('animated pulse');
-                }
-            );
-            $('.service-item').hover(
-                function () {
-                    $(this).find('.service-icon').addClass('animated rotateIn');
-                },
-                function () {
-                    $(this).find('.service-icon').removeClass('animated rotateIn');
-                }
-            );
-
-            $('.offre-item').hover(
-                function () {
-                    $(this).addClass('animated bounce');
-                },
-                function () {
-                    $(this).removeClass('animated bounce');
-                }
-            );
-
-            $('.techno-item').hover(
-                function () {
-                    $(this).addClass('animated pulse');
-                },
-                function () {
-                    $(this).removeClass('animated pulse');
-                }
-            );
 
 
 
@@ -733,7 +697,7 @@
 
 
         <!-- ##############################################################
-###################   SECTION  "PRESENTATION"  ######################
+###################   SECTION  "IDENTITE"  ######################
 #####################################################################  -->
         <div class="separateurSection row ">
             <hr width='50%' style="margin-bottom:0">
@@ -741,6 +705,22 @@
 
         <section id="presentation">
 
+        <script type="application/javascript">
+
+            $(document).ready(function () {
+
+
+            $('.offre-item').hover(
+                function () {
+                    $(this).addClass('bounce animated');
+                },
+                function () {
+                    $(this).removeClass('bounce animated');
+                }
+            );
+
+            });
+            </script>
             <div class="row text-center ">
                 <h2 class="section-heading">Notre identité</h2>
             </div>
