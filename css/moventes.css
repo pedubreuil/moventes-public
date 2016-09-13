@@ -1366,14 +1366,21 @@ section#valeurs {
     border-bottom: solid 2px #23527c;
 }
 
+.iconLeft{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
 .iconLeft i {
     text-align: center;
     font-size: 5em;
     vertical-align: middle;
+    margin:auto;
 }
 
 .valeursTxt {
-    border: solid 1px grey;
+    /*border: solid 1px grey;*/
     margin-right: 2em;
     margin-top: 1em;
     text-align: -webkit-auto;
