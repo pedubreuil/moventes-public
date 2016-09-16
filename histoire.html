@@ -21,361 +21,186 @@
     <!-- build:include:inc _commonmenu.html -->
     <!-- /build -->
 
-    <!-- ##############################################################
-###################   SECTION  "TECHNO"  ######################
-#####################################################################  -->
 
 
+    <div class="parallax b-lazy" data-src="img/bg/header5-lg.jpg" data-src-small="img/bg/header5-xs.jpg" data-src-medium="img/bg/header5-md.jpg">
 
-    <div class="modal fade" id="timeoutModal" tabindex="-1" role="dialog" aria-labelledby="timeoutModalTitle">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="timeoutModalTitle">
-                    Moventes vous accompagne<br/>
-                    <small>pour trouver et mettre en place une solution de mobilité adaptée à votre entreprise</small>
-                </h4>
-
-                </div>
-                <form action="bin/contact_us.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
-
-                    <div class="modal-body">
-
-                        <div class="form-group form-group-lg">
-                            <label class="sr-only" for="mce-EMAIL">Email:</label>
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-envelope-o"></i></div>
-                                <input class="form-control" type="email" value="" name="email" id="mce-EMAIL" placeholder="Votre email">
-                            </div>
-                        </div>
-
-                        <div class="form-group form-group-sm">
-                            <label class="sr-only" for="mce-LNAME">Nom:</label>
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input type="text" class="form-control" name="lastname" id="mce-LNAME" placeholder="Votre nom">
-                            </div>
-                        </div>
+        <!-- Services -->
+        <section id="histoire">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h1 class="section-title">Notre histoire</h1>
+                        <div class="row">
+                            <div class="col-md-12">
 
 
-                        <div class="form-group form-group-sm">
-                            <label class="sr-only" for="mce-COMPNY">Entreprise:</label>
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-building-o"></i></div>
-                                <input type="text" class="form-control" name="company" id="mce-COMPNY" placeholder="Votre entreprise">
-                            </div>
-                        </div>
-
-
-                        <!--
-                    <div class="form-group form-group-sm">
-                        <label class="sr-only" for="mce-ACTIVT">Secteur d'activité:</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="fa fa-industry"></i></div>
-                            <select class="form-control"  name="activity" id="mce-ACTIVT">
-                                <option value="" >Votre secteur d'activité</option>
-                                <option value="agriculture, sylviculture et pêche">agriculture, sylviculture et pêche</option>
-                                <option value="industries extractives">industries extractives</option>
-                                <option value="industrie manufacturière">industrie manufacturière</option>
-                                <option value="électricité, gaz, air conditionné">électricité, gaz, air conditionné</option>
-                                <option value="environnement (eau, déchets, dépollution)">environnement (eau, déchets, dépollution)</option>
-                                <option value="construction, BTP">construction, BTP</option>
-                                <option value="commerce">commerce</option>
-                                <option value="transports et entreposage">transports et entreposage</option>
-                                <option value="hébergement et restauration">hébergement et restauration</option>
-                                <option value="information et communication">information et communication</option>
-                                <option value="finances et assurance">finances et assurance</option>
-                                <option value="immobilier">immobilier</option>
-                                <option value="activités spécialisées, scientifiques et techniques">activités spécialisées, scientifiques et techniques</option>
-                                <option value="services administratifs et de soutien">services administratifs et de soutien</option>
-                                <option value="administration publique">administration publique</option>
-                                <option value="enseignement">enseignement</option>
-                                <option value="santé humaine et action sociale">santé humaine et action sociale</option>
-                                <option value="arts, spectacles et activités récréatives">arts, spectacles et activités récréatives</option>
-                                <option value="autre">autre</option>
-                            </select>
-                        </div>
-                    </div>
--->
-
-                        <div class="checkbox checkbox-success">
-                            <input type="checkbox" value="1" name="newsletter" id="mce-group[7125]-7125-0">
-                            <label for="mce-group[7125]-7125-0">s'abonner à la newsletter mensuelle</label>
-                        </div>
-
-                        <div class="checkbox checkbox-success">
-                            <input type="checkbox" value="1" name="mobilityPotential" id="mce-group[7125]-7125-1">
-                            <label for="mce-group[7125]-7125-1">demander une évaluation du potentiel mobilité de l'entreprise</label>
-                        </div>
-                        <div class="checkbox checkbox-success">
-                            <input type="checkbox" value="1" name="quotation" id="mce-group[7125]-7125-2">
-                            <label for="mce-group[7125]-7125-2">demander un devis pour réaliser une application mobile B2B</label>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" value="Envoyer" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-    <script type="application/javascript">
-        $(document).ready(function () {
-
-
-            // console.log('form',$('#contactForm'));
-            $('#mc-embedded-subscribe-form').bootstrapValidator({
-                    message: 'Ce champ n\'est pas valide',
-                    feedbackIcons: {
-                        valid: 'glyphicon glyphicon-ok',
-                        invalid: 'glyphicon glyphicon-remove',
-                        validating: 'glyphicon glyphicon-refresh'
-                    },
-                    live: 'enabled',
-                    submitButtons: 'input[type="submit"]',
-                    fields: {
-                        lastname: {
-                            validators: {}
-                        },
-                        company: {
-                            validators: {}
-                        },
-                        email: {
-                            validators: {
-                                notEmpty: {
-                                    message: ''
-                                },
-                                emailAddress: {
-                                    message: ''
-                                }
-                            }
-                        }
-                    }
-                })
-                .on('success.form.bv', function (e) {
-                    // Prevent form submission
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-
-                    var $form = $(e.target),
-                        validator = $form.data('bootstrapValidator'),
-                        submitButton = validator.getSubmitButton();
-
-                    var dataToSend = $form.serialize();
-                    console.log('data to send', dataToSend);
-                    $form.find(':input').prop('disabled', true)
-
-                    submitButton.replaceWith('<i class="fa fa-spinner fa-spin"></i>');
-
-                    var posting = $.post($form.attr('action'), dataToSend, function (result) {
-                        console.log('result', result);
-                    });
-                    posting.done(function (data) {
-                        console.log("done !", data);
-                        var response = jQuery.parseJSON(data);
-                        console.log('success', response.success);
-                        if (response.success) {
-                            $(".modal-body").empty().append('<div class="alert alert-success"  role="alert">' + response.message + '</div>');
-                            window.setTimeout(function () {
-                                $('#timeoutModal').modal('hide');
-                            }, 3000);
-                        } else {
-                            $(".modal-body").empty().append('<div class="alert alert-danger"  role="alert">' + response.message + '<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
-                        }
-                    }).fail(function () {
-                        $(".modal-body").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
-                    });
-
-                    $.cookie("modal_completed", true, {
-                        expires: 365,
-                        path: '/'
-                    });
-
-                });
-        });
-    </script>
-
-
-
-
-    <!-- Services -->
-    <section id="histoire" class="parallax b-lazy" data-src="img/bg/header5-lg.jpg" data-src-medium="img/bg/header5-md.jpg" data-src-small="img/bg/header5-xs.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2 class="section-title">Notre histoire</h2>
-                    <div class="row">
-                        <div class="col-md-12">
-
-
-                            <ul class="timeline">
-                                <li class="timeline-inverted">
-                                    <span class="tl-circ fa-stack fa-2x wow rotateIn">
+                                <ul class="timeline">
+                                    <li class="timeline-inverted">
+                                        <span class="tl-circ fa-stack fa-2x wow rotateIn">
                                             <i class="fa fa-circle fa-stack-2x text-primary"></i>
                                             <i class="fa  fa-lightbulb-o  fa-stack-1x fa-inverse"></i>
                                         </span>
-                                    <div class="timeline-panel wow slideInRight">
-                                        <div class="tl-heading">
-                                            <h4 class="text-primary" style="padding-top:10px">votre projet entrepreneurial !</h4>
+                                        <div class="timeline-panel wow slideInRight active">
+                                            <div class="tl-heading">
+                                                <h4 class="text-primary" style="padding-top:10px">votre projet entrepreneurial !</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="milestone alert timeline-central wow zoomIn">
-                                        <div class="milestone-heading">Nouvelle offre de Moventes dédiée aux startups françaises (aout 2016)</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="tl-circ fa-stack fa-2x wow rotateIn">
+                                    </li>
+                                    <li>
+                                        <div class="milestone alert timeline-central wow zoomIn">
+                                            <div class="milestone-heading">Nouvelle offre de Moventes dédiée aux startups françaises (août 2016)</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tl-circ fa-stack fa-2x wow rotateIn">
                                             <i class="fa fa-circle fa-stack-2x text-primary"></i>
                                             <i class="fa fa-h-square fa-stack-1x fa-inverse"></i>
                                         </span>
-                                    <div class="timeline-panel wow slideInLeft backgroundNew">
-                                        <div class="tl-heading">
-                                            <h4 class="text-primary">Projet AZELIES (2016)</h4>
-                                        </div>
-                                        <div class="tl-body">
-                                            <p>Incubée par EuraSanté, la startup AZELIES propose aux professionnels de la Santé une approche innovante pour accéder à des équipements médicaux de pointe. De nombreux acteurs du domaine attendent avec impatience la sortie prochaine de cette solution développée par Moventes.</p>
-                                        </div>
-                                        <ul class="list-inline milestone-body">
-                                            <li><a href="http://azelies.com/" target="_blank">En savoir plus</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="tl-circ fa-stack fa-2x wow rotateIn">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <i class="fa fa-female fa-stack-1x fa-inverse"></i>
-                                    </div>
-                                    <div class="timeline-panel wow slideInRight backgroundNew">
-                                        <div class="tl-heading">
-                                            <h4 class="text-primary">Projet JamboMama! (2015-2016)</h4>
-                                        </div>
-                                        <div class="tl-body">
-                                            <p>Porté par l'ONG SAHFA, ce projet d'applications mobiles est destiné à mettre en relation les femmes enceintes de Tanzanie avec des soignants qualifiés pour suivre leur grossesse. La levée de fonds et des discussions avec les acteurs locaux sont en cours.</p>
-                                        </div>
-                                        <ul class="list-inline milestone-body">
-                                            <li><a href="http://smartaccesstohealthforall.org/jambomama" target="_blank">En savoir plus</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="tl-circ fa-stack fa-2x wow rotateIn">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <i class="fa fa-sitemap  fa-stack-1x fa-inverse"></i>
-                                    </div>
-                                    <div class="timeline-panel  wow slideInLeft">
-                                        <div class="tl-heading">
-                                            <h4 class="text-primary">Sites web (2015-2016)</h4>
-
-                                        </div>
-                                        <div class="tl-body">
-                                            <p>Moventes a réalisé le site web de plusieurs associations et TPE, dont:</p>
-                                            <ul>
-                                                <li><a href="https://www.revuethomiste.fr/" target="_blank">La revue thomistes</a></li>
-                                                <li><a href="http://www.gahia.com/wp/" target="_blank">Gahia</a></li>
-                                                <li><a href="http://www.artisansetnumerique.fr/" target="_blank">Artisans & Numérique</a></li>
-                                                <li><a href="http://www.aumonerienantes.fr/" target="_blank">Aumônerie étudiante de Nantes</a></li>
-                                                <li><a href="https://symposium2017.revuethomiste.org/" target="_blank">Symposium thomiste 2017</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="tl-circ fa-stack fa-2x wow rotateIn">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <i class="fa fa-fire-extinguisher  fa-stack-1x fa-inverse"></i>
-                                    </div>
-                                    <div class="timeline-panel wow slideInRight">
-                                        <div class="tl-heading">
-                                            <h4 class="text-primary">projet Permis de Feu (2015)</h4>
-                                            <div class="tl-body">
-                                                <p>Moventes a travaillé plusieurs mois sur ce projet d'application mobile pour la prévention incendie sur les chantiers, avec <a href="https://www.linkedin.com/in/sebastienclery" target="_blank">Sébastien CLERY</a>. Un acteur majeur du secteur de la prévention ayant alors commencé un projet similaire, Moventes est sorti du projet en janvier 2016.</p>
+                                        <div class="timeline-panel wow slideInLeft backgroundNew">
+                                            <div class="tl-heading">
+                                                <h4 class="">Projet AZELIES (2016)</h4>
                                             </div>
-                                            <ul class="list-inline milestone-body">
-                                                <li><a href="http://permisdefeu.fr/" target="_blank">En savoir plus</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="milestone alert timeline-central wow zoomIn">
-                                        <div class="milestone-heading">Création de Moventes (mai 2015)</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="tl-circ fa-stack fa-2x wow rotateIn">
-                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                            <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    <div class="timeline-panel  wow slideInLeft">
-                                        <div class="tl-heading">
-                                            <h4 class="text-primary">projet Movalys MDK HTML5 (2014)</h4>
-                                        </div>
-                                        <div class="tl-body">
-                                            <p>Pierre-Emmanuel a managé une équipe de 10 développeurs pour réaliser la première version de ce générateur d'applications mobiles hybrides.</p>
-                                        </div>
-                                        <ul class="list-inline milestone-body">
-                                            <li><a href="https://www.movalys.org/" target="_blank">En savoir plus</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="tl-circ fa-stack fa-2x wow rotateIn">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
-                                    </div>
-                                    <div class="timeline-panel wow slideInRight">
-                                        <div class="tl-heading">
-                                            <h4 class="text-primary">projet GlobeExpert (2013-2014)</h4>
-                                        </div>
-                                        <div class="tl-body">
-                                            <p><a href="https://fr.linkedin.com/in/pedubreuil/fr" target="_blank">Pierre-Emmanuel</a> a aidé <a href="https://www.linkedin.com/in/thierry-lorho-25820937" target="_blank">Thierry</a> dans le développement et la rédaction du Business Plan de ce logiciel d'analyse géopolitique (à partir d'analyses mathématiques du big data <b>et d'intelligence artificielle</b>). La levée de fonds n'a pas abouti mais ce logiciel continue à être utilisé par un groupe d'experts.
-                                                <a href="http://thinkingthefuture.org/globe-expert/" target="_blank">En savoir plus</a></p>
-                                        </div>
-                                        <ul class="list-inline milestone-body">
-                                            <li><a href="http://thinkingthefuture.org/globe-expert/" target="_blank">En savoir plus</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="tl-circ fa-stack fa-2x wow rotateIn">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <i class="fa fa-database  fa-stack-1x fa-inverse"></i>
-                                    </div>
-                                    <div class="timeline-panel  wow slideInLeft">
-                                        <div class="tl-heading">
-                                            <h4 class="text-primary">Projet Modelata (2011)</h4>
                                             <div class="tl-body">
+                                                <p>Incubée par EuraSanté, la startup AZELIES propose aux professionnels de la Santé une approche innovante pour accéder à des équipements médicaux de pointe. De nombreux acteurs du domaine attendent avec impatience la sortie prochaine de cette solution développée par Moventes.</p>
+                                            </div>
+                                            <div class="tl-footer">
+                                                <a href="http://azelies.com/" class="btn btn-primary" target="_blank">En savoir plus</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-inverted">
+                                        <div class="tl-circ fa-stack fa-2x wow rotateIn">
+                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fa fa-female fa-stack-1x fa-inverse"></i>
+                                        </div>
+                                        <div class="timeline-panel wow slideInRight backgroundNew">
+                                            <div class="tl-heading">
+                                                <h4 class="">Projet JamboMama! (2015-2016)</h4>
+                                            </div>
+                                            <div class="tl-body">
+                                                <p>Porté par l'ONG SAHFA, ce projet d'applications mobiles est destiné à mettre en relation les femmes enceintes de Tanzanie avec des soignants qualifiés pour suivre leur grossesse. La levée de fonds et des discussions avec les acteurs locaux sont en cours.</p>
+                                            </div>
+                                            <div class="tl-footer">
+                                                <a href="http://smartaccesstohealthforall.org/jambomama" class="btn btn-primary" target="_blank">En savoir plus</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tl-circ fa-stack fa-2x wow rotateIn">
+                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fa fa-sitemap  fa-stack-1x fa-inverse"></i>
+                                        </div>
+                                        <div class="timeline-panel  wow slideInLeft">
+                                            <div class="tl-heading">
+                                                <h4 class="text-primary">Sites web (2015-2016)</h4>
+
+                                            </div>
+                                            <div class="tl-body text-left">
+                                                <p>Moventes a réalisé le site web de plusieurs associations et TPE, dont:</p>
                                                 <ul>
-                                                    <p><a href="https://fr.linkedin.com/in/pedubreuil/fr" target="_blank">Pierre-Emmanuel</a> et <a href="https://www.linkedin.com/in/tankevin" target="_blank">Kevin</a> ont travaillé plusieurs mois sur la création d'un logiciel SaaS d'agrégation de données (publiques et privées) pour les entreprises. Leur manque d'expérience commerciale ne leur a pas permis de convaincre prospects et investisseurs.
-                                                    </p>
+                                                    <li><a href="https://www.revuethomiste.fr/" target="_blank">La revue thomistes</a></li>
+                                                    <li><a href="http://www.gahia.com/wp/" target="_blank">Gahia</a></li>
+                                                    <li><a href="http://www.artisansetnumerique.fr/" target="_blank">Artisans & Numérique</a></li>
+                                                    <li><a href="http://www.aumonerienantes.fr/" target="_blank">Aumônerie étudiante de Nantes</a></li>
+                                                    <li><a href="https://symposium2017.revuethomiste.org/" target="_blank">Symposium thomiste 2017</a></li>
                                                 </ul>
                                             </div>
                                         </div>
-                                </li>
-                            </ul>
-                            </div>
+                                    </li>
+                                    <li class="timeline-inverted">
+                                        <div class="tl-circ fa-stack fa-2x wow rotateIn">
+                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fa fa-fire-extinguisher  fa-stack-1x fa-inverse"></i>
+                                        </div>
+                                        <div class="timeline-panel wow slideInRight">
+                                            <div class="tl-heading">
+                                                <h4 class="text-primary">projet Permis de Feu (2015)</h4>
+                                                <div class="tl-body">
+                                                    <p>Moventes a travaillé plusieurs mois sur ce projet d'application mobile pour la prévention incendie sur les chantiers, avec <a href="https://www.linkedin.com/in/sebastienclery" target="_blank">Sébastien CLERY</a>. Un acteur majeur du secteur de la prévention ayant alors commencé un projet similaire, Moventes est sorti du projet en janvier 2016.</p>
+                                                </div>
+                                                <div class="tl-footer">
+                                                    <a href="http://permisdefeu.fr/" class="btn btn-default btn-small" target="_blank">En savoir plus</a>
+                                                </div>
 
-                            <div class="clearfix"></div>
-                            <div class="col-md-12 text-right">
-                                <!--                                <a href="http://moventes.com/solution" class="btn btn-primary">En savoir plus <span class="glyphicon glyphicon-chevron-right"></span></a>-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="milestone alert timeline-central wow zoomIn">
+                                            <div class="milestone-heading">Création de Moventes (mai 2015)</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tl-circ fa-stack fa-2x wow rotateIn">
+                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                        <div class="timeline-panel  wow slideInLeft">
+                                            <div class="tl-heading">
+                                                <h4 class="text-primary">projet Movalys MDK HTML5 (2014)</h4>
+                                            </div>
+                                            <div class="tl-body">
+                                                <p>Pierre-Emmanuel a managé une équipe de 10 développeurs pour réaliser la première version de ce générateur d'applications mobiles hybrides.</p>
+                                            </div>
+                                            <div class="tl-footer">
+                                                <a href="https://www.movalys.org/" class="btn btn-default" target="_blank">En savoir plus</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-inverted">
+                                        <div class="tl-circ fa-stack fa-2x wow rotateIn">
+                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+                                        </div>
+                                        <div class="timeline-panel wow slideInRight">
+                                            <div class="tl-heading">
+                                                <h4 class="text-primary">projet GlobeExpert (2013-2014)</h4>
+                                            </div>
+                                            <div class="tl-body">
+                                                <p><a href="https://fr.linkedin.com/in/pedubreuil/fr" target="_blank">Pierre-Emmanuel</a> a aidé <a href="https://www.linkedin.com/in/thierry-lorho-25820937" target="_blank">Thierry</a> dans le développement et la rédaction du Business Plan de ce logiciel d'analyse géopolitique (à partir d'analyses mathématiques du big data <b>et d'intelligence artificielle</b>). La levée de fonds n'a pas abouti mais ce logiciel continue à être utilisé par un groupe d'experts.
+                                                    <a href="http://thinkingthefuture.org/globe-expert/" target="_blank">En savoir plus</a></p>
+                                            </div>
+                                            <div class="tl-footer">
+                                                <a href="http://thinkingthefuture.org/globe-expert/" class="btn btn-default" target="_blank">En savoir plus</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tl-circ fa-stack fa-2x wow rotateIn">
+                                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fa fa-database  fa-stack-1x fa-inverse"></i>
+                                        </div>
+                                        <div class="timeline-panel  wow slideInLeft">
+                                            <div class="tl-heading">
+                                                <h4 class="text-primary">Projet Modelata (2011)</h4>
+                                                <div class="tl-body">
+                                                    <ul>
+                                                        <p><a href="https://fr.linkedin.com/in/pedubreuil/fr" target="_blank">Pierre-Emmanuel</a> et <a href="https://www.linkedin.com/in/tankevin" target="_blank">Kevin</a> ont travaillé plusieurs mois sur la création d'un logiciel SaaS d'agrégation de données (publiques et privées) pour les entreprises. Leur manque d'expérience commerciale ne leur a pas permis de convaincre prospects et investisseurs.
+                                                        </p>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    </li>
+                                </ul>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <div class="col-md-12 text-right">
+                                    <!--                                <a href="http://moventes.com/solution" class="btn btn-primary">En savoir plus <span class="glyphicon glyphicon-chevron-right"></span></a>-->
+                                </div>
                             </div>
+                            <!-- /.row (nested) -->
                         </div>
-                        <!-- /.row (nested) -->
+                        <!-- /.col-lg-10 -->
                     </div>
-                    <!-- /.col-lg-10 -->
+                    <!-- /.row -->
                 </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-    </section>
-    <!-- build:include:inc _commonfooter.html -->
-    <!-- /build -->
+                <!-- /.container -->
+        </section>
+        </div>
+        <!-- build:include:inc _commonfooter.html -->
+        <!-- /build -->
 </body>
 
 

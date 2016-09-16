@@ -47,82 +47,6 @@
             });
 
 
-            //-----------------------------------------------------------
-            //problem/solution
-            //-----------------------------------------------------------
-
-
-            $(this).find('.solution').hide();
-            $(this).find('.problem').show();
-
-            function checkEnjeuScrolled(enjeu) {
-                var fromTop = enjeu.offset().top - $(window).scrollTop();
-                return (fromTop <= 150);
-            }
-
-
-            $(document).scroll(function () {
-                $(".enjeux").each(function (indexEnjeu) {
-                    if (checkEnjeuScrolled($(this))) {
-                        showSolution($(this));
-                    } else {
-                        showProblem($(this));
-                    }
-                });
-            });
-
-            $('.enjeux').hover(function () {
-                if (checkEnjeuScrolled($(this))) {
-                    showProblem($(this));
-                }
-            }, function () {
-                if (checkEnjeuScrolled($(this))) {
-                    showSolution($(this));
-                }
-            });
-
-            function showSolution(enjeu) {
-                //                console.log('showSolution (START)');
-                if (!enjeu.find('.solution').is(":visible")) {
-
-                    enjeu.find('.problem').hide(0, function () {
-                        enjeu.find('.solution').fadeIn("slow", function () {
-                            //                console.log('showSolution (END)');
-                        });
-                    });
-                }
-
-            }
-
-            function showProblem(enjeu) {
-                //                console.log('showProblem (START)');
-                if (!enjeu.find('.problem').is(":visible")) {
-                    enjeu.find('.solution').hide(0, function () {
-                        enjeu.find('.problem').fadeIn("slow", function () {
-                            //                console.log('showProblem (END)');
-                        });
-                    });
-                }
-            }
-
-
-
-            $('.enjeux').on("click", function (event) {
-                event.stopPropagation();
-                if ($(this).find('.problem').is(":visible")) {
-                    showSolution($(this));
-                } else {
-                    showProblem($(this));
-                }
-                return false;
-            });
-
-
-
-
-
-
-
         });
     </script>
 
@@ -169,23 +93,45 @@
 
     <!-- Header -->
     <header id="top" class="header b-lazy" data-src="img/bg/header2-lg.jpg" data-src-small="img/bg/header2-xs.jpg" data-src-medium="img/bg/header2-md.jpg">
-        <div class="container decalage-top">
-            <div class="row">
+        <div class="container ">
+            <div class="row decalage-top">
                 <div class="col-md-8 col-md-offset-2 fond-blanc">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
-                            <h1 class="brand"><img alt="Logo Moventes" src="img/logo.png"> Moventes</h1>
-                            <h3 class="text-header">Partenaire informatique des startups</h3>
+                            <div class="row title">
+                                <div class="col-xs-3 text-right">
+                                    <img class="img-responsive" src="img/logo.png" alt="...">
+                                </div>
+                                <div class="col-xs-9 text-left">
+                                    <h1 class="brand">Moventes</h1>
+                                    <h3 class="text-header text-center">Partenaire informatique des startups</h3>
+
+                                </div>
+                            </div>
+
+                            <!--
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <a href="#">
+                                        <img class="media-object" src="img/logo.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h1 class="brand media-heading">Moventes</h1>
+                                </div>
+                            </div>
+-->
+
                             <p>Pour développer la plateforme web ou mobile de votre startup, il peut être difficile de trouver le cofondateur informatique idéal... Moventes concrétise avec vous ce projet entrepreneurial, en relevant ses défis business et technologiques, et en coachant les développeurs qui formeront votre future direction informatique !
                             </p>
                         </div>
                     </div>
                     <div class="row text-center equal-height top-buffer">
-                        <div class="col-xs-12 col-md-3">
+                        <div class="col-xs-12 col-md-3 col-md-offset-1 home-step">
                             <a href="#preparation">
                                 <div class="home-item wow fadeIn" data-wow-delay="1s">
                                     <span class="fa-stack fa-4x home-icon">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
                                     </span>
                                     <h3>Préparation</h3>
@@ -197,11 +143,11 @@
                                 <i class="fa fa-chevron-right fa-4x chevronHome"></i>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-3">
+                        <div class="col-xs-12 col-md-3 home-step">
                             <a href="#construction">
                                 <div class="home-item wow fadeIn" data-wow-delay="2s">
                                     <span class="fa-stack fa-4x home-icon">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
                                 </span>
                                     <h3>Construction</h3>
@@ -213,13 +159,13 @@
                                 <i class="fa fa-chevron-right fa-4x "></i>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-3">
+                        <div class="col-xs-12 col-md-3 home-step">
                             <a href="#decollage">
                                 <div class="home-item wow fadeIn" data-wow-delay="3s">
                                     <span class="fa-stack fa-4x home-icon">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
-                                </span>
+                                    </span>
                                     <h3>Décollage</h3>
                                 </div>
                             </a>
@@ -229,10 +175,22 @@
                 </div>
             </div>
         </div>
-        <a class="page-scroll" href="#approche" style="color:grey;"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
+        <script type="application/javascript">
+            $(document).ready(function () {
+                $('.home-step').hover(
+                    function () {
+                        console.log('will pulse', $(this));
+                        $(this).addClass('pulse animated');
+                    },
+                    function () {
+                        $(this).removeClass('pulse animated');
+                    }
+                );
+            });
+        </script>
+        <!--<a class="page-scroll" href="#approche" style="color:grey;"><i class="fa fa-chevron-circle-down fa-4x"></i></a>-->
     </header>
     <div class="parallax b-lazy" data-src="img/bg/header3-lg.jpg" data-src-small="img/bg/header3-xs.jpg" data-src-medium="img/bg/header3-md.jpg">
-
 
         <!-- ##############################################################
 ###################   SECTION  "APPROCHE"  ######################
@@ -240,86 +198,102 @@
 
         <section id="approche" class="container-fluid">
             <div class="row">
-                <div id="preparation" class="row text-center">
-                    <h2 class="section-heading">Notre approche</h2>
+                <div id="preparation" class="col-sm-10 col-sm-offset-1  text-center">
+                    <h1 class="section-heading">Notre approche</h1>
                 </div>
+            </div>
 
-                <div class="row col-md-10 col-md-offset-1  top-buffer wow slideInRight vertical-align approche approche1">
-                    <figure class="figure1 col-md-4 col-md-offset-4 hidden-xs hidden-sm">
-                        <img class="figure1img img-responsive img-circle center-block" src="../img/approche-1.jpg" alt="préparation" />
-                        <div class="legend-approche etiquette-approche1"><img class="barre" src="../img/barre-white-bold.png" alt="barré" />
-                            <p>consultant </p>
-                            <p>&nbsp;Partenaire</p>
-                        </div>
-                    </figure>
-                    <div class="divFigure1 col-md-4">
-                        <h4 class="">Préparation</h4>
-                        <ul class="list-group">
-                            <li class="list-group-item"><b>Sondages</b> du marché</li>
-                            <li class="list-group-item">Conception de la <b>solution informatique</b> et de son modèle économique</li>
-                            <li class="list-group-item">Montage d'une vidéo de <b>présentation</b> du projet et d'une page web pour "vendre" le concept</li>
-                            <li class="list-group-item">Lancement d'une campagne de <b>crowdfunding</b></li>
-                        </ul>
-                        <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-accompagnement">
-                    Notre accompagnement
-                </a>
+            <div class="row top-buffer wow slideInRight approche approche1 center-block">
+                <figure class="figure1 col-sm-4 col-lg-offset-4 hidden-xs">
+                    <img class="figure1img img-responsive img-circle " src="../img/approche-1.jpg" alt="préparation" />
+                    <div class="legend-approche etiquette-approche1"><img class="barre" src="../img/barre-white-bold.png" alt="barré" />
+                        <p>consultant </p>
+                        <p>&nbsp;Partenaire</p>
+                    </div>
+                </figure>
+                <div class="divFigure1 col-lg-4 col-sm-8 col-xs-12 text-center">
+
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <h4>Préparation</h4></li>
+                        <li class="list-group-item"><b>Sondages</b> du marché</li>
+                        <li class="list-group-item">Conception de la <b>solution informatique</b>
+                            <nobr>et de son modèle économique</nobr>
+                        </li>
+                        <li class="list-group-item">Montage d'une vidéo de <b>présentation</b> du projet
+                            <br/>et d'une page web pour "vendre" le concept</li>
+                        <li class="list-group-item">Lancement d'une campagne de <b>crowdfunding</b></li>
+                    </ul>
+                    <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-accompagnement">
+                                Notre accompagnement
+                            </a>
+                </div>
+            </div>
+
+            <div id="construction" class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+
+            <div class="row  top-buffer wow slideInLeft approche approche2 center-block">
+                <figure class="figure2 col-sm-4 col-lg-push-4 hidden-xs">
+                    <img class="figure2img img-responsive img-circle center-block" src="../img/approche-22.jpg" alt="construction" />
+                    <div class="legend-approche etiquette-approche2"><img class="barre" src="../img/barre-white-bold.png" alt="barré" />
+                        <p>manager </p>
+                        <p>&nbsp;Coach</p>
                     </div>
 
-                </div>
-                <div id="construction" class="col-md-12 " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
-                <div class="row col-md-10 col-md-offset-1  top-buffer wow slideInLeft vertical-align approche approche2">
-                    <div class="divFigure2 col-md-4">
-                        <h4>Construction</h4>
-                        <ul class="list-group">
-                            <li class="list-group-item"><b>conception technique</b> et cahier des charges</li>
-                            <li class="list-group-item"><b>développement de la solution</b> informatique (web et mobile)</li>
-                            <li class="list-group-item"><b>formation</b>, coaching et soutien technique des développeurs par un ingénieur expérimenté</li>
-                            <li class="list-group-item"><b>gestion de projet agile</b> et reporting d'avancement continu</li>
-                        </ul>
-                        <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-engagements">
+                </figure>
+                <div class="divFigure2 col-lg-4 col-sm-8 col-xs-12 col-lg-pull-4 text-center">
+
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <h4>Construction</h4></li>
+                        <li class="list-group-item"><b>conception technique</b> et cahier des charges</li>
+                        <li class="list-group-item"><b>développement de la solution</b> informatique
+                            <nobr>(web et mobile)</nobr>
+                        </li>
+                        <li class="list-group-item"><b>formation</b>, coaching et soutien technique
+                            <nobr>des développeurs</nobr> par un ingénieur expérimenté</li>
+                        <li class="list-group-item"><b>gestion de projet agile</b> et
+                            <nobr>reporting d'avancement continu</nobr>
+                        </li>
+                    </ul>
+                    <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-engagements">
                     Nos engagements
                 </a>
-                    </div>
-                    <figure class="figure2 col-md-4 hidden-xs hidden-sm">
-                        <img class="figure2img img-responsive img-circle center-block" src="../img/approche-22.jpg" alt="construction" />
-                        <div class="legend-approche etiquette-approche2"><img class="barre" src="../img/barre-white-bold.png" alt="barré" />
-                            <p>manager </p>
-                            <p>&nbsp;Coach</p>
-                        </div>
-
-                    </figure>
                 </div>
-                <div id="decollage" class="col-md-12 " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+            </div>
 
-                <div class="row col-md-10 col-md-offset-1  top-buffer wow slideInRight vertical-align approche approche3">
-                    <figure class="figure3 col-md-4 col-md-offset-4 hidden-xs hidden-sm">
-                        <img class="figure3img img-responsive img-circle center-block" src="../img/approche-33.jpg" alt="croissance" />
-                        <div class="legend-approche etiquette-approche1"><img class="barre" src="../img/barre-white-bold.png" alt="barré" />
-                            <p>prestataire </p>
-                            <p>&nbsp;Allié</p>
-                        </div>
+            <div id="decollage" class="row" style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
 
-                    </figure>
-                    <div class="divFigure3 col-md-4">
-                        <h4 class="">Décollage</h4>
-                        <ul class="list-group">
-                            <li class="list-group-item"><b>opportunité d'embaucher les développeurs</b> qui ont travaillé dessus, pour monter une direction informatique interne et devenir autonome</li>
-                            <li class="list-group-item"><b>assistance</b> lors de la <b>commercialisation</b> de la solution</li>
-                            <li class="list-group-item"><b>expertise et soutien techniques</b> pour les évolutions majeures de la solution informatique</li>
-                        </ul>
-                        <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-rh">
+            <div class="row  top-buffer wow slideInRight approche approche3 center-block">
+                <figure class="figure3 col-sm-4 col-lg-offset-4 hidden-xs">
+                    <img class="figure3img img-responsive img-circle center-block" src="../img/approche-33.jpg" alt="croissance" />
+                    <div class="legend-approche etiquette-approche3"><img class="barre" src="../img/barre-white-bold.png" alt="barré" />
+                        <p>prestataire </p>
+                        <p>&nbsp;Allié</p>
+                    </div>
+
+                </figure>
+                <div class="divFigure3 col-lg-4 col-sm-8 col-xs-12 text-center">
+
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <h4 class="">Décollage</h4></li>
+                        <li class="list-group-item"><b>opportunité d'embaucher les développeurs</b> qui ont travaillé sur le projet, pour monter une direction informatique interne et devenir autonome</li>
+                        <li class="list-group-item"><b>assistance lors de la commercialisation</b> de la solution</li>
+                        <li class="list-group-item"><b>expertise et soutien techniques</b> pour les évolutions majeures de la solution informatique</li>
+                    </ul>
+                    <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-rh">
                     Notre politique RH
                 </a>
-                    </div>
                 </div>
             </div>
 
         </section>
         <script type="application/javascript">
             function resizeCircle() {
-                $(".figure1img").height($(".divFigure1").height());
-                $(".figure2img").height($(".divFigure2").height());
-                $(".figure3img").height($(".divFigure3").height());
+                $(".figure1img").css('max-height', $(".divFigure1").height());
+                $(".figure2img").css('max-height', $(".divFigure2").height());
+                $(".figure3img").css('max-height', $(".divFigure3").height());
             }
 
             $(document).ready(function () {
@@ -330,105 +304,99 @@
             });
         </script>
 
-        <!-- ##############################################################
-###################   MODAL  "approche"  ######################
-#####################################################################  -->
+        <!-- ======================= MODAL  "accompagnement"  ====================================================================  -->
 
-        <!-- ************ MODAL Croissance *************** -->
 
         <div class="modal fade" id="modal-accompagnement" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="modal-title-pay">Notre accompagnement</h4>
+                        <h4 class="modal-title" id="modal-title-accompagnement">Notre accompagnement</h4>
                     </div>
                     <div class="modal-body text-left">
-                        <div class="row panel-body">
-                            Nous montons ensemble votre projet, en travaillant côte à côte tout au long de cette création. Un ingénieur expérimenté de Moventes vous accompagne, vous et les développeurs dédiés au projet, à chaque étape de cette belle aventure qu'est l'entrepreneuriat, pour arriver ensemble à une belle réussite!
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-8 text-center">
+                                <small>
+                                Nous travaillons côte à côte sur votre projet tout au long de sa création.
+                                Ainsi, un ingénieur expérimenté de Moventes vous accompagne, vous et les développeurs dédiés au projet, à chaque étape de cette aventure entrepreneuriale, pour arriver ensemble à une belle réussite!
+                                <br/><br/>
+                                </small>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 ">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title text-center">Formalisation des concepts</h5>
-                                    </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">les "use cases" (pré-conception de la solution)</li>
-                                            <li class="list-group-item">le modèle économique</li>
-                                            <li class="list-group-item">la stratégie business (quelle cible? quels besoins? quelle valeur ajoutée?)</li>
-                                            <li class="list-group-item">le modèle économique</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 ">
-                                <div class="panel panel-default">
+                                <div class="panel panel-primary">
                                     <div class="panel-heading">
                                         <h5 class="panel-title text-center">Etude du marché</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">mise en place de sondages en ligne</li>
-                                            <li class="list-group-item">analyse des besoins et de la concurrence</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">mise en place de sondages en ligne</li>
+                                        <li class="list-group-item">analyse des besoins et de la concurrence</li>
+                                    </ul>
                                 </div>
                             </div>
+
+                            <div class="col-md-6 ">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Formalisation des concepts</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">les "use cases"
+                                            <br/><small>(pré-conception de la solution)</small></li>
+                                        <li class="list-group-item">le modèle économique</li>
+                                        <li class="list-group-item">la stratégie business
+                                            <br/><small>(quelle cible? quels besoins? quelle valeur ajoutée?)</small></li>
+                                    </ul>
+                                </div>
+                            </div>
+
 
                         </div>
                         <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
                         <div class="row">
                             <div class="col-md-6 ">
-                                <div class="panel panel-default">
+                                <div class="panel panel-primary">
                                     <div class="panel-heading">
                                         <h5 class="panel-title text-center">Communication digitale</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">landing page</li>
-                                            <li class="list-group-item">vidéo de présentation du projet (2-3 min)</li>
-                                            <li class="list-group-item">réseaux sociaux</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">page web de présentation (<i>landing page</i>)</li>
+                                        <li class="list-group-item">vidéo de présentation du projet (2-3 min)</li>
+                                        <li class="list-group-item">réseaux sociaux</li>
+                                    </ul>
                                 </div>
                             </div>
 
                             <div class="col-md-6 ">
-                                <div class="panel panel-default">
+                                <div class="panel panel-primary">
                                     <div class="panel-heading">
                                         <h5 class="panel-title text-center">Recherche de financements</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">dossiers pour des subventions et prêts</li>
-                                            <li class="list-group-item">campagne de crowdfunding ou de love money</li>
-                                            <li class="list-group-item">participation à des concours</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">dossiers pour des subventions et prêts</li>
+                                        <li class="list-group-item">campagne de crowdfunding ou de love money</li>
+                                        <li class="list-group-item">participation à des concours</li>
+                                    </ul>
                                 </div>
                             </div>
 
                         </div>
                         <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
                         <div class="row">
-                            <div class="col-md-12 ">
+                            <div class="col-md-offset-3 col-md-6 ">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title text-center">Conception détaillée de la solution informatique</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">maquette détaillée et cahier des charges</li>
-                                            <li class="list-group-item">découpage par lots (priorisation des fonctionnalités, planification des versions)</li>
-                                            <li class="list-group-item">modèle de données</li>
-                                            <li class="list-group-item">étude des contraintes (terminaux, sécurité, connectivité,...)</li>
-                                            <li class="list-group-item">choix des technologies les plus adaptées ppour ce projet (backend et frontend)</li>
-                                            <li class="list-group-item">charte graphique</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">maquette détaillée et cahier des charges</li>
+                                        <li class="list-group-item">découpage par lots <small>(priorisation des fonctionnalités, planification des versions)</small></li>
+                                        <li class="list-group-item">étude des contraintes <small>(terminaux, sécurité, connectivité,...)</small></li>
+                                        <li class="list-group-item">choix des technologies les plus adaptées ppour ce projet <small>(backend et frontend)</small></li>
+                                        <li class="list-group-item">modèle de données et charte graphique</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -453,7 +421,7 @@
                         </div>
                         <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
                         <div class="row">
-                            <div class="col-md-12 ">
+                            <div class="col-md-offset-3 col-md-6 ">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title text-center">Commercialisation et support technique</h5>
@@ -468,6 +436,7 @@
                 </div>
             </div>
         </div>
+        <!-- ======================= MODAL  "engagements"==================================================================== -->
 
         <div class="modal fade" id="modal-engagements" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
             <div class="modal-dialog modal-lg" role="document">
@@ -479,60 +448,59 @@
                     <div class="modal-body text-left">
                         <div style="margin-top:3em;" class="row">
                             <div class="col-md-4 ">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <div class="rond " style="border: solid 1px #ddd; background:#f5f5f5; position:absolute; top:-3em; text-align:center; width:6em; left:calc(50% - 3em); height:6em; ">
-                                            <i style="margin-top: .5em;
-    font-size: 3em;" class="fa fa-clock-o" aria-hidden="true"></i>
-                                        </div>
-                                        <h5 style="margin-top:3em;" class="panel-title text-center">Engagement d'efficacité</h5>
+                                <span class="fa-stack fa-3x text-success" style="position:absolute; top:-1em; width:100%;text-align:center ">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
+                                </span>
+
+                                <div class="panel panel-success">
+                                    <div class="panel-heading text-center">
+                                        <!--
+<div class="rond " style="position:absolute; top:-3em; text-align:center; width:6em; left:calc(50% - 3em); height:6em; ">
+    <i style="" class="fa " aria-hidden="true"></i>
+</div>-->
+                                        <h5 style="margin-top:2em;" class="panel-title text-center">Engagement d'efficacité</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">Suivi de l'avancement des tâches consultable en temps réel </li>
-                                            <li class="list-group-item">Résultat des développements en cours visible à tout moment</li>
-                                            <li class="list-group-item">Engagement d'efficacité de tous les collaborateurs</li>
-                                            <li class="list-group-item">Relevé précis et détaillé du temps passé à chaque tâche</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Suivi de l'avancement des tâches consultable en temps réel </li>
+                                        <li class="list-group-item">Résultat des développements en cours visible à tout moment</li>
+                                        <li class="list-group-item">Engagement d'efficacité de tous les collaborateurs</li>
+                                        <li class="list-group-item">Relevé précis et détaillé du temps passé à chaque tâche</li>
+                                    </ul>
                                 </div>
                             </div>
 
                             <div class="col-md-4 ">
-                                <div class="panel panel-default">
+                                <span class="fa-stack fa-3x text-success" style="position:absolute; top:-1em; width:100%;text-align:center ">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa fa-eur fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <div class="panel panel-success">
                                     <div class="panel-heading">
-                                        <div class="rond " style="border: solid 1px #ddd; background:#f5f5f5; position:absolute; top:-3em; text-align:center; width:6em; left:calc(50% - 3em); height:6em; ">
-                                            <i style="margin-top: .5em;
-    font-size: 3em;" class="fa fa-eur" aria-hidden="true"></i>
-                                        </div>
-                                        <h5 style="margin-top:3em;" class="panel-title text-center">Engagement du juste prix</h5>
+                                        <h5 style="margin-top:2em;" class="panel-title text-center">Engagement du juste prix</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">facturation au temps réellement passé</li>
-                                            <li class="list-group-item">gestion fine et flexible de l'équipe en fonction des besoins</li>
-                                            <li class="list-group-item">tarif abordable, basé sur un calcul précis du coût de revient</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">facturation au temps réellement passé</li>
+                                        <li class="list-group-item">gestion fine et flexible de l'équipe en fonction des besoins</li>
+                                        <li class="list-group-item">tarif abordable, basé sur un calcul précis du coût de revient</li>
+                                    </ul>
                                 </div>
                             </div>
 
                             <div class="col-md-4 ">
-                                <div class="panel panel-default">
+                                <span class="fa-stack fa-3x text-success" style="position:absolute; top:-1em; width:100%;text-align:center ">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa fa-thumbs-o-up fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <div class="panel panel-success">
                                     <div class="panel-heading">
-                                        <div class="rond " style="border: solid 1px #ddd; background:#f5f5f5; position:absolute; top:-3em; text-align:center; width:6em; left:calc(50% - 3em); height:6em; ">
-                                            <i style="margin-top: .5em;
-    font-size: 3em;" class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                                        </div>
-                                        <h5 style="margin-top:3em;" class="panel-title text-center">Engagement de qualité</h5>
+                                        <h5 style="margin-top:2em;" class="panel-title text-center">Engagement de qualité</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">stratégie managériale visant à responsabiliser le développeur</li>
-                                            <li class="list-group-item">exigence élevée de qualité (grâce à des outils de qualimétrie du code et à la supervision d'un ingénieur expérimenté)</li>
-                                            <li class="list-group-item">implication personnelle forte de toute l'équipe Moventes dans la réussite le projet</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">stratégie managériale visant à responsabiliser le développeur</li>
+                                        <li class="list-group-item">exigence élevée de qualité (grâce à des outils de qualimétrie du code et à la supervision d'un ingénieur expérimenté)</li>
+                                        <li class="list-group-item">implication personnelle forte de toute l'équipe Moventes dans la réussite le projet</li>
+                                    </ul>
                                 </div>
                             </div>
 
@@ -542,61 +510,57 @@
                 </div>
             </div>
         </div>
+        <!-- ======================= MODAL  "RH" ==================================================================== -->
+
 
         <div class="modal fade" id="modal-rh" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="modal-title-pay">Notre politique RH</h4>
+                        <h4 class="modal-title" id="modal-title-rh">Notre politique RH</h4>
                     </div>
                     <div class="modal-body text-left">
 
                         <div class="row">
                             <div class="col-md-12 ">
-                                <div class="panel panel-default">
+                                <div class="panel panel-warning">
                                     <div class="panel-heading">
                                         <h5 class="panel-title text-center">Recrutement &amp; Formation</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">des développeurs sont recrutés à l'issue d'entretiens et tests, par rapport à leur attrait pour l'entrepreneuriat, leur capacité d'adaptation et de travail en équipe, leurs compétences sociales et techniques,...</li>
-                                            <li class="list-group-item">Moventes forme ensuite ses développeurs spécifiquement aux technologies choisies pour la startup, en vue de les rendre le plus rapidement possible autonomes</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">des développeurs sont recrutés à l'issue d'entretiens et tests, par rapport à leur attrait pour l'entrepreneuriat, leur capacité d'adaptation et de travail en équipe, leurs compétences sociales et techniques,...</li>
+                                        <li class="list-group-item">Moventes forme ensuite ses développeurs spécifiquement aux technologies choisies pour la startup, en vue de les rendre le plus rapidement possible autonomes</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
                         <div class="row">
                             <div class="col-md-12 ">
-                                <div class="panel panel-default">
+                                <div class="panel panel-warning">
                                     <div class="panel-heading">
                                         <h5 class="panel-title text-center">Coaching &amp; Soutien</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">nos développeurs sont quotidiennement coachés et challengés pour donner le meilleur d'eux-mêmes dans le projet qu'ils portent</li>
-                                            <li class="list-group-item">nos méthodes de gestion de projet aident nos développeurs à mieux organiser leur temps et à être plus efficaces</li>
-                                            <li class="list-group-item">un ingénieur expérimenté est toujours disponible comme support technique, en cas de difficultés dans le développement</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">nos développeurs sont quotidiennement coachés et challengés pour donner le meilleur d'eux-mêmes dans le projet qu'ils portent</li>
+                                        <li class="list-group-item">nos méthodes de gestion de projet aident nos développeurs à mieux organiser leur temps et à être plus efficaces</li>
+                                        <li class="list-group-item">un ingénieur expérimenté est toujours disponible comme support technique, en cas de difficultés dans le développement</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
                         <div class="row">
                             <div class="col-md-12 ">
-                                <div class="panel panel-default">
+                                <div class="panel panel-warning">
                                     <div class="panel-heading">
                                         <h5 class="panel-title text-center">Internalisation de l'équipe informatique</h5>
                                     </div>
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">la startup a l'opportunité d'embaucher les développeurs qui travaillent sur sa solution informatique, pour monter sa direction informatique et ainsi avoir les compétences techniques en interne.</li>
-                                            <li class="list-group-item">Moventes accompagne progressivement la startup vers son autonomie, et lui apporte son expertise et son soutien techniques pour les évolutions majeures de la solution informatique</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">la startup a l'opportunité d'embaucher les développeurs qui travaillent sur sa solution informatique, pour monter sa direction informatique et ainsi avoir les compétences techniques en interne.</li>
+                                        <li class="list-group-item">Moventes accompagne progressivement la startup vers son autonomie, et lui apporte son expertise et son soutien techniques pour les évolutions majeures de la solution informatique</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -611,17 +575,89 @@
         <!-- ##############################################################
 ###################   SECTION  "ENJEUX"  ######################
 #####################################################################  -->
-        <div class="separateurSection row ">
-            <hr width='50%'>
+        <div class="divider  ">
         </div>
 
+        <script type="application/javascript">
+            $(document).ready(function () {
+                //-----------------------------------------------------------
+                //problem/solution
+                //-----------------------------------------------------------
+
+
+                $(this).find('.solution').hide();
+                $(this).find('.problem').show();
+
+                function checkEnjeuScrolled(enjeu) {
+                    var fromTop = enjeu.offset().top - $(window).scrollTop();
+                    return (fromTop <= 150);
+                }
+
+
+                $(document).scroll(function () {
+                    $(".enjeux").each(function (indexEnjeu) {
+                        if (checkEnjeuScrolled($(this))) {
+                            showSolution($(this));
+                        } else {
+                            showProblem($(this));
+                        }
+                    });
+                });
+
+                $('.enjeux').hover(function () {
+                    if (checkEnjeuScrolled($(this))) {
+                        showProblem($(this));
+                    }
+                }, function () {
+                    if (checkEnjeuScrolled($(this))) {
+                        showSolution($(this));
+                    }
+                });
+
+                function showSolution(enjeu) {
+                    //                console.log('showSolution (START)');
+                    if (!enjeu.find('.solution').is(":visible")) {
+
+                        enjeu.find('.problem').hide(0, function () {
+                            enjeu.find('.solution').fadeIn("slow", function () {
+                                //                console.log('showSolution (END)');
+                            });
+                        });
+                    }
+
+                }
+
+                function showProblem(enjeu) {
+                    //                console.log('showProblem (START)');
+                    if (!enjeu.find('.problem').is(":visible")) {
+                        enjeu.find('.solution').hide(0, function () {
+                            enjeu.find('.problem').fadeIn("slow", function () {
+                                //                console.log('showProblem (END)');
+                            });
+                        });
+                    }
+                }
+
+
+
+                $('.enjeux').on("click", function (event) {
+                    event.stopPropagation();
+                    if ($(this).find('.problem').is(":visible")) {
+                        showSolution($(this));
+                    } else {
+                        showProblem($(this));
+                    }
+                    return false;
+                });
+            });
+        </script>
         <!-- Services -->
         <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
         <section id="enjeux" class="container-fluid">
 
             <div class="row text-center ">
-                <h2 class="section-heading">Notre réponse</h2>
-                <h2 class="section-heading h2Little">aux enjeux des entrepreneurs</h2>
+                <h1 class="section-heading">Notre réponse
+                <br/><small>aux enjeux des entrepreneurs</small></h1>
             </div>
             <div class="row top-buffer">
                 <div class="col-md-4 enjeux" id="enjeux1">
@@ -690,6 +726,7 @@
                 </div>
 
             </div>
+
         </section>
 
 
@@ -699,82 +736,56 @@
         <!-- ##############################################################
 ###################   SECTION  "IDENTITE"  ######################
 #####################################################################  -->
-        <div class="separateurSection row ">
-            <hr width='50%' style="margin-bottom:0">
-        </div>
-
-        <section id="presentation">
-
-        <script type="application/javascript">
-
-            $(document).ready(function () {
 
 
-            $('.offre-item').hover(
-                function () {
-                    $(this).addClass('bounce animated');
-                },
-                function () {
-                    $(this).removeClass('bounce animated');
-                }
-            );
+        <section id="presentation" class="container-fluid">
+            <!--            <hr class="small">-->
 
-            });
+            <script type="application/javascript">
+                $(document).ready(function () {
+
+
+                    $('.identite-item').hover(
+                        function () {
+                            $(this).addClass('bounce animated');
+                        },
+                        function () {
+                            $(this).removeClass('bounce animated');
+                        }
+                    );
+
+                });
             </script>
             <div class="row text-center ">
-                <h2 class="section-heading">Notre identité</h2>
+                <h1 class="section-heading">Notre identité</h1>
             </div>
             <div class="row top-buffer text-primary">
-                <div class="col-md-2 col-md-offset-2 col-sm-6">
-                    <a href="valeurs.html">
-                        <div class="panel rond panel-default offre-item presentation-valeurs">
-                            <div class="panel-body media">
-
-                                <div class="media-body">
-                                    <h3 class="media-heading">Nos valeurs</h3>
-                                </div>
-
-                            </div>
+                <div class="col-md-2 col-md-offset-2 col-sm-4 col-sm-offset-1 col-xs-8 col-xs-offset-2 text-center">
+                    <a href="/valeurs" class="wrapper identite-item ">
+                        <img class=" img-responsive img-circle" src="../img/nosValeurs.png" alt="nosValeurs" />
+                        <div class="overlay">
+                            <h3>Nos valeurs</h3>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-2 col-md-offset-1 col-sm-6 ">
-                    <a href="expertise.html">
-                        <div class="panel rond panel-default offre-item presentation-expertise">
-                            <div class="panel-body media">
-
-                                <div class="media-body">
-                                    <h3 class="media-heading">Notre expertise</h3>
-                                </div>
-
-                            </div>
+                <div class=" col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2 ">
+                    <a href="/expertise" class="wrapper identite-item">
+                        <img class=" img-responsive img-circle" src="../img/notreExpertise.png" alt="notreExpertise" />
+                        <div class="overlay">
+                            <h3>Notre expertise</h3>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-2 col-md-offset-1 col-sm-6 ">
-                    <a href="histoire.html">
-                        <div class="panel rond panel-default offre-item presentation-histoire">
-                            <div class="panel-body media">
-
-                                <div class="media-body">
-                                    <h3 class="media-heading">Notre histoire</h3>
-                                </div>
-
-                            </div>
+                <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2 ">
+                    <a href="/histoire" class="wrapper identite-item">
+                        <img class=" img-responsive img-circle" src="../img/notreHistoire.png" alt="notreHistoire" />
+                        <div class="overlay">
+                            <h3>Notre histoire</h3>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                var heightWidth = $('.panel.rond').width();
-                $('.panel.rond').css({
-                    height: $('.panel.rond').width()
-                });
-            });
-        </script>
 
         <!-- ##############################################################
 ###################   SECTION  "CONTACT" à inclure dans une MODAL  ######################
@@ -785,7 +796,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Contactez-nous !</h2>
+                        <h1 class="section-heading">Contactez-nous !</h1>
                         <hr class="small">
                         <!--                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
 
@@ -994,7 +1005,6 @@
     </div>
     <!-- build:include:inc _commonfooter.html -->
     <!-- /build -->
-
 </body>
 
 </html>

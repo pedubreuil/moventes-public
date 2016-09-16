@@ -74,7 +74,7 @@ module.exports = function (grunt) {
                         src: ['**'],
                         dest: 'dist/',
                         filter: 'isFile',
-                        dot:true
+                        dot: true
                     },
                     {
                         expand: true,
@@ -178,7 +178,7 @@ module.exports = function (grunt) {
                         /.*tooltip.*/,
                         /.*bv-.*/, /.*has-.*/, /.*form-.*/, /.*input-.*/, '.help-block', '.glyphicon-remove', '.glyphicon-ok', '.btn[disabled]',
                         '.alert-danger', '.alert', '.alert-success',
-                        /.*modal*/, /.*fade*/, '.b-loaded', /.*animated.*/
+                        /.*modal*/, /.*fade*/, '.b-loaded', /.*animated.*/, /.*bounce.*/, /.*pulse.*/
                     ],
                     ignoreSheets: [/fonts.googleapis/],
                     report: 'min'

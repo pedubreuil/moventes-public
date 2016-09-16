@@ -1,23 +1,19 @@
 <footer class="footer">
     <div class="container-fluid">
 
-        <div class="row row-eq-height">
-            <div class="col-md-4 col-sm-12 col-xs-12 colonne">
-                <a class="" href="mailto:contact@moventes.com">
-                    <i class=" fa fa-envelope fa-2x" aria-hidden="true"></i>
-                    <p class=" ">contact@moventes.com</p>
-                </a>
-                <a class="" href="tel:+33-2-53-45-61-43" style="margin-bottom:3em;">
-                    <i class=" fa fa-phone fa-2x" aria-hidden="true"></i>
+        <div class="row vdivide">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <a class="" href="tel:+33253456143">
+                    <i class=" fa fa-phone fa-1x" aria-hidden="true"></i>
                     <p class="">02 53 45 61 43</p>
                 </a>
-                <div class="">
-                    <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-contact">Contactez-nous</a>
-                </div>
+                <a class="" href="mailto:contact@moventes.com" target="_blank">
+                    <i class=" fa fa-envelope fa-1x" aria-hidden="true"></i>
+                    <p class=" ">contact@moventes.com</p>
+                </a>
             </div>
-            <div class="col-md-4 col-sm-12 col-xs-12 colonne ">
-                <div class="separator"></div>
-                <ul class=" list-inline" style="margin-bottom:3em;">
+            <div class="col-md-4 col-sm-12 col-xs-12 ">
+                <ul class=" list-inline">
                     <li class="btn-group">
                         <a class="btn btn-info" href="https://twitter.com/moventes_fr" target="_blank" style="width:45px"><i class="fa fa-twitter fa-lg" title="Suivre Moventes sur Twitter"></i></a>
                         <a class="btn btn-primary" href="https://www.facebook.com/Moventes.fr" target="_blank" style="width:45px"><i class="fa fa-facebook fa-lg" title="Suivre Moventes sur Facebook"></i></a>
@@ -25,27 +21,41 @@
                         <a class="btn btn-primary" href="https://www.linkedin.com/company/10046010" target="_blank" style="width:45px"><i class="fa fa-linkedin fa-lg"  title="Suivre Moventes sur LinkedIn"></i></a>
                     </li>
                 </ul>
-                <div class="">
-                    <a class="btn btn-default" href="http://moventes.com/delivery" role="button">Espace client</a>
-                </div>
             </div>
-            <div class="col-md-4 col-sm-12 col-xs-12 colonne">
-                <div class="separator"></div>
-                <a class="" href="#" role="button" data-toggle="modal" data-target="#modal-map" style="margin-bottom:3em;">
-                    <i class=" fa fa-map-marker fa-3x" aria-hidden="true"></i>
-                    <p class="">60 Bd Maréchal Juin, 44100 NANTES</p>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <!--                <div class="separator"></div>-->
+                <a class="" href="#" role="button" data-toggle="modal" data-target="#modal-map">
+                    <i class=" fa fa-map-marker fa-2x" aria-hidden="true"></i> 60 Bd Maréchal Juin, 44100 NANTES
                 </a>
-                <div class="">
-                    <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-about">A propos de Moventes</a>
-                </div>
             </div>
 
 
 
 
         </div>
+
+        <div class="row vdivide">
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-contact"><i class=" fa fa-comments-o" aria-hidden="true"></i> Contactez-nous</a>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <a class="btn btn-default" href="http://moventes.com/delivery" role="button"><i class="fa fa-user" aria-hidden="true"></i>
+ Espace client</a>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-about"><i class="fa fa-info-circle" aria-hidden="true"></i> A propos de Moventes</a>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <div class="copyright">Copyright &copy; Moventes 2015 - 2016</div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
     </div>
-    <div class="copyright">Copyright &copy; Moventes 2015 - 2016</div>
 </footer>
 
 <!-- build:include:inc _contactmodal.html -->
@@ -68,7 +78,6 @@
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
     })();
-
 </script>
 <!--End of Tawk.to Script-->
 
@@ -378,6 +387,7 @@
     var map;
 
     function initMap() {
+        console.log('init map');
         var myLatLng = {
             lat: 47.198822,
             lng: -1.604177
@@ -407,7 +417,7 @@
             animation: google.maps.Animation.DROP,
             attribution: {
                 source: 'Moventes',
-                webUrl: 'http://www.moventes.com/about.html'
+                webUrl: 'https://www.moventes.com/'
             },
             optimized: true
 
@@ -415,6 +425,7 @@
         mapInitialized = true;
     }
     $("#modal-map").on("shown.bs.modal", function () {
+        console.log('show modal');
         if (!mapInitialized) {
             initMap();
         } else if (map) {

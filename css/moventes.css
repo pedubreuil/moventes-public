@@ -115,7 +115,10 @@ a:hover {
         transition: all .5s ease-out;
     }
     .nav-over-header .navbar-nav>li>a {
-        color: #23527c;
+        color: whitesmoke;
+    }
+    .nav-over-header .navbar-brand {
+        display: none
     }
 }
 
@@ -123,10 +126,13 @@ a:hover {
     font-weight: bolder;
 }
 
+
+/*
 .text-header {
     color: #1F2A36;
-    /*    font-weight: bolder;*/
+    font-weight: bolder;
 }
+*/
 
 .panel-heading h4 {
     display: inline;
@@ -215,8 +221,23 @@ a.page-scroll:hover {
     color: #000;
 }
 
+header h1.brand {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+header .title {
+    margin-top: 20px;
+}
+
 header p {
     text-align: justify;
+    font-weight: bolder;
+}
+
+header h3 {
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 
 .breadcrumb {
@@ -232,8 +253,8 @@ header p {
     margin-top: 20px;
 }
 
-.fond-blanc {
-    background-color: rgba(255, 255, 255, 0.6);
+header .fond-blanc {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .header_chevron {
@@ -252,15 +273,6 @@ header p {
         -o-transform: rotate(90deg);
         transform: rotate(90deg);
     }
-    div.approche1 {
-        background: rgba(103, 113, 142, .6);
-    }
-    div.approche2 {
-        background: rgba(169, 152, 120, .6);
-    }
-    div.approche3 {
-        background: rgba(223, 191, 68, .6);
-    }
     div.row-eq-height {
         display: block;
     }
@@ -277,6 +289,16 @@ header p {
     height: 100%;
     top: 0;
     left: 0;
+}
+
+.home-item,
+.home-item h3 {
+    color: rgba(35, 82, 124, 1);
+}
+
+.home-item:hover,
+.home-item:hover h3 {
+    color: rgba(51, 122, 183, 0.7);
 }
 
 
@@ -320,10 +342,10 @@ section {
     margin: 0 auto;
 }
 
-h2 {
+h2,
+h3 {
     font-family: 'Courgette', cursive;
     color: #23527c;
-    background-color: white;
     margin: 10px;
 }
 
@@ -440,46 +462,13 @@ h2 {
 
 /* Section "APPROCHE" ---------------------------------------------------------------------------------------------------*/
 
-
-/*.img-approche {
-    background-size: cover;
-    width: 100%;
-}*/
-
-
-/*
-.approche figure img{
-    border-radius: 100%;
-}*/
-
-
-/*
-.approche figure div:nth-child(2){
-    top: calc(50% - 48px);
-    position: absolute;
-    right:0;
-    width: auto;
+.approche row {
+    width: 100%
 }
 
-.approche figure div:last-child{
-    top: 50%;
-    left:0;
-    position: absolute;
-    width: auto;
+.approche figure {
+    max-width: 100%
 }
-
-.approche.approche2 figure div:nth-child(2){
-    top: calc(50% - 48px);
-    left:0;
-    right: inherit;
-}
-
-.approche.approche2 figure div:last-child{
-    top: 50%;
-    right:0;
-    left: inherit;
-}
-*/
 
 .approche figure div {
     top: calc(50% - 24px);
@@ -493,33 +482,36 @@ h2 {
     right: inherit;
 }
 
-
-/*
-
-.approche figure div:last-child{
-    top: calc(50% - 48px);
-    position: absolute;
-    float:right;
-    display: inline-block;
-    
-}
-
-*/
-
 #approche {
     background-color: rgba(255, 255, 255, 1);
 }
 
-.approche1 {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(103, 113, 142, .6) 51%, rgba(103, 113, 142, .6) 100%);
+.approche1 .divFigure1 {
+    background: rgba(103, 113, 142, .6);
 }
 
-.approche2 {
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(169, 152, 120, .6) 51%, rgba(169, 152, 120, .6) 100%);
+div.approche2 .divFigure2 {
+    background: rgba(169, 152, 120, .6);
 }
 
-.approche3 {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(223, 191, 68, .6) 51%, rgba(223, 191, 68, .6) 100%);
+div.approche3 .divFigure3 {
+    background: rgba(223, 191, 68, .6);
+}
+
+@media screen and (min-width: 1170px) {
+    .approche1 .figure1 {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 45%, rgba(103, 113, 142, .6) 46%, rgba(103, 113, 142, .6) 100%);
+    }
+    .approche2 .figure2 {
+        background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 55%, rgba(169, 152, 120, .6) 56%, rgba(169, 152, 120, .6) 100%);
+    }
+    .approche3 .figure3 {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 45%, rgba(223, 191, 68, .6) 46%, rgba(223, 191, 68, .6) 100%);
+    }
+    .etiquette-approche2 {
+        right: auto !important;
+        left: 0;
+    }
 }
 
 .etiquette-approche1 {
@@ -527,11 +519,11 @@ h2 {
 }
 
 .etiquette-approche2 {
-    background-color: rgba(169, 152, 120, .4);
+    background-color: rgba(169, 152, 120, .7);
 }
 
 .etiquette-approche3 {
-    background-color: rgba(223, 191, 68, .4);
+    background-color: rgba(223, 191, 68, .7);
 }
 
 .approche1Txt {
@@ -563,8 +555,27 @@ h2 {
     font-size: 15px;
 }
 
+#approche .list-group {
+    margin-top: 20px;
+}
+
 #approche .list-group-item {
     background-color: rgba(255, 255, 255, 0.4);
+}
+
+#approche .divFigure1 .list-group-item.active {
+    border-color: rgb(103, 113, 142);
+    background-color: rgba(103, 113, 142, 0.8);
+}
+
+#approche .divFigure2 .list-group-item.active {
+    border-color: rgb(169, 152, 120);
+    background-color: rgba(169, 152, 120, 0.8);
+}
+
+#approche .divFigure3 .list-group-item.active {
+    border-color: rgb(223, 191, 68);
+    background-color: rgba(223, 191, 68, 0.9);
 }
 
 .barre {
@@ -597,19 +608,7 @@ h2 {
 }
 
 
-/* section presentation--------------------------------------------------------------------*/
-
-.panel.rond,
-.panel .rond {
-    border-radius: 50%;
-}
-
-.panel.rond .panel-body {
-    position: absolute;
-    top: calc(50% - 55px);
-    text-align: center;
-    left: 0
-}
+/* section Notre identité --------------------------------------------------------------------*/
 
 #presentation {
     background-color: rgba(255, 255, 255, 0.9)
@@ -619,28 +618,50 @@ h2 {
     background-color: rgba(255, 255, 255, 0)
 }
 
-.presentation-valeurs {
-    background-image: url(../img/nosValeurs.png);
-    background-size: cover;
+h1 small {
+    color: #23527c;
+    font-size: 50%;
 }
 
-.presentation-expertise {
-    background-image: url(../img/notreExpertise.png);
-    background-size: cover;
+body {
+    text-align: center;
 }
 
-.presentation-histoire {
-    background-image: url(../img/notreHistoire.png);
-    background-size: cover;
+.wrapper {
+    display: inline-block;
+    margin-top: 25px;
+    position: relative;
+}
+
+.wrapper img {
+    display: block;
+    max-width: 100%;
+}
+
+.wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.45);
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
 }
 
 #presentation h3 {
     color: #00547d;
 }
 
-h2.h2Little {
-    font-family: 'Courgette', cursive;
-    font-size: 18px;
+.wrapper .overlay:hover {
+    background-color: rgba(103, 113, 142, .8);
+    color: white
+}
+
+#presentation .wrapper .overlay:hover h3 {
+    color: white
 }
 
 
@@ -728,77 +749,6 @@ h2.h2Little {
 }
 
 
-/*
-.savoir a::after {
-    background-color: rgba(223, 191, 68, 0.5);
-    z-index: 999;
-    background-size: cover;
-    opacity: 1;
-    content: "";
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: relative;
-}
-*/
-
-
-/*
-
-.savoir::before {
-    background-size: cover;
-    opacity: 1;
-    content: "";
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-}
-.savoir {
-    background-color: rgba(223, 191, 68, 0.5);
-}
-
-
-#savoir1::before {
-    background: url(../img/nosValeurs.jpg);
-    background-image: url(../img/nosValeurs.jpg)
-}
-*/
-
-
-/*
-
-
-
-
-.cercle {
-    border-radius: 50%;
-    width: 100%;
-    height: 265px;
-
-    background-image: url(../img/notreHistoire.jpg)
-}
-
-.cercle:hover {
- opacity: 0.2;
- background-color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.cercle-valeur {
-    background-image: url(../img/nosValeurs.jpg)
-}
-.cercle-expertise {
-    background-image: url(../img/notreExpertise.jpg)
-}
-.cercle-histoire {
-    background-image: url(../img/notreHistoire.jpg)
-}
-*/
-
-
 /* Section "SERVICE" ---------------------------------------------------------------------------------------------------*/
 
 
@@ -866,19 +816,33 @@ height: 10em;
 }*/
 
 footer {
-    padding-top: 15px;
-    padding-bottom: 10px;
-    padding-right: 0;
-    padding-left: 0;
-    /*    margin-top: 20px;*/
-    margin-bottom: 0;
-    margin-right: 0;
-    margin-left: 0;
     text-align: center;
     font-size: 90%;
     background-color: lightgrey;
     /*background-color: #23527c;*/
     color: #23527c;
+}
+
+.row.vdivide [class*='col-']:not(:last-child):after {
+    background: #e0e0e0;
+    width: 1px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    min-height: 70px;
+}
+
+footer .container-fluid {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer .btn {
+    margin-bottom: 20px;
+    width: 80%
 }
 
 footer p {
@@ -1037,7 +1001,7 @@ hr.small {
 .timeline > li .timeline-panel {
     width: 46%;
     float: left;
-    background: rgba(223, 191, 68, 1);
+    background: #ddd;
     border: 1px solid #d4d4d4;
     padding: 20px;
     position: relative;
@@ -1047,6 +1011,10 @@ hr.small {
     -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+.timeline > li .timeline-panel.active {
+    background: rgb(255, 233, 146);
 }
 
 
@@ -1070,10 +1038,15 @@ hr.small {
     right: -14px;
     display: inline-block;
     border-top: 14px solid transparent;
-    border-left: 14px solid rgba(223, 191, 68, 1);
-    border-right: 0 solid rgba(223, 191, 68, 1);
+    border-left: 14px solid #ddd;
+    border-right: 0 solid #ddd;
     border-bottom: 14px solid transparent;
     content: " ";
+}
+
+.timeline li .active.timeline-panel:after {
+    border-left: 14px solid rgb(255, 233, 146);
+    border-right: 0 solid rgb(255, 233, 146);
 }
 
 .timeline li .timeline-panel.noarrow:before,
@@ -1211,7 +1184,8 @@ hr.small {
 .venn-container {
     margin-left: auto;
     margin-right: auto;
-    width: 350px
+    width: 350px;
+    height: 350px;
 }
 
 .venncircle {
@@ -1247,7 +1221,7 @@ hr.small {
     margin-bottom: -75px;
     margin-left: 75px;
     margin-right: 0px;
-    background-color: #093d5c;
+    background-color: rgb(12, 58, 154);
     z-index: 3;
     position: relative;
 }
@@ -1258,7 +1232,7 @@ hr.small {
 
 .venncirclft {
     margin-left: 0px;
-    background-color: #e9bf44;
+    background-color: #f5c22a;
     z-index: 2;
     position: absolute;
 }
@@ -1319,12 +1293,14 @@ hr.small {
     }
 }
 
+
+/*
 div[class*='col-'] > a {
     width: 100%
 }
 
 
-/*
+
 
 
 .vertical-middle {
@@ -1339,20 +1315,36 @@ div[class*='col-'] > a {
 }
 
 .timeline > li .timeline-panel.backgroundNew {
-    background-color: #E88F53;
+    background-color: #23527c;
+}
+
+.tl-footer {
+    text-align: center;
+}
+
+.timeline > li .timeline-panel.backgroundNew .tl-body,
+.timeline > li .timeline-panel.backgroundNew .tl-heading,
+.timeline > li .timeline-panel.backgroundNew .tl-footer a {
+    color: white;
 }
 
 .timeline > li .timeline-panel.backgroundNew::after {
-    border-left-color: #E88F53;
-    border-right-color: #E88F53;
+    border-left-color: #23527c;
+    border-right-color: #23527c;
 }
 
-.header {}
 
+/*
 section#valeurs {
     padding-bottom: 200px;
+}*/
+
+.sectionValeurs {
+    padding-top: 50px;
 }
 
+
+/*
 .sectionValeurs {
     padding: 20px 0;
 }
@@ -1360,13 +1352,14 @@ section#valeurs {
 .sectionValeurs > div {
     margin-top: 2em;
 }
+*/
 
 .sectionValeurs-title {
     height: 2em;
     border-bottom: solid 2px #23527c;
 }
 
-.iconLeft{
+.iconLeft {
     display: flex;
     align-items: center;
     text-align: center;
@@ -1376,25 +1369,149 @@ section#valeurs {
     text-align: center;
     font-size: 5em;
     vertical-align: middle;
-    margin:auto;
+    margin: auto;
 }
 
+
+/*
 .valeursTxt {
-    /*border: solid 1px grey;*/
+    border: solid 1px grey;
     margin-right: 2em;
     margin-top: 1em;
     text-align: -webkit-auto;
-    text-align: auto;
-}
+    text-align: justify;
+}*/
 
 .valeursTxt img {
     width: 100%;
     height: 100%;
 }
 
+h1 {
+    font-family: 'Courgette', cursive;
+    color: #23527c;
+    font-size: 50px;
+}
+
+#confiance {
+    background-color: rgba(12, 58, 154, 0.1);
+}
+
+#confiance .logo,
+#confiance h2 {
+    color: rgb(12, 58, 154);
+    ;
+}
+
+#confiance .sectionValeurs-title {
+    border-bottom-color: rgb(12, 58, 154);
+    ;
+}
+
+#confiance .well {
+    background-color: rgba(12, 58, 154, 0.2);
+    ;
+    border-color: rgb(12, 58, 154);
+    ;
+}
+
+#bienveillance {
+    background-color: rgba(245, 194, 42, 0.1);
+}
+
+#bienveillance .logo,
+#bienveillance h2 {
+    color: #f5c22a;
+}
+
+#bienveillance .sectionValeurs-title {
+    border-bottom-color: #f5c22a;
+}
+
+#bienveillance .well {
+    background-color: rgba(245, 194, 42, 0.2);
+    border-color: #f5c22a;
+}
+
+#equite {
+    background-color: rgba(160, 160, 160, 0.1);
+}
+
+#equite .logo,
+#equite h2 {
+    color: rgba(160, 160, 160, 1);
+}
+
+#equite .sectionValeurs-title {
+    border-bottom-color: rgba(160, 160, 160, 1);
+}
+
+#equite .well {
+    background-color: rgba(160, 160, 160, 0.2);
+    border-color: rgba(160, 160, 160, 1);
+}
+
+
+/*
 @media screen and (min-width: 768px) {
     .rowValeursTxt {
         display: -webkit-box;
         display: box;
     }
+}*/
+
+
+/* -------------------------------------------------------------------------------  */
+
+
+/* UTILITAIRES POUR VERTICAL ALIGN */
+
+@media only screen and (min-width: 768px) {
+    .is-table-row {
+        display: table;
+    }
+    .is-table-row [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+
+.row.is-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row.is-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*
+* And with max cross-browser enabled.
+* Nobody should ever write this by hand.
+* Use a preprocesser with autoprefixing.
+*/
+
+.row.is-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row.is-flex > [class*='col-'] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
