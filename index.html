@@ -961,6 +961,7 @@
                                                         console.log('result', result);
                                                     });
                                                     posting.done(function (data) {
+                                                        console.debug(data);
                                                         var response = jQuery.parseJSON(data);
                                                         console.log('success', response.success);
                                                         if (response.success) {
