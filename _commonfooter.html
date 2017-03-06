@@ -3,9 +3,9 @@
 
         <div class="row vdivide">
             <div class="col-md-4 col-sm-12 col-xs-12">
-                <a class="" href="tel:+33253456143">
+                <a class="" href="tel:+33272013828">
                     <i class=" fa fa-phone fa-1x" aria-hidden="true"></i>
-                    <p class="">02 53 45 61 43</p>
+                    <p class="">02 72 01 38 28</p>
                 </a>
                 <a class="" href="mailto:contact@moventes.com" target="_blank">
                     <i class=" fa fa-envelope fa-1x" aria-hidden="true"></i>
@@ -25,7 +25,7 @@
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <!--                <div class="separator"></div>-->
                 <a class="" href="#" role="button" data-toggle="modal" data-target="#modal-map">
-                    <i class=" fa fa-map-marker fa-2x" aria-hidden="true"></i> 60 Bd Maréchal Juin, 44100 NANTES
+                    <i class=" fa fa-map-marker fa-2x" aria-hidden="true"></i> 6 Rue Rose Dieng-Kuntz, 44300 Nantes
                 </a>
             </div>
 
@@ -51,7 +51,7 @@
 
         <div class="row">
             <div class="col-xs-12 text-center">
-                <div class="copyright">Copyright &copy; Moventes 2015 - 2016</div>
+                <div class="copyright">Copyright &copy; Moventes 2015 - 2017</div>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -99,7 +99,7 @@
                 <h4 class="modal-title">Contactez-nous !</h4>
             </div>
             <div class="modal-body" id="contact-block">
-                <form id="contactForm" method="post" action="bin/contact_us.php" class="form-horizontal">
+                <form id="contactModalForm" method="post" action="bin/contact_us.php" class="form-horizontal">
                     <div class="form-group">
                         <label class="sr-only" for="lastname">Votre nom:</label>
                         <input type="text" class="form-control" placeholder="Votre nom *" name="lastname" id="lastname">
@@ -125,10 +125,10 @@
 
 
 </div>-->
-                <button type="submit" class="btn btn-lg btn-dark"><span class="glyphicon glyphicon-envelope"></span> Envoyer le message</button>
+                    <button type="submit" class="btn btn-lg btn-dark"><span class="glyphicon glyphicon-envelope"></span> Envoyer le message</button>
                 </form>
             </div>
-<!--
+            <!--
 <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 </div>-->
@@ -164,8 +164,8 @@
 
 
     $(document).ready(function () {
-        // console.log('form',$('#contactForm'));
-        $('#contactForm').bootstrapValidator({
+        // console.log('form',$('#contactModalForm'));
+        $('#contactModalForm').bootstrapValidator({
                 message: 'Ce champ n\'est pas valide',
                 feedbackIcons: {
                     valid: 'glyphicon glyphicon-ok',
@@ -359,7 +359,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Moventes : 60 Boulevard Maréchal Juin 44100 Nantes</h4>
+                <h4 class="modal-title">Moventes : 6 Rue Rose Dieng-Kuntz, 44300 Nantes</h4>
             </div>
             <div class="modal-body">
                 <div id="map-moventes" style="  height: 430px;position: relative;width: 100%;">Map is loading...</div>
@@ -382,8 +382,8 @@
     function initMap() {
         console.log('init map');
         var myLatLng = {
-            lat: 47.198822,
-            lng: -1.604177
+            lat: 47.284279,
+            lng: -1.515481
         };
 
         // Create a map object and specify the DOM element for display.
