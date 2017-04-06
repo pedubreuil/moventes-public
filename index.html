@@ -1,204 +1,836 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
 
-    <head>
+<head>
 
-        <meta name="description" content="Moventes, expert des applications mobiles B2B sur mesure hébergées dans le cloud"/>
-        <title>Moventes, expert des applications mobiles B2B sur mesure hébergées dans le cloud</title>
-        <link rel="canonical" href="http://moventes.com" />
-        <meta name="keywords" content=""/>
+    <title>Moventes, partenaire informatique des startups</title>
+    <meta name="description" content="Moventes, partenaire informatique des startups" />
+    <link rel="canonical" href="https://moventes.com/" />
+    <meta name="keywords" content="" />
 
-        <!-- build:include _commonhtmlhead.html -->
-        <!-- /build -->
-
-        <!--  CSS -->
-
-        <!-- build:css inc/moventes.min.css -->
-        <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bower_components/bootstrapvalidator/dist/css/bootstrapValidator.css" />
-        <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
-        <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
-        <!-- endbower -->
-        <link href="css/cookiecuttr.css" rel="stylesheet"/>
-        <link href="css/moventes.css" rel="stylesheet">
-        <!-- /build -->
-
-
-        <!-- JavaScript -->
-
-        <!-- build:js inc/moventes.min.js -->
-        <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
-        <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
-        <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
-        <!-- endbower -->
-        <script src="js/jquery.cookiecuttr.js"></script>
-        <script src="js/moventes.js"></script>
-        <!-- /build -->
+    <!-- build:include:inc _commonhtmlhead.html -->
+    <!-- /build -->
 
 
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 
 
-        <script type="text/javascript" async defer src="https://apis.google.com/js/platform.js?publisherid=117084928015054396102"></script>
 
+
+    <!-- pour rétrécir le menu on scroll down -->
+    <script type="application/javascript">
+        fixNavLayout = function () {
+            if ($(".navbar").offset().top > 50) {
+                $(".navbar-fixed-top").removeClass("nav-over-header");
+            } else if ($("header").length) {
+                $(".navbar-fixed-top").addClass("nav-over-header");
+            }
+        };
+
+        $(document).ready(function () {
+            fixNavLayout();
+
+            //jQuery to collapse the navbar on scroll
+            $(window).scroll(function () {
+                fixNavLayout();
+            });
+
+            // for page scrolling feature - requires jQuery Easing plugin
+            $('a.page-scroll').bind('click', function (event) {
+                console.log('click for page-scroll ', $(this));
+                var $anchor = $(this);
+                console.log($($anchor.attr('href')).offset().top);
+                $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top
+                }, 2000, 'easeInOutQuart');
+                event.preventDefault();
+            });
+
+
+        });
+    </script>
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8&appId=359254307789931";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+    <!-- build:include:inc _commonmenu.html -->
+    <!-- /build -->
+
+    <!-- Header -->
+    <header id="top" class="header b-lazy" data-src="img/bg/header2-lg.jpg" data-src-small="img/bg/header2-xs.jpg" data-src-medium="img/bg/header2-md.jpg">
+        <div class="container ">
+            <div class="row decalage-top">
+                <div class="col-md-8 col-md-offset-2 fond-blanc">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="row title">
+                                <div class="col-xs-3 text-right">
+                                    <img class="img-responsive" src="img/logo.png" alt="...">
+                                </div>
+                                <div class="col-xs-9 text-left">
+                                    <h1 class="brand">Moventes</h1>
+                                    <h3 class="text-header text-center">Partenaire informatique des startups</h3>
+
+                                </div>
+                            </div>
+
+                            <!--
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <a href="#">
+                                        <img class="media-object" src="img/logo.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h1 class="brand media-heading">Moventes</h1>
+                                </div>
+                            </div>
+-->
+
+                            <p>
+                                Face à la difficulté de beaucoup d’entrepreneurs à trouver le cofondateur informatique idéal pour concevoir et développer leur plateforme web ou mobile, Moventes apporte une solution simple et durable.
+                                <br/> Nous vous aidons à concrétiser votre projet de startup, en relevant ses défis business et technologiques, et en coachant les développeurs qui formeront votre future direction informatique!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row text-center equal-height top-buffer">
+                        <div class="col-xs-12 col-md-3 col-md-offset-1 home-step">
+                            <a href="#preparation">
+                                <div class="home-item wow fadeIn" data-wow-delay="1s">
+                                    <span class="fa-stack fa-4x home-icon">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                    <h3>Préparation</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-md-1">
+                            <div class="home-item wow fadeIn " data-wow-delay="1.5s">
+                                <i class="fa fa-chevron-right fa-4x chevronHome"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3 home-step">
+                            <a href="#construction">
+                                <div class="home-item wow fadeIn" data-wow-delay="2s">
+                                    <span class="fa-stack fa-4x home-icon">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
+                                </span>
+                                    <h3>Construction</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-md-1">
+                            <div class="home-item wow fadeIn chevronHome" data-wow-delay="2.5s">
+                                <i class="fa fa-chevron-right fa-4x "></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3 home-step">
+                            <a href="#decollage">
+                                <div class="home-item wow fadeIn" data-wow-delay="3s">
+                                    <span class="fa-stack fa-4x home-icon">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                    <h3>Décollage</h3>
+                                </div>
+                            </a>
+                            <!-- /.row (nested) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script type="application/javascript">
-            fixNavLayout = function(){
-                if ($(".navbar").offset().top > 50 ) {
-                    $(".navbar-fixed-top").removeClass("nav-over-header");
-                } else if($("header").length) {
-                    $(".navbar-fixed-top").addClass("nav-over-header");
-                }
-            };
+            $(document).ready(function () {
+                $('.home-step').hover(
+                    function () {
+                        console.log('will pulse', $(this));
+                        $(this).addClass('pulse animated');
+                    },
+                    function () {
+                        $(this).removeClass('pulse animated');
+                    }
+                );
+            });
+        </script>
+        <!--<a class="page-scroll" href="#approche" style="color:grey;"><i class="fa fa-chevron-circle-down fa-4x"></i></a>-->
+    </header>
+    <div class="parallax b-lazy" data-src="img/bg/header3-lg.jpg" data-src-small="img/bg/header3-xs.jpg" data-src-medium="img/bg/header3-md.jpg">
+
+
+
+        <!-- ##############################################################
+###################   SECTION  "VIDEO"  ######################
+#####################################################################  -->
+        <section id="video" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1  text-center">
+                    <h1 class="section-heading">Notre accompagnement</h1>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://www.youtube.com/embed/ZFaMNR1Hbmk?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen class="wow fadeIn embed-responsive-item" data-wow-delay="0.5s"></iframe>
+                        <script>
+                            ! function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0],
+                                    p = /^http:/.test(d.location) ? 'http' : 'https';
+                                if (!d.getElementById(id)) {
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.src = p + '://platform.twitter.com/widgets.js';
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }
+                            }(document, 'script', 'twitter-wjs');
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-md-3 col-md-offset-3 text-center">
+
+                    <!-- FACEBOOK -->
+                    <div class="fb-share-button" data-href="https://www.facebook.com/Moventes.fr/videos/572284076301765/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FMoventes.fr%2Fvideos%2F572284076301765%2F&amp;src=sdkpreparse">Partager à Facebook</a></div>
+                </div>
+                <div class="col-md-3 text-center">
+
+                    <!-- TWITTER -->
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://moventes.com" data-text="En création de startup? Découvrez l'accompagnement de @moventes_fr en vidéo" data-lang="fr" data-size="large">Tweeter</a>
+                    <script>
+                        ! function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0],
+                                p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + '://platform.twitter.com/widgets.js';
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, 'script', 'twitter-wjs');
+                    </script>
+
+                </div>
+            </div>
+        </section>
+        <!-- ##############################################################
+###################   SECTION  "APPROCHE"  ######################
+#####################################################################  -->
+
+        <section id="approche" class="container-fluid">
+            <div class="row">
+                <div id="preparation" class="col-sm-10 col-sm-offset-1  text-center">
+                    <h1 class="section-heading">Notre approche</h1>
+                </div>
+            </div>
+
+            <div class="row top-buffer wow slideInRight approche approche1 center-block">
+                <figure class="figure1 col-sm-4 col-lg-offset-4 hidden-xs">
+                    <img class="figure1img img-responsive img-circle " src="../img/approche-1.jpg" alt="préparation" />
+                    <div class="legend-approche etiquette-approche1"><img class="barre" src="../img/barre-white-bold.png" alt="barré" />
+                        <p>consultant </p>
+                        <p>&nbsp;Partenaire</p>
+                    </div>
+                </figure>
+                <div class="divFigure1 col-lg-4 col-sm-8 col-xs-12 text-center">
+
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <h4>Préparation</h4></li>
+                        <li class="list-group-item"><b>Sondages</b> du marché</li>
+                        <li class="list-group-item">Conception de la <b>solution informatique</b>
+                            <nobr>et de son modèle économique</nobr>
+                        </li>
+                        <li class="list-group-item">Montage d'une vidéo de <b>présentation</b> du projet
+                            <br/>et d'une page web pour "vendre" le concept</li>
+                        <li class="list-group-item">Lancement d'une campagne de <b>crowdfunding</b></li>
+                    </ul>
+                    <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-accompagnement">
+                                Notre accompagnement
+                            </a>
+                </div>
+            </div>
+
+            <div id="construction" class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+
+            <div class="row  top-buffer wow slideInLeft approche approche2 center-block">
+                <figure class="figure2 col-sm-4 col-lg-push-4 hidden-xs">
+                    <img class="figure2img img-responsive img-circle center-block" src="../img/approche-22.jpg" alt="construction" />
+                    <div class="legend-approche etiquette-approche2"><img class="barre" src="../img/barre-white-bold.png" alt="barré" />
+                        <p>manager </p>
+                        <p>&nbsp;Coach</p>
+                    </div>
+
+                </figure>
+                <div class="divFigure2 col-lg-4 col-sm-8 col-xs-12 col-lg-pull-4 text-center">
+
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <h4>Construction</h4></li>
+                        <li class="list-group-item"><b>conception technique</b> et cahier des charges</li>
+                        <li class="list-group-item"><b>développement de la solution</b> informatique
+                            <nobr>(web et mobile)</nobr>
+                        </li>
+                        <li class="list-group-item"><b>formation</b>, coaching et soutien technique
+                            <nobr>des développeurs</nobr> par un ingénieur expérimenté</li>
+                        <li class="list-group-item"><b>gestion de projet agile</b> et
+                            <nobr>reporting d'avancement continu</nobr>
+                        </li>
+                    </ul>
+                    <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-engagements">
+                    Nos engagements
+                </a>
+                </div>
+            </div>
+
+            <div id="decollage" class="row" style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+
+            <div class="row  top-buffer wow slideInRight approche approche3 center-block">
+                <figure class="figure3 col-sm-4 col-lg-offset-4 hidden-xs">
+                    <img class="figure3img img-responsive img-circle center-block" src="../img/approche-33.jpg" alt="croissance" />
+                    <div class="legend-approche etiquette-approche3"><img class="barre" src="../img/barre-white-bold.png" alt="barré" />
+                        <p>prestataire </p>
+                        <p>&nbsp;Allié</p>
+                    </div>
+
+                </figure>
+                <div class="divFigure3 col-lg-4 col-sm-8 col-xs-12 text-center">
+
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <h4 class="">Décollage</h4></li>
+                        <li class="list-group-item"><b>opportunité d'embaucher les développeurs</b> qui ont travaillé sur le projet, pour monter une direction informatique interne et devenir autonome</li>
+                        <li class="list-group-item"><b>assistance lors de la commercialisation</b> de la solution</li>
+                        <li class="list-group-item"><b>expertise et soutien techniques</b> pour les évolutions majeures de la solution informatique</li>
+                    </ul>
+                    <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-rh">
+                    Notre politique RH
+                </a>
+                </div>
+            </div>
+
+        </section>
+        <script type="application/javascript">
+            function resizeCircle() {
+                $(".figure1img").css('max-height', $(".divFigure1").height());
+                $(".figure2img").css('max-height', $(".divFigure2").height());
+                $(".figure3img").css('max-height', $(".divFigure3").height());
+            }
 
             $(document).ready(function () {
-                fixNavLayout();
-
-                //jQuery to collapse the navbar on scroll
-                $(window).scroll(function() {
-                    fixNavLayout();
-                });
-
-                // for page scrolling feature - requires jQuery Easing plugin
-                $('a.page-scroll').bind('click', function(event) {
-                    console.log('click for page-scroll ',$(this));
-                    var $anchor = $(this);
-                    console.log( $($anchor.attr('href')).offset().top);
-                    $('html, body').stop().animate({
-                        scrollTop: $($anchor.attr('href')).offset().top
-                    }, 1500, 'easeInOutExpo');
-                    event.preventDefault();
-                });
-
+                resizeCircle();
+            });
+            $(window).resize(function () {
+                resizeCircle();
             });
         </script>
 
+        <!-- ======================= MODAL  "accompagnement"  ====================================================================  -->
 
-    </head>
 
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-        <!-- Navigation -->
-        <!--navbar-inverse-->
-        <nav class="navbar navbar-default navbar-fixed-top" id="nav">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#full-navbar-collapse">
-                        <span class="sr-only">Afficher le menu</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#page-top" title="Moventes"> <img alt="" src="img/logo.png"><span class="brand">Moventes</span></a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="full-navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="http://moventes.com/offre">Notre offre</a>
-                        </li>
-                        <li>
-                            <a href="http://moventes.com/demarche">Notre démarche</a>
-                        </li>
-                        <li>
-                            <a href="http://moventes.com/potentiel">Votre potentiel mobilité</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#contact">Nous contacter</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
-
-        <!-- Header -->
-        <header id="top" class="header">
-
-            <div class="text-vertical-center">
-                <h1 class="brand">Moventes</h1>
-                <h3 class="text-header">Spécialiste des applications mobiles pour les professionnels <br/>faites sur mesure et livrées clé-en-main</h3>
-                <br>
-                <a class="btn btn-dark btn-lg page-scroll" href="#services">En savoir plus</a>
-                <a class="btn btn-dark btn-lg page-scroll" href="#contact">Nous contacter</a>
-
-            </div>
-        </header>
-
-        <!-- Services -->
-        <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-        <section id="services" class="bg-primary">
-            <div class="container text-vertical-center">
-                <div class="row text-center ">
-                    <div class="col-lg-10 col-lg-offset-1">
-                        <h2>Avançons ensemble !</h2>
-                        <hr class="small">
+        <div class="modal fade" id="modal-accompagnement" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-accompagnement">Notre accompagnement</h4>
+                    </div>
+                    <div class="modal-body text-left">
                         <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                <a class="service-item" href="http://moventes.com/offre">
-                                    <span class="fa-stack fa-4x">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-suitcase fa-stack-1x text-primary"></i>
-                                    </span>
-                                    <h4>
-                                        <strong>Notre offre</strong>
-                                    </h4>
-                                    <p>Une prestation complète pour construire à vos côtés votre application mobile B2B hébergée dans le cloud</p>
-                                </a>
-                            </div>
-                            <div class="col-md-4 col-sm-6 ">
-                                <a class="service-item"  href="http://moventes.com/demarche">
-                                    <span class="fa-stack fa-4x">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-connectdevelop fa-stack-1x text-primary"></i>
-                                    </span>
-                                    <h4>
-                                        <strong>Notre démarche</strong>
-                                    </h4>
-                                    <p>Une approche professionnelle (du conseil à l'exploitation) pour rester à votre écoute et maitriser votre budget</p>
-                                </a>
-                            </div>
-                            <div class="col-md-4 col-sm-12 ">
-                                <a class="service-item"  href="http://moventes.com/potentiel">
-                                    <span class="fa-stack fa-4x">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-mobile fa-stack-1x text-primary"></i>
-                                    </span>
-                                    <h4>
-                                        <strong>Votre potentiel mobilité</strong>
-                                    </h4>
-                                    <p>A chaque entreprise, à chaque métier, son application mobile sur mesure !</p>
-                                </a>
+                            <div class="col-md-offset-2 col-md-8 text-center">
+                                <small>
+                                Nous travaillons côte à côte sur votre projet tout au long de sa création.
+                                Ainsi, un ingénieur expérimenté de Moventes vous accompagne, vous et les développeurs dédiés au projet, à chaque étape de cette aventure entrepreneuriale, pour arriver ensemble à une belle réussite!
+                                <br/><br/>
+                                </small>
                             </div>
                         </div>
-                        <!-- /.row (nested) -->
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Etude du marché</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">mise en place de sondages en ligne</li>
+                                        <li class="list-group-item">analyse des besoins et de la concurrence</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Formalisation des concepts</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">les "use cases"
+                                            <br/><small>(pré-conception de la solution)</small></li>
+                                        <li class="list-group-item">le modèle économique</li>
+                                        <li class="list-group-item">la stratégie business
+                                            <br/><small>(quelle cible? quels besoins? quelle valeur ajoutée?)</small></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Communication digitale</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">page web de présentation (<i>landing page</i>)</li>
+                                        <li class="list-group-item">vidéo de présentation du projet (2-3 min)</li>
+                                        <li class="list-group-item">réseaux sociaux</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Recherche de financements</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">dossiers pour des subventions et prêts</li>
+                                        <li class="list-group-item">campagne de crowdfunding ou de love money</li>
+                                        <li class="list-group-item">participation à des concours</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-6 ">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Conception détaillée de la solution informatique</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">maquette détaillée et cahier des charges</li>
+                                        <li class="list-group-item">découpage par lots <small>(priorisation des fonctionnalités, planification des versions)</small></li>
+                                        <li class="list-group-item">étude des contraintes <small>(terminaux, sécurité, connectivité,...)</small></li>
+                                        <li class="list-group-item">choix des technologies les plus adaptées ppour ce projet <small>(backend et frontend)</small></li>
+                                        <li class="list-group-item">modèle de données et charte graphique</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Développement informatique</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Gestion de projet</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-6 ">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Commercialisation et support technique</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
                     </div>
-                    <!-- /.col-lg-10 -->
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /.container -->
+        </div>
+        <!-- ======================= MODAL  "engagements"==================================================================== -->
+
+        <div class="modal fade" id="modal-engagements" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-pay">Nos engagements</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        <div style="margin-top:3em;" class="row">
+                            <div class="col-md-4 ">
+                                <span class="fa-stack fa-3x text-success" style="position:absolute; top:-1em; width:100%;text-align:center ">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
+                                </span>
+
+                                <div class="panel panel-success">
+                                    <div class="panel-heading text-center">
+                                        <!--
+<div class="rond " style="position:absolute; top:-3em; text-align:center; width:6em; left:calc(50% - 3em); height:6em; ">
+    <i style="" class="fa " aria-hidden="true"></i>
+</div>-->
+                                        <h5 style="margin-top:2em;" class="panel-title text-center">Efficacité</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Suivi de l'avancement des tâches détaillé et en temps réel </li>
+                                        <li class="list-group-item">Résultat des développements en cours visible à tout moment</li>
+                                        <li class="list-group-item">Engagement d'efficacité de tous les collaborateurs</li>
+                                        <li class="list-group-item">Relevé précis et détaillé du temps passé à chaque tâche</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 ">
+                                <span class="fa-stack fa-3x text-success" style="position:absolute; top:-1em; width:100%;text-align:center ">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa fa-eur fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <h5 style="margin-top:2em;" class="panel-title text-center">Juste prix</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Facturation au temps réellement passé</li>
+                                        <li class="list-group-item">Gestion fine et flexible de l'équipe en fonction des besoins</li>
+                                        <li class="list-group-item">Tarif abordable, basé sur un calcul précis du coût de revient</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 ">
+                                <span class="fa-stack fa-3x text-success" style="position:absolute; top:-1em; width:100%;text-align:center ">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa fa-thumbs-o-up fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <h5 style="margin-top:2em;" class="panel-title text-center">Qualité</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Stratégie managériale visant à responsabiliser le développeur</li>
+                                        <li class="list-group-item">Exigence de qualité élevée (grâce à des outils de qualimétrie du code et à la supervision d'un ingénieur expérimenté)</li>
+                                        <li class="list-group-item">Implication personnelle forte de notre équipe dans la réussite de votre projet</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ======================= MODAL  "RH" ==================================================================== -->
+
+
+        <div class="modal fade" id="modal-rh" tabindex="-1" role="dialog" aria-labelledby="modal-title-pay">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modal-title-rh">Notre politique RH</h4>
+                    </div>
+                    <div class="modal-body text-left">
+
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Recrutement &amp; Formation</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">des développeurs sont recrutés à l'issue d'entretiens et tests, par rapport à leur attrait pour l'entrepreneuriat, leur capacité d'adaptation et de travail en équipe, leurs compétences sociales et techniques,...</li>
+                                        <li class="list-group-item">Moventes forme ensuite ses développeurs spécifiquement aux technologies choisies pour la startup, en vue de les rendre le plus rapidement possible autonomes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Coaching &amp; Soutien</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">nos développeurs sont quotidiennement coachés et challengés pour donner le meilleur d'eux-mêmes dans le projet qu'ils portent</li>
+                                        <li class="list-group-item">nos méthodes de gestion de projet aident nos développeurs à mieux organiser leur temps et à être plus efficaces</li>
+                                        <li class="list-group-item">un ingénieur expérimenté est toujours disponible comme support technique, en cas de difficultés dans le développement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row " style="text-align:center; color:grey"><i class=" rotate fa fa-chevron-right fa-4x"></i></div>
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title text-center">Internalisation de l'équipe informatique</h5>
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">la startup a l'opportunité d'embaucher les développeurs qui travaillent sur sa solution informatique, pour monter sa direction informatique et ainsi avoir les compétences techniques en interne.</li>
+                                        <li class="list-group-item">Moventes accompagne progressivement la startup vers son autonomie, et lui apporte son expertise et son soutien techniques pour les évolutions majeures de la solution informatique</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ##############################################################
+###################   SECTION  "ENJEUX"  ######################
+#####################################################################  -->
+        <div class="divider  ">
+        </div>
+
+        <script type="application/javascript">
+            $(document).ready(function () {
+                //-----------------------------------------------------------
+                //problem/solution
+                //-----------------------------------------------------------
+
+
+                $(this).find('.solution').hide();
+                $(this).find('.problem').show();
+
+                function checkEnjeuScrolled(enjeu) {
+                    var fromTop = enjeu.offset().top - $(window).scrollTop();
+                    return (fromTop <= 150);
+                }
+
+
+                $(document).scroll(function () {
+                    $(".enjeux").each(function (indexEnjeu) {
+                        if (checkEnjeuScrolled($(this))) {
+                            showSolution($(this));
+                        } else {
+                            showProblem($(this));
+                        }
+                    });
+                });
+
+                $('.enjeux').hover(function () {
+                    if (checkEnjeuScrolled($(this))) {
+                        showProblem($(this));
+                    }
+                }, function () {
+                    if (checkEnjeuScrolled($(this))) {
+                        showSolution($(this));
+                    }
+                });
+
+                function showSolution(enjeu) {
+                    //                console.log('showSolution (START)');
+                    if (!enjeu.find('.solution').is(":visible")) {
+
+                        enjeu.find('.problem').hide(0, function () {
+                            enjeu.find('.solution').fadeIn("slow", function () {
+                                //                console.log('showSolution (END)');
+                            });
+                        });
+                    }
+
+                }
+
+                function showProblem(enjeu) {
+                    //                console.log('showProblem (START)');
+                    if (!enjeu.find('.problem').is(":visible")) {
+                        enjeu.find('.solution').hide(0, function () {
+                            enjeu.find('.problem').fadeIn("slow", function () {
+                                //                console.log('showProblem (END)');
+                            });
+                        });
+                    }
+                }
+
+
+
+                $('.enjeux').on("click", function (event) {
+                    event.stopPropagation();
+                    if ($(this).find('.problem').is(":visible")) {
+                        showSolution($(this));
+                    } else {
+                        showProblem($(this));
+                    }
+                    return false;
+                });
+            });
+        </script>
+        <!-- Services -->
+        <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+        <section id="enjeux" class="container-fluid">
+
+            <div class="row text-center ">
+                <h1 class="section-heading">Notre réponse
+                <br/><small>aux enjeux des entrepreneurs</small></h1>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-md-4 enjeux" id="enjeux1">
+                    <div class="row problem">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Difficulté à trouver un co-fondateur informatique, fiable et expérimenté</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
+                            <p>Besoin d'avoir en interne la maitrise de la solution informatique</p>
+                        </div>
+                    </div>
+                    <div class="row solution">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <span class="fa-stack fa-4x home-icon">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Les développeurs de Moventes sont formés et coachés pour les <b>besoins spécifiques</b> de la startup, qui peut ensuite les embaucher pour <b>conserver le savoir-faire</b> technique en interne</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 enjeux" id="enjeux2">
+                    <div class="row problem">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Difficulté à figer le concept face au risque d'avoir une solution qui ne répond pas au besoin du marché</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
+                            <p>besoin d'avoir une stratégie claire et convaincante</p>
+                        </div>
+                    </div>
+                    <div class="row solution">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <span class="fa-stack fa-4x home-icon">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Moventes vous aide dans la <b>conception collaborative</b> de la solution et de son business model , et dans l'élaboration des supports de <b>communication</b> (BP, vidéo, page web,...)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 enjeux" id="enjeux3">
+                    <div class="row problem">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Difficulté à s'adapter aux contraintes budgétaires</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux separateur">
+                            <p>Besoin d'avoir une gestion fine et flexible du projet</p>
+                        </div>
+                    </div>
+                    <div class="row solution">
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <span class="fa-stack fa-4x home-icon">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-money fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </div>
+                        <div class="col-xs-12 col-md-6 align-center-vertically-enjeux">
+                            <p>Basé sur une relation de confiance, Moventes facture au <b>prix coûtant</b> le temps effectif de travail, tout en assurant une <b>implication</b> forte de l'équipe dans la réussite de votre projet</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </section>
 
 
+
+
+
+        <!-- ##############################################################
+###################   SECTION  "IDENTITE"  ######################
+#####################################################################  -->
+
+
+        <section id="presentation" class="container-fluid">
+            <!--            <hr class="small">-->
+
+            <script type="application/javascript">
+                $(document).ready(function () {
+
+
+                    $('.identite-item').hover(
+                        function () {
+                            $(this).addClass('bounce animated');
+                        },
+                        function () {
+                            $(this).removeClass('bounce animated');
+                        }
+                    );
+
+                });
+            </script>
+            <div class="row text-center ">
+                <h1 class="section-heading">Notre identité</h1>
+            </div>
+            <div class="row top-buffer text-primary">
+                <div class="col-md-2 col-md-offset-2 col-sm-4 col-sm-offset-1 col-xs-8 col-xs-offset-2 text-center">
+                    <a href="/valeurs" class="wrapper identite-item ">
+                        <img class=" img-responsive img-circle" src="../img/nosValeurs.png" alt="nosValeurs" />
+                        <div class="overlay">
+                            <h3>Nos valeurs</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class=" col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2 ">
+                    <a href="/expertise" class="wrapper identite-item">
+                        <img class=" img-responsive img-circle" src="../img/notreExpertise.png" alt="notreExpertise" />
+                        <div class="overlay">
+                            <h3>Notre expertise</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2 ">
+                    <a href="/histoire" class="wrapper identite-item">
+                        <img class=" img-responsive img-circle" src="../img/notreHistoire.png" alt="notreHistoire" />
+                        <div class="overlay">
+                            <h3>Notre histoire</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ##############################################################
+###################   SECTION  "CONTACT" à inclure dans une MODAL  ######################
+#####################################################################  -->
 
         <!-- Contact Section -->
         <section id="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Contactez-nous !</h2>
+                        <h1 class="section-heading">Contactez-nous !</h1>
                         <hr class="small">
                         <!--                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
 
@@ -244,147 +876,160 @@
 
                                     <script type="text/javascript">
                                         /* <![CDATA[ */
-                                        goog_snippet_vars = function() {
-                                            var w = window;
-                                            w.google_conversion_id = 952666343;
-                                            w.google_conversion_label = "3S_xCNSugl0Q55GixgM";
-                                            w.google_remarketing_only = false;
-                                        }
-                                        // DO NOT CHANGE THE CODE BELOW.
-                                        goog_report_conversion = function(url) {
-                                            goog_snippet_vars();
-                                            window.google_conversion_format = "3";
-                                            window.google_is_call = true;
-                                            var opt = new Object();
-                                            opt.onload_callback = function() {
-                                                if (typeof(url) != 'undefined') {
-                                                    window.location = url;
-                                                }
-                                            }
-                                            var conv_handler = window['google_trackConversion'];
-                                            if (typeof(conv_handler) == 'function') {
-                                                conv_handler(opt);
-                                            }
-                                        }
-
+                                        //                                    goog_snippet_vars = function () {
+                                        //                                            var w = window;
+                                        //                                            w.google_conversion_id = 952666343;
+                                        //                                            w.google_conversion_label = "3S_xCNSugl0Q55GixgM";
+                                        //                                            w.google_remarketing_only = false;
+                                        //                                        }
+                                        //                                        // DO NOT CHANGE THE CODE BELOW.
+                                        //                                    goog_report_conversion = function (url) {
+                                        //                                        goog_snippet_vars();
+                                        //                                        window.google_conversion_format = "3";
+                                        //                                        window.google_is_call = true;
+                                        //                                        var opt = new Object();
+                                        //                                        opt.onload_callback = function () {
+                                        //                                            if (typeof (url) != 'undefined') {
+                                        //                                                window.location = url;
+                                        //                                            }
+                                        //                                        }
+                                        //                                        var conv_handler = window['google_trackConversion'];
+                                        //                                        if (typeof (conv_handler) == 'function') {
+                                        //                                            conv_handler(opt);
+                                        //                                        }
+                                        //                                    }
 
 
 
                                         $(document).ready(function () {
-
-
                                             // console.log('form',$('#contactForm'));
                                             $('#contactForm').bootstrapValidator({
-                                                message: 'Ce champ n\'est pas valide',
-                                                feedbackIcons: {
-                                                    valid: 'glyphicon glyphicon-ok',
-                                                    invalid: 'glyphicon glyphicon-remove',
-                                                    validating: 'glyphicon glyphicon-refresh'
-                                                },
-                                                live: 'enabled',
-                                                submitButtons: 'button[type="submit"]',
-                                                fields: {
-                                                    firstname: {
-                                                        validators: {
-                                                            notEmpty: {
-                                                                message:'Veuillez saisir votre prénom'
-                                                            },
-                                                            stringLength: {
-                                                                min: 2,
-                                                                max: 30,
-                                                                message:'Votre prénom doit être d\'au moins 2 caractères'
+                                                    message: 'Ce champ n\'est pas valide',
+                                                    feedbackIcons: {
+                                                        valid: 'glyphicon glyphicon-ok',
+                                                        invalid: 'glyphicon glyphicon-remove',
+                                                        validating: 'glyphicon glyphicon-refresh'
+                                                    },
+                                                    live: 'enabled',
+                                                    submitButtons: 'button[type="submit"]',
+                                                    fields: {
+                                                        firstname: {
+                                                            validators: {
+                                                                notEmpty: {
+                                                                    message: 'Veuillez saisir votre prénom'
+                                                                },
+                                                                stringLength: {
+                                                                    min: 2,
+                                                                    max: 30,
+                                                                    message: 'Votre prénom doit être d\'au moins 2 caractères'
+                                                                }
                                                             }
-                                                        }
-                                                    },
-                                                    lastname: {
-                                                        validators: {
-                                                            notEmpty: {
-                                                                message:'Veuillez saisir votre nom'
-                                                            },
-                                                            stringLength: {
-                                                                min: 2,
-                                                                max: 30,
-                                                                message:'Votre nom doit être d\'au moins 2 caractères'
+                                                        },
+                                                        lastname: {
+                                                            validators: {
+                                                                notEmpty: {
+                                                                    message: 'Veuillez saisir votre nom'
+                                                                },
+                                                                stringLength: {
+                                                                    min: 2,
+                                                                    max: 30,
+                                                                    message: 'Votre nom doit être d\'au moins 2 caractères'
+                                                                }
                                                             }
-                                                        }
-                                                    },
-                                                    company: {
-                                                        validators: {
-                                                            stringLength: {
-                                                                min: 2,
-                                                                max: 40,
-                                                                message:'Le nom de votre entreprise doit être d\'au moins 2 caractères'
+                                                        },
+                                                        company: {
+                                                            validators: {
+                                                                stringLength: {
+                                                                    min: 2,
+                                                                    max: 40,
+                                                                    message: 'Le nom de votre entreprise doit être d\'au moins 2 caractères'
+                                                                }
                                                             }
-                                                        }
-                                                    },
-                                                    email: {
-                                                        validators: {
-                                                            notEmpty: {
-                                                                message:'Veuillez saisir votre adresse email'
-                                                            },
-                                                            emailAddress: {
-                                                                message:'Votre adresse email n\'est pas valide'                                           }
-                                                        }
-                                                    },
-                                                    phone:{
-                                                        validators: {
-                                                            phone: {
-                                                                country: 'FR',
-                                                                message:'Votre numéro de téléphone n\'est pas valide'
+                                                        },
+                                                        email: {
+                                                            validators: {
+                                                                notEmpty: {
+                                                                    message: 'Veuillez saisir votre adresse email'
+                                                                },
+                                                                emailAddress: {
+                                                                    message: 'Votre adresse email n\'est pas valide'
+                                                                }
                                                             }
-                                                        }
-                                                    },
-                                                    message: {
-                                                        validators: {
-                                                            notEmpty: {
-                                                                message:'Veuillez rédiger ici votre message'
-                                                            },
-                                                            stringLength: {
-                                                                min: 5,
-                                                                message:'Votre message est trop court !'
+                                                        },
+                                                        phone: {
+                                                            validators: {
+                                                                phone: {
+                                                                    country: 'FR',
+                                                                    message: 'Votre numéro de téléphone n\'est pas valide'
+                                                                }
+                                                            }
+                                                        },
+                                                        message: {
+                                                            validators: {
+                                                                notEmpty: {
+                                                                    message: 'Veuillez rédiger ici votre message'
+                                                                },
+                                                                stringLength: {
+                                                                    min: 5,
+                                                                    message: 'Votre message est trop court !'
+                                                                }
                                                             }
                                                         }
                                                     }
-                                                }
-                                            })
-                                                .on('success.form.bv', function(e) {
-                                                // Prevent form submission
-                                                e.preventDefault();
-                                                e.stopImmediatePropagation();
+                                                })
+                                                .on('success.form.bv', function (e) {
+                                                    // Prevent form submission
+                                                    e.preventDefault();
+                                                    e.stopImmediatePropagation();
 
-                                                var $form        = $(e.target),
-                                                    validator    = $form.data('bootstrapValidator'),
-                                                    submitButton = validator.getSubmitButton();
+                                                    var $form = $(e.target),
+                                                        validator = $form.data('bootstrapValidator'),
+                                                        submitButton = validator.getSubmitButton();
 
-                                                var dataToSend = $form.serialize();
-                                                console.log('data to send', dataToSend);
-                                                submitButton.replaceWith('<i class="fa fa-spinner fa-spin"></i>');
-                                                $form.find(':input').prop('disabled',true)
+                                                    var dataToSend = $form.serialize();
+                                                    console.log('data to send', dataToSend);
+                                                    submitButton.replaceWith('<i class="fa fa-spinner fa-spin"></i>');
+                                                    $form.find(':input').prop('disabled', true)
 
-                                                var posting = $.post($form.attr('action'), dataToSend, function(result) {
-                                                    console.log('result', result);
+                                                    var posting = $.post($form.attr('action'), dataToSend, function (result) {
+                                                        console.log('result', result);
+                                                    });
+                                                    posting.done(function (data) {
+                                                        console.debug(data);
+                                                        var response = jQuery.parseJSON(data);
+                                                        console.log('success', response.success);
+                                                        if (response.success) {
+                                                            $("#contact-block").empty().append('<div class="alert alert-success"  role="alert">' + response.message + '</div>');
+                                                            if (typeof goog_report_conversion !== undefined) {
+                                                                console.log('goog_report_conversion');
+                                                                goog_report_conversion();
+                                                            }
+                                                        } else {
+                                                            $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">' + response.message + '<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+                                                        }
+                                                    }).fail(function () {
+                                                        $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+                                                    });
+                                                    $.cookie("modal_completed", true, {
+                                                        expires: 365,
+                                                        path: '/'
+                                                    });
+
                                                 });
-                                                posting.done(function( data ) {
-                                                    var response = jQuery.parseJSON(data);
-                                                    console.log('success',response.success);
-                                                    if(response.success){
-                                                        $("#contact-block").empty().append('<div class="alert alert-success"  role="alert">'+response.message+'</div>');
-                                                        if(typeof goog_report_conversion !== undefined){console.log('goog_report_conversion');goog_report_conversion();}
-                                                    }
-                                                    else {
-                                                        $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">'+response.message+'<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
-                                                    }
-                                                }).fail(function() {
-                                                    $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
-                                                });
-                                                $.cookie("modal_completed", true, { expires: 365, path: '/' });
 
-                                            });
                                         });
+
+
+
+
+
 
                                         /* ]]> */
                                     </script>
-                                    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js"> </script>
+                                    <!--
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js">
+</script>
+-->
                                 </div>
                             </div>
                         </form>
@@ -392,27 +1037,9 @@
                 </div>
             </div>
         </section>
-        <footer class="bg-white">
-            <ul class="list-inline ">
-                <li>
-                    <a href="http://moventes.com/about">Qui sommes nous?</a>
-                </li>
-                <li class="btn-group">
-                    <a class="btn btn-info" href="https://twitter.com/moventes_fr" target="_blank" style="width:45px"><i class="fa fa-twitter fa-lg" title="Suivre Moventes sur Twitter"></i></a>
-                    <a class="btn btn-primary" href="https://www.facebook.com/Moventes.fr" target="_blank" style="width:45px"><i class="fa fa-facebook fa-lg" title="Suivre Moventes sur Facebook"></i></a>
-                    <a class="btn btn-danger" href="https://plus.google.com/117084928015054396102" target="_blank" style="width:45px"><i class="fa fa-google-plus fa-lg" title="Suivre Moventes sur Google+"></i></a>
-                    <a class="btn btn-primary" href="https://www.linkedin.com/company/10046010" target="_blank" style="width:45px"><i class="fa fa-linkedin fa-lg"  title="Suivre Moventes sur LinkedIn"></i></a>
-                </li>
-                <li>
-                    <span class="copyright">Copyright &copy; Moventes 2015</span>
-                </li>
-            </ul>
-        </footer>
-        <!-- build:include _timeoutmodal.html -->
-        include here timeoutmodal.html
-        <!-- /build -->
-
-
-    </body>
+    </div>
+    <!-- build:include:inc _commonfooter.html -->
+    <!-- /build -->
+</body>
 
 </html>

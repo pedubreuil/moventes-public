@@ -1,0 +1,431 @@
+<footer class="footer">
+    <div class="container-fluid">
+
+        <div class="row vdivide">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <a class="" href="tel:+33272013828">
+                    <i class=" fa fa-phone fa-1x" aria-hidden="true"></i>
+                    <p class="">02 72 01 38 28</p>
+                </a>
+                <a class="" href="mailto:contact@moventes.com" target="_blank">
+                    <i class=" fa fa-envelope fa-1x" aria-hidden="true"></i>
+                    <p class=" ">contact@moventes.com</p>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 ">
+                <ul class=" list-inline">
+                    <li class="btn-group">
+                        <a class="btn btn-info" href="https://twitter.com/moventes_fr" target="_blank" style="width:45px"><i class="fa fa-twitter fa-lg" title="Suivre Moventes sur Twitter"></i></a>
+                        <a class="btn btn-primary" href="https://www.facebook.com/Moventes.fr" target="_blank" style="width:45px"><i class="fa fa-facebook fa-lg" title="Suivre Moventes sur Facebook"></i></a>
+                        <a class="btn btn-danger" href="https://plus.google.com/117084928015054396102" target="_blank" style="width:45px"><i class="fa fa-google-plus fa-lg" title="Suivre Moventes sur Google+"></i></a>
+                        <a class="btn btn-primary" href="https://www.linkedin.com/company/10046010" target="_blank" style="width:45px"><i class="fa fa-linkedin fa-lg"  title="Suivre Moventes sur LinkedIn"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <!--                <div class="separator"></div>-->
+                <a class="" href="#" role="button" data-toggle="modal" data-target="#modal-map">
+                    <i class=" fa fa-map-marker fa-2x" aria-hidden="true"></i> 6 Rue Rose Dieng-Kuntz, 44300 Nantes
+                </a>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="row vdivide">
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-contact"><i class=" fa fa-comments-o" aria-hidden="true"></i> Contactez-nous</a>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <a class="btn btn-default" href="http://moventes.com/delivery" role="button"><i class="fa fa-user" aria-hidden="true"></i>
+                    Espace client</a>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <a class="btn btn-default" href="#" role="button" data-toggle="modal" data-target="#modal-about"><i class="fa fa-info-circle" aria-hidden="true"></i> A propos de Moventes</a>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <div class="copyright">Copyright &copy; Moventes 2015 - 2017</div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</footer>
+
+<!-- build:include:inc _contactmodal.html -->
+<!-- /build -->
+
+
+
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/57aadaa9dd9efba60befdb48/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
+
+
+
+<!-- ##############################################################
+###################   MODAL  "CONTACT"  ######################
+#####################################################################  -->
+
+
+
+<!-- Modal Contact -->
+<div id="modal-contact" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Contactez-nous !</h4>
+            </div>
+            <div class="modal-body" id="contact-block">
+                <form id="contactModalForm" method="post" action="bin/contact_us.php" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="sr-only" for="lastname">Votre nom:</label>
+                        <input type="text" class="form-control" placeholder="Votre nom *" name="lastname" id="lastname">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="email">Votre email:</label>
+                        <input type="email" class="form-control" placeholder="Votre email *" name="email" id="email">
+                    </div>
+                    <!--
+<div class="form-group">
+<label class="sr-only" for="phone">Votre téléphone:</label>
+<input type="tel" class="form-control" placeholder="Votre téléphone" name="phone" id="phone">
+</div>
+-->
+
+                    <div class="form-group">
+                        <label class="sr-only" for="message">Votre message:</label>
+                        <textarea class="form-control" placeholder="Votre message *" name="message" id="message"></textarea>
+                    </div>
+                    <!--
+<div class="clearfix"></div>
+<div class="col-lg-12 text-center">
+
+
+</div>-->
+                    <button type="submit" class="btn btn-lg btn-dark"><span class="glyphicon glyphicon-envelope"></span> Envoyer le message</button>
+                </form>
+            </div>
+            <!--
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>-->
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    //                                    goog_snippet_vars = function () {
+    //                                            var w = window;
+    //                                            w.google_conversion_id = 952666343;
+    //                                            w.google_conversion_label = "3S_xCNSugl0Q55GixgM";
+    //                                            w.google_remarketing_only = false;
+    //                                        }
+    //                                        // DO NOT CHANGE THE CODE BELOW.
+    //                                    goog_report_conversion = function (url) {
+    //                                        goog_snippet_vars();
+    //                                        window.google_conversion_format = "3";
+    //                                        window.google_is_call = true;
+    //                                        var opt = new Object();
+    //                                        opt.onload_callback = function () {
+    //                                            if (typeof (url) != 'undefined') {
+    //                                                window.location = url;
+    //                                            }
+    //                                        }
+    //                                        var conv_handler = window['google_trackConversion'];
+    //                                        if (typeof (conv_handler) == 'function') {
+    //                                            conv_handler(opt);
+    //                                        }
+    //                                    }
+
+
+
+    $(document).ready(function () {
+        // console.log('form',$('#contactModalForm'));
+        $('#contactModalForm').bootstrapValidator({
+                message: 'Ce champ n\'est pas valide',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                live: 'enabled',
+                submitButtons: 'button[type="submit"]',
+                fields: {
+                    firstname: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Veuillez saisir votre prénom'
+                            },
+                            stringLength: {
+                                min: 2,
+                                max: 30,
+                                message: 'Votre prénom doit être d\'au moins 2 caractères'
+                            }
+                        }
+                    },
+                    lastname: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Veuillez saisir votre nom'
+                            },
+                            stringLength: {
+                                min: 2,
+                                max: 30,
+                                message: 'Votre nom doit être d\'au moins 2 caractères'
+                            }
+                        }
+                    },
+                    company: {
+                        validators: {
+                            stringLength: {
+                                min: 2,
+                                max: 40,
+                                message: 'Le nom de votre entreprise doit être d\'au moins 2 caractères'
+                            }
+                        }
+                    },
+                    email: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Veuillez saisir votre adresse email'
+                            },
+                            emailAddress: {
+                                message: 'Votre adresse email n\'est pas valide'
+                            }
+                        }
+                    },
+                    phone: {
+                        validators: {
+                            phone: {
+                                country: 'FR',
+                                message: 'Votre numéro de téléphone n\'est pas valide'
+                            }
+                        }
+                    },
+                    message: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Veuillez rédiger ici votre message'
+                            },
+                            stringLength: {
+                                min: 5,
+                                message: 'Votre message est trop court !'
+                            }
+                        }
+                    }
+                }
+            })
+            .on('success.form.bv', function (e) {
+                // Prevent form submission
+                e.preventDefault();
+                e.stopImmediatePropagation();
+
+                var $form = $(e.target),
+                    validator = $form.data('bootstrapValidator'),
+                    submitButton = validator.getSubmitButton();
+
+                var dataToSend = $form.serialize();
+                console.log('data to send', dataToSend);
+                submitButton.replaceWith('<i class="fa fa-spinner fa-spin"></i>');
+                $form.find(':input').prop('disabled', true)
+
+                var posting = $.post($form.attr('action'), dataToSend, function (result) {
+                    console.log('result', result);
+                });
+                posting.done(function (data) {
+                    var response = jQuery.parseJSON(data);
+                    console.log('success', response.success);
+                    if (response.success) {
+                        $("#contact-block").empty().append('<div class="alert alert-success"  role="alert">' + response.message + '</div>');
+                        if (typeof goog_report_conversion !== undefined) {
+                            console.log('goog_report_conversion');
+                            goog_report_conversion();
+                        }
+                    } else {
+                        $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">' + response.message + '<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+                    }
+                }).fail(function () {
+                    $("#contact-block").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+                });
+                $.cookie("modal_completed", true, {
+                    expires: 365,
+                    path: '/'
+                });
+
+            });
+
+    });
+
+
+
+
+
+
+    /* ]]> */
+</script>
+<!--
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js">
+</script>
+-->
+
+
+<!-- ##############################################################
+###################   MODAL  "ABOUT"  ######################
+#####################################################################  -->
+
+<div id="modal-about" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Information</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped bg-success">
+                    <tbody>
+                        <tr>
+                            <th>Nom</th>
+                            <td>Moventes
+                                <br><small>(du latin <i>movens, moventis</i> : "ceux qui mettent en mouvement")</small></td>
+                        </tr>
+                        <tr>
+                            <th>Statut</th>
+                            <td>Société par Actions Simplifiée (SAS)</td>
+                        </tr>
+                        <tr>
+                            <th>Capital</th>
+                            <td>6 000 €</td>
+                        </tr>
+                        <tr>
+                            <th>SIREN</th>
+                            <td><a href="https://www.infogreffe.fr/societes/entreprise-societe/811962794-moventes-440115B015090000.html" target="_blank">811 962 794</a></td>
+                        </tr>
+                        <tr>
+                            <th>TVA</th>
+                            <td><a href="http://ec.europa.eu/taxation_customs/vies/vatRequest.html" target="_blank">FR47811962794</a></td>
+                        </tr>
+                        <tr>
+                            <th>Siège social</th>
+                            <td>Nantes (Pays-de-Loire)</td>
+                        </tr>
+                        <tr>
+                            <th>Contact</th>
+                            <td><a href="mailto:contact@moventes.com" target="_blank">contact@moventes.com</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ##############################################################
+###################   MODAL  "CARTE-MOVENTES"  ######################
+#####################################################################  -->
+<!-- Modal -->
+<div id="modal-map" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Moventes : 6 Rue Rose Dieng-Kuntz, 44300 Nantes</h4>
+            </div>
+            <div class="modal-body">
+                <div id="map-moventes" style="  height: 430px;position: relative;width: 100%;">Map is loading...</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ##############################################################
+###################   SCRIPT POUR INTEGRER GOOGLE MAP DANS MODAL  ######################
+#####################################################################  -->
+<script>
+    var mapInitialized = false;
+    var map;
+
+    function initMap() {
+        console.log('init map');
+        var myLatLng = {
+            lat: 47.284279,
+            lng: -1.515481
+        };
+
+        // Create a map object and specify the DOM element for display.
+        map = new google.maps.Map(document.getElementById('map-moventes'), {
+            center: myLatLng,
+            scrollwheel: false,
+            zoom: 5,
+            maxZoom: 12,
+            minZoom: 4
+
+        });
+
+        var imageSize = new google.maps.Size(40, 40);
+
+        // Create a marker and set its position.
+        var marker = new google.maps.Marker({
+            map: map,
+            position: myLatLng,
+            title: 'Siège social de Moventes',
+            icon: {
+                url: 'img/mapicon.png',
+                scaledSize: imageSize
+            },
+            animation: google.maps.Animation.DROP,
+            attribution: {
+                source: 'Moventes',
+                webUrl: 'https://www.moventes.com/'
+            },
+            optimized: true
+
+        });
+        mapInitialized = true;
+    }
+    $("#modal-map").on("shown.bs.modal", function () {
+        console.log('show modal');
+        if (!mapInitialized) {
+            initMap();
+        } else if (map) {
+            google.maps.event.trigger(map, "resize");
+        }
+    });
+</script>
+<script src="https://maps.googleapis.com/maps/api/js" async defer></script>
+<!--TODO https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY -->
+<!--TODO proposer calcul du trajet de localisation courante jusqu'au bureau AZELIES -->

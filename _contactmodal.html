@@ -1,0 +1,174 @@
+<script type="application/javascript">
+    /* <![CDATA[ */
+
+
+    $(document).ready(function () {
+
+
+    // console.log('form',$('#contactForm'));
+    $('#mc-embedded-subscribe-form').bootstrapValidator({
+            message: 'Ce champ n\'est pas valide',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            live: 'enabled',
+            submitButtons: 'input[type="submit"]',
+            fields: {
+                lastname: {
+                    validators: {}
+                },
+                company: {
+                    validators: {}
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: ''
+                        },
+                        emailAddress: {
+                            message: ''
+                        }
+                    }
+                }
+            }
+        })
+        .on('success.form.bv', function (e) {
+            // Prevent form submission
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            var $form = $(e.target),
+                validator = $form.data('bootstrapValidator'),
+                submitButton = validator.getSubmitButton();
+
+            var dataToSend = $form.serialize();
+            console.log('data to send', dataToSend);
+            $form.find(':input').prop('disabled', true)
+
+            submitButton.replaceWith('<i class="fa fa-spinner fa-spin"></i>');
+
+            var posting = $.post($form.attr('action'), dataToSend, function (result) {
+                console.log('result', result);
+            });
+            posting.done(function (data) {
+                console.log("done !", data);
+                var response = jQuery.parseJSON(data);
+                console.log('success', response.success);
+                if (response.success) {
+                    $(".modal-body").empty().append('<div class="alert alert-success"  role="alert">' + response.message + '</div>');
+                    window.setTimeout(function () {
+                        $('#timeoutModal').modal('hide');
+                    }, 3000);
+                } else {
+                    $(".modal-body").empty().append('<div class="alert alert-danger"  role="alert">' + response.message + '<br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+                }
+            }).fail(function () {
+                $(".modal-body").empty().append('<div class="alert alert-danger"  role="alert">La requête a échoué. <br/>Nous nous excusons pour cet incident technique.<br/> Merci de nous contacter par email : <a href="mailto:contact@moventes.com">contact@moventes.com</a></div>');
+            });
+
+            $.cookie("modal_completed", true, {
+                expires: 365,
+                path: '/'
+            });
+
+        });
+    });
+    /* ]]> */
+</script>
+
+<div class="modal fade" id="timeoutModal" tabindex="-1" role="dialog" aria-labelledby="timeoutModalTitle">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="timeoutModalTitle">
+                    Moventes vous accompagne<br/>
+                    <small>pour trouver et mettre en place une solution de mobilité adaptée à votre entreprise</small>
+                </h4>
+
+            </div>
+            <form action="bin/contact_us.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
+
+                <div class="modal-body">
+
+                    <div class="form-group form-group-lg">
+                        <label class="sr-only" for="mce-EMAIL">Email:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-envelope-o"></i></div>
+                            <input class="form-control" type="email" value="" name="email" id="mce-EMAIL" placeholder="Votre email">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="sr-only" for="mce-LNAME">Nom:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" class="form-control" name="lastname" id="mce-LNAME" placeholder="Votre nom">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="sr-only" for="mce-COMPNY">Entreprise:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-building-o"></i></div>
+                            <input type="text" class="form-control" name="company" id="mce-COMPNY" placeholder="Votre entreprise">
+                        </div>
+                    </div>
+
+
+                    <!--
+                    <div class="form-group form-group-sm">
+                        <label class="sr-only" for="mce-ACTIVT">Secteur d'activité:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-industry"></i></div>
+                            <select class="form-control"  name="activity" id="mce-ACTIVT">
+                                <option value="" >Votre secteur d'activité</option>
+                                <option value="agriculture, sylviculture et pêche">agriculture, sylviculture et pêche</option>
+                                <option value="industries extractives">industries extractives</option>
+                                <option value="industrie manufacturière">industrie manufacturière</option>
+                                <option value="électricité, gaz, air conditionné">électricité, gaz, air conditionné</option>
+                                <option value="environnement (eau, déchets, dépollution)">environnement (eau, déchets, dépollution)</option>
+                                <option value="construction, BTP">construction, BTP</option>
+                                <option value="commerce">commerce</option>
+                                <option value="transports et entreposage">transports et entreposage</option>
+                                <option value="hébergement et restauration">hébergement et restauration</option>
+                                <option value="information et communication">information et communication</option>
+                                <option value="finances et assurance">finances et assurance</option>
+                                <option value="immobilier">immobilier</option>
+                                <option value="activités spécialisées, scientifiques et techniques">activités spécialisées, scientifiques et techniques</option>
+                                <option value="services administratifs et de soutien">services administratifs et de soutien</option>
+                                <option value="administration publique">administration publique</option>
+                                <option value="enseignement">enseignement</option>
+                                <option value="santé humaine et action sociale">santé humaine et action sociale</option>
+                                <option value="arts, spectacles et activités récréatives">arts, spectacles et activités récréatives</option>
+                                <option value="autre">autre</option>
+                            </select>
+                        </div>
+                    </div>
+-->
+
+                    <div class="checkbox checkbox-success">
+                        <input type="checkbox" value="1" name="newsletter" id="mce-group[7125]-7125-0">
+                        <label for="mce-group[7125]-7125-0">s'abonner à la newsletter mensuelle</label>
+                    </div>
+
+                    <div class="checkbox checkbox-success">
+                        <input type="checkbox" value="1" name="mobilityPotential" id="mce-group[7125]-7125-1">
+                        <label for="mce-group[7125]-7125-1">demander une évaluation du potentiel mobilité de l'entreprise</label>
+                    </div>
+                    <div class="checkbox checkbox-success">
+                        <input type="checkbox" value="1" name="quotation" id="mce-group[7125]-7125-2">
+                        <label for="mce-group[7125]-7125-2">demander un devis pour réaliser une application mobile B2B</label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Envoyer" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
